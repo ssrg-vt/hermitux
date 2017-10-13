@@ -2,9 +2,9 @@ CC=/opt/hermit/bin/x86_64-hermit-gcc
 LD=/opt/hermit/bin/x86_64-hermit-ld
 CFLAGS=-Wall -Werror -g
 LDFLAGS=
-LIBS= musl/lib/libc.a \
+LIBS= ../musl-hermitux/prefix/lib/libc.a \
 	 /opt/hermit/x86_64-hermit/lib/libm.a \
-	 /opt/hermit/x86_64-hermit/lib/libhermit.a \
+	 ../hermit-compiler/prefix/x86_64-hermit/lib/libhermit.a \
 	 /opt/hermit/lib/gcc/x86_64-hermit/6.3.0/crtend.o \
 	 /opt/hermit/lib/gcc/x86_64-hermit/6.3.0/crtbegin.o \
 	 /opt/hermit/lib/gcc/x86_64-hermit/6.3.0/crti.o \
