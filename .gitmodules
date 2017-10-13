@@ -1,0 +1,8 @@
+[submodule "musl-hermitux"]
+	path = musl-hermitux
+	url = git@github.com:ssrg-vt/musl-hermitux.git
+	branch = hermitux
+[submodule "hermit-compiler"]
+	path = hermit-compiler
+	url = git@github.com:danchiba/hermit-compiler.git
+	branch = pierre
