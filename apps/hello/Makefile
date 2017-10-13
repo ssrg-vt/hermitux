@@ -1,6 +1,6 @@
 HERMIT_TOOLCHAIN=/opt/hermit/
-HERMIT_LOCAL_INSTALL=../hermit-compiler/prefix
-MUSL_LIBC=../musl-hermitux/lib/libc.a 
+HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
+MUSL_LIBC=../../musl-hermitux/lib/libc.a 
 
 CC=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-ld
