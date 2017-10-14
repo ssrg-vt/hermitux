@@ -5,7 +5,7 @@ MUSL_LIBC=../../../musl-hermitux/lib/libc.a
 CC=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-ld
 CFLAGS=-Wall -Werror -g
-LDFLAGS=
+LDFLAGS=-static
 LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/x86_64-hermit/lib/libm.a \
 	 $(HERMIT_LOCAL_INSTALL)/x86_64-hermit/lib/libhermit.a \
