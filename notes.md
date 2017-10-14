@@ -11,5 +11,5 @@
 
 - `writev`: just iterate over the io vectors and call write on each one. This is supposed to be atomic so I used a spinlock. 
 - `exit_group`: for now this just calls exit **TODO**: that probably won't work in a multi-threaded environment
-- `ioctl`: this really depends on the actual command  executed by ioctl! Thus, I plan to implement command by command. For now I only experimented with simple programs so I only have TIOCGWINSZ
+- `ioctl`: this really depends on the actual command  executed by ioctl! Thus, I plan to implement command by command. For now I only experimented with simple programs so I only have `TIOCGWINSZ`
   - `TIOCGWINSZ`: it's supposed to return the size of the window in characters and pixel. Hermitcore only use serial output so I don't think this matters much, I hardcoded a 24 * 80 window specs to be returned
