@@ -5,7 +5,7 @@
 1. Musl:
 - Need to implement the `__getreent()` function from newlib to be compatible with hermitcore. The current hack I have made in `src/errno/__errno_location.c` (line 8) does not work (This function is related to TLS/errno and I had to comment the errno check on return from syscall in musl, in `src/internal/syscall_ret.c`). Not sure that will be a problem when we actually load the program though.
 
-- ""VDSO"": need to disable it somehow, for application calling `gettimeofday` musl tries to access the VDSO and generates a page fault. **TODO**
+- **VDSO**: need to disable it somehow, for application calling `gettimeofday` musl tries to access the VDSO and generates a page fault. **TODO**
 
 2. Syscalls implemented in HermitCore:
 
