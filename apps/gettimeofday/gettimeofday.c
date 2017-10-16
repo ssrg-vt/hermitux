@@ -7,7 +7,9 @@
 #include <signal.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include <hermit/syscall.h>
+//#include <hermit/syscall.h>
+
+extern int sys_msleep(long arg);
 
 #define N	255
 
@@ -18,7 +20,7 @@ int main(int argc, char** argv)
 	gettimeofday(&res, NULL);
 	printf("res.tv_sec = %ld\nres.tv_usec = %ld\n", res.tv_sec, res.tv_usec);
 
-	sys_msleep(2000);
+	sys_msleep(10000);
 
 	gettimeofday(&res, NULL);
 	printf("res.tv_sec = %ld\nres.tv_usec = %ld\n", res.tv_sec, res.tv_usec);

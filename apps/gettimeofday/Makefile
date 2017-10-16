@@ -5,7 +5,7 @@ MUSL_LOCAL_INSTALL=../../musl-hermitux/prefix/include
 
 CC=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-ld
-CFLAGS=-Wall -Werror -g -isystem $(MUSL_LOCAL_INSTALL) -O3 -mcmodel=medium 
+CFLAGS=-Wall -Werror -g -isystem $(MUSL_LOCAL_INSTALL) -O0 #-O3 -mcmodel=medium 
 LDFLAGS=-static
 LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/x86_64-hermit/lib/libm.a \
@@ -16,10 +16,10 @@ LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtn.o
 
 PROG=gettimeofday
-OBJS=gettimeofday.o
+OBJS=crt0.o gettimeofday.o
 
 VERBOSE=0
-ISLE=uhyve
+ISLE=qemu
 KVM=1
 
 all: $(PROG)
@@ -30,7 +30,7 @@ $(PROG): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
-test: $(PROG)
+test: clean $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
 				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
