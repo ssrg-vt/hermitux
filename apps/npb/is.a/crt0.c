@@ -41,6 +41,9 @@ extern char** environ;
 extern void __init_libc(char **envp, char *pn);
 extern void __libc_start_init(void);
 
+/* Pierre: */
+extern void gettimeofday_init(void);
+
 #define PHYS	0x800000ULL
 
 int libc_start(int argc, char** argv, char** env)
@@ -67,6 +70,11 @@ int libc_start(int argc, char** argv, char** env)
    /* Pierre: call musl init */
 	__init_libc(envp, argv[0]);
 	__libc_start_init();
+
+
+	/* pierre: gettimeofday init */
+	gettimeofday_init();
+
    ret = main(argc, argv);
 
    /* call exit from the C library so atexit gets called, and the
