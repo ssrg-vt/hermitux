@@ -37,11 +37,16 @@ extern void __libc_fini_array (void);
 extern int _init_signal(void);
 extern char** environ;
 
+/* Pierre: musl init functions */
+extern void __init_libc(char **envp, char *pn);
+extern void __libc_start_init(void);
+
 #define PHYS	0x800000ULL
 
 int libc_start(int argc, char** argv, char** env)
 {
    int ret;
+   char **envp = argv+argc+1;
 
    /* call init function */
    //__libc_init_array();
@@ -58,6 +63,10 @@ int libc_start(int argc, char** argv, char** env)
    /* initialize simple signal handling */
    //_init_signal();
 
+
+   /* Pierre: call musl init */
+	__init_libc(envp, argv[0]);
+	__libc_start_init();
    ret = main(argc, argv);
 
    /* call exit from the C library so atexit gets called, and the

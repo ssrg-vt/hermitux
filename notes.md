@@ -13,3 +13,6 @@
 - `exit_group`: for now this just calls exit **TODO**: that probably won't work in a multi-threaded environment
 - `ioctl`: this really depends on the actual command  executed by ioctl! Thus, I plan to implement command by command. For now I only experimented with simple programs so I only have `TIOCGWINSZ`
   - `TIOCGWINSZ`: it's supposed to return the size of the window in characters and pixel. Hermitcore only use serial output so I don't think this matters much, I hardcoded a 24 * 80 window specs to be returned
+- `arch_prctl`: musl use it to set the tls address in the `FS` register, for now it is just doing nothing silently, probably need to implement it in the future **TODO**
+- `set_tid_address`: musl use it too, doing nothing silently for now, probably need to implement it later **TODO**
+- `clock_gettime`: **TODO**
