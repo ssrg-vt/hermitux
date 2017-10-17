@@ -20,3 +20,34 @@
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
 
 ## `Syscall` catch impact
+
+The program tested:
+```C
+#include /* ... */
+
+#define ITERATIONS	10000
+
+inline static unsigned long long rdtsc(void) {
+	unsigned long lo, hi;
+	asm volatile ("rdtsc" : "=a"(lo), "=d"(hi) :: "memory");
+	return ((unsigned long long) hi << 32ULL | (unsigned long long) lo);
+}
+
+int main(int argc, char** argv)
+{
+	int i;
+	unsigned long long start, stop;
+	struct winsize sz;
+
+	start = rdtsc();
+	for(i=0; i<ITERATIONS; i++) {
+		ioctl(0, TIOCGWINSZ, &sz);
+		(void)sz;
+	}
+	stop = rdtsc();
+
+	printf("Result: %llu\n", stop - start);
+
+	return 0;
+}
+```
