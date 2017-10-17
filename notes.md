@@ -18,3 +18,5 @@
 - `set_tid_address`: musl use it too, doing nothing silently for now, probably need to implement it later **TODO**
 - `clock_gettime`: **TODO**, for now just returns `-ENOSYS` (musl is then falling back on gettimeofday which is implemented
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
+
+## `Syscall` catch impact
