@@ -21,7 +21,7 @@
 
 ## `Syscall` catch impact
 
-The program tested:
+### The program tested:
 ```C
 #include /* ... */
 
@@ -41,6 +41,8 @@ int main(int argc, char** argv)
 
 	start = rdtsc();
 	for(i=0; i<ITERATIONS; i++) {
+		/* the following being replaced by sys_ioctl( ... ) in the non-catch
+         * version */
 		ioctl(0, TIOCGWINSZ, &sz);
 		(void)sz;
 	}
@@ -50,4 +52,76 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+```
+
+### Setup: everything compiled with `-O3`:
+- Native Linux
+- Qemu/KVM with syscall catching
+- uHyve with syscall catching
+- Qemu/KVM with direct call
+- uHyve with direct call
+
+### Results
+
+```
+LINUX
+Result: 14405692
+Result: 14081966
+Result: 13955332
+Result: 14067852
+Result: 14135586
+Result: 14036106
+Result: 14290898
+Result: 14179994
+Result: 13942806
+Result: 14094688
+
+KVM (catch)
+Result: 61172602
+Result: 62802182
+Result: 167445942
+Result: 161251990
+Result: 167225052
+Result: 156427462
+Result: 170259560
+Result: 175406026
+Result: 97091170
+Result: 63631592
+
+uhyve (catch)
+Result: 49010934
+Result: 48194500
+Result: 48555946
+Result: 48765228
+Result: 47947304
+Result: 48476300
+Result: 49024454
+Result: 49050998
+Result: 49986266
+Result: 51898732
+
+KVM (call)
+Result: 226152
+Result: 226164
+Result: 226198
+Result: 226174
+Result: 467146
+Result: 225978
+Result: 226174
+Result: 226158
+Result: 225984
+Result: 226158
+
+uhyve (call)
+
+Result: 45154
+Result: 45274
+Result: 46320
+Result: 45266
+Result: 45202
+Result: 45166
+Result: 46378
+Result: 98784
+Result: 45276
+Result: 45290
 ```
