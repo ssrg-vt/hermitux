@@ -62,7 +62,6 @@ int main(int argc, char** argv)
 - uHyve with direct call
 
 ### Results
-
 ```
 LINUX
 Result: 14405692
