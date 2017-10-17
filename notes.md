@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 	}
 	stop = rdtsc();
 
-	printf("Result: %llu\n", stop - start);
+	printf("%llu\n", stop - start);
 
 	return 0;
 }
@@ -64,63 +64,62 @@ int main(int argc, char** argv)
 ### Results
 ```
 LINUX
-Result: 14405692
-Result: 14081966
-Result: 13955332
-Result: 14067852
-Result: 14135586
-Result: 14036106
-Result: 14290898
-Result: 14179994
-Result: 13942806
-Result: 14094688
+14405692
+14081966
+13955332
+14067852
+14135586
+14036106
+14290898
+14179994
+13942806
+14094688
 
 KVM (catch)
-Result: 61172602
-Result: 62802182
-Result: 167445942
-Result: 161251990
-Result: 167225052
-Result: 156427462
-Result: 170259560
-Result: 175406026
-Result: 97091170
-Result: 63631592
+61172602
+62802182
+167445942
+161251990
+167225052
+156427462
+170259560
+175406026
+97091170
+63631592
 
 uhyve (catch)
-Result: 49010934
-Result: 48194500
-Result: 48555946
-Result: 48765228
-Result: 47947304
-Result: 48476300
-Result: 49024454
-Result: 49050998
-Result: 49986266
-Result: 51898732
+49010934
+48194500
+48555946
+48765228
+47947304
+48476300
+49024454
+49050998
+49986266
+51898732
 
 KVM (call)
-Result: 226152
-Result: 226164
-Result: 226198
-Result: 226174
-Result: 467146
-Result: 225978
-Result: 226174
-Result: 226158
-Result: 225984
-Result: 226158
+226152
+226164
+226198
+226174
+467146
+225978
+226174
+226158
+225984
+226158
 
 uhyve (call)
-
-Result: 45154
-Result: 45274
-Result: 46320
-Result: 45266
-Result: 45202
-Result: 45166
-Result: 46378
-Result: 98784
-Result: 45276
-Result: 45290
+45154
+45274
+46320
+45266
+45202
+45166
+46378
+98784
+45276
+45290
 ```
