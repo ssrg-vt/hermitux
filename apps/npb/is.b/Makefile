@@ -15,11 +15,11 @@ LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crti.o \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtn.o
 
-PROG=is.a
+PROG=is.b
 OBJS=is.o crt0.o c_timers.o c_print_results.o wtime.o
 
-VERBOSE=0
-ISLE=uhyve
+VERBOSE=1
+ISLE=qemu
 KVM=1
 
 all: $(PROG)
@@ -30,7 +30,7 @@ $(PROG): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
-test: $(PROG)
+test: clean $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
 				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
