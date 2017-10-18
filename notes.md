@@ -63,64 +63,16 @@ int main(int argc, char** argv)
 - uHyve with direct call
 
 ### Results
-```
-LINUX
-14405692
-14081966
-13955332
-14067852
-14135586
-14036106
-14290898
-14179994
-13942806
-14094688
+See  in this repo `results/ioctl` (ipython notebook + graph)
 
-KVM (catch)
-61172602
-62802182
-167445942
-161251990
-167225052
-156427462
-170259560
-175406026
-97091170
-63631592
-
-uhyve (catch)
-49010934
-48194500
-48555946
-48765228
-47947304
-48476300
-49024454
-49050998
-49986266
-51898732
-
-KVM (call)
-226152
-226164
-226198
-226174
-467146
-225978
-226174
-226158
-225984
-226158
-
-uhyve (call)
-45154
-45274
-46320
-45266
-45202
-45166
-46378
-98784
-45276
-45290
-```
+## NPB
+- BT: working
+- CG: working
+- DC: not working, using `mmap`
+- IS: working
+- EP: working
+- FT: not working, I'm suspecting an error internal to hermitcore
+- LU: not working, page fault
+- MG: working
+- SP: working
+- UA: working
