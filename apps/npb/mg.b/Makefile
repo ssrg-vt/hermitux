@@ -21,8 +21,8 @@ PROG=mg.b
 OBJS=mg.o crt0.o c_timers.o print_results.o \
 	 randdp.o c_print_results.o wtime.o
 
-VERBOSE=1
-ISLE=qemu
+VERBOSE=0
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)

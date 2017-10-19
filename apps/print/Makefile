@@ -1,11 +1,11 @@
 HERMIT_TOOLCHAIN=/opt/hermit/
-HERMIT_LOCAL_INSTALL=../../../hermit-compiler/prefix
-MUSL_LIBC=../../../musl-hermitux/lib/libc.a 
-MUSL_LOCAL_INSTALL=../../../musl-hermitux/prefix/include
+HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
+MUSL_LIBC=../../musl-hermitux/lib/libc.a 
+MUSL_LOCAL_INSTALL=../../musl-hermitux/prefix/include
 
 CC=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-ld
-CFLAGS=-Wall -Werror -g -isystem $(MUSL_LOCAL_INSTALL) -O3 -mcmodel=medium 
+CFLAGS=-Wall -Werror -g -isystem $(MUSL_LOCAL_INSTALL) -O0 #-O3 -mcmodel=medium 
 LDFLAGS=-static
 LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/x86_64-hermit/lib/libm.a \
@@ -15,11 +15,11 @@ LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crti.o \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtn.o
 
-PROG=is.b
-OBJS=is.o crt0.o c_timers.o c_print_results.o wtime.o
+PROG=print
+OBJS=crt0.o print.o
 
 VERBOSE=0
-ISLE=qemu
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)
@@ -35,8 +35,8 @@ test: clean $(PROG)
 				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
-				   HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=qemu \
+				   HERMIT_KVM=0 $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 
 clean:

@@ -23,8 +23,8 @@ OBJS=sp.o add.o adi.o error.o exact_rhs.o crt0.o c_timers.o print_results.o \
 	 sp.o txinvr.o tzetar.o verify.o x_solve.o y_solve.o z_solve.o \
 	 randdp.o c_print_results.o wtime.o
 
-VERBOSE=1
-ISLE=qemu
+VERBOSE=0
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)

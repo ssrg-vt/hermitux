@@ -76,3 +76,15 @@ See  in this repo `results/ioctl` (ipython notebook + graph)
 - MG: working
 - SP: working
 - UA: working
+
+### Performance evaluation
+
+Setup:
+- Hermit with syscall catch mechanism, musl, _KVM_
+- Hermit with syscall catch, musl, _uHyve_
+- Native linux (static compilation with musl)
+
+Everything -O3, class B:
+BT, CG, IS, EP, MG, SP, UA
+
+Results: see results/npb and the graph. KVM is always slightly slower that uhyve, true for stdev to (higher on KVM). Linux is a bit slower thatn the other 2.

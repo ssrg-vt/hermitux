@@ -22,8 +22,8 @@ OBJS=ua.o adapt.o diffuse.o move.o setup.o crt0.o c_timers.o print_results.o \
 	 randdp.o c_print_results.o wtime.o verify.o convect.o mason.o precond.o \
 	 transfer.o utils.o
 
-VERBOSE=1
-ISLE=qemu
+VERBOSE=0
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)
