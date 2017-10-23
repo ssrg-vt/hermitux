@@ -8,11 +8,10 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
+extern int sys_ioctl(unsigned int fd, unsigned int cmd, unsigned long arg); 
 
+#define SYSCATCH
 #define ITERATIONS	10000
-
-
-extern void sys_msleep(int x);
 
 inline static unsigned long long rdtsc(void) {
 	unsigned long lo, hi;
@@ -29,7 +28,11 @@ int main(int argc, char** argv)
 
 	start = rdtsc();
 	for(i=0; i<ITERATIONS; i++) {
+#ifdef SYSCATCH
 		ioctl(0, TIOCGWINSZ, &sz);
+#else
+		sys_ioctl(0, TIOCGWINSZ, (unsigned long)&sz);
+#endif /* SYSCATCH */
 		(void)sz;
 	}
 	stop = rdtsc();
