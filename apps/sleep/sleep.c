@@ -7,9 +7,11 @@ extern void sleep(unsigned int sec);
 int main(int argc, char **argv) {
 	
 	struct timeval start, stop, res;
-	
+
+	printf("started.\n");
+
 	gettimeofday(&start, NULL);
-	sleep(2);
+	sleep(10);
 	gettimeofday(&stop, NULL);
 
 	timersub(&stop, &start, &res);

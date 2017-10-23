@@ -18,8 +18,8 @@ LIBS= $(MUSL_LIBC) \
 PROG=sleep
 OBJS=crt0.o sleep.o
 
-VERBOSE=0
-ISLE=qemu
+VERBOSE=1
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)
@@ -33,6 +33,9 @@ $(PROG): $(OBJS)
 test: clean $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
 				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+timing: clean $(PROG)
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				   /usr/bin/time $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
