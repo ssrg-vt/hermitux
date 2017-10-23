@@ -22,6 +22,7 @@ mkdir -p prefix
 
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=../prefix ..
+make -j`nproc` hermit-bootstrap-install
 make -j`nproc` install
 cd ..
 cd ..
