@@ -17,6 +17,7 @@ LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crti.o \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtn.o
 
+FREQ=3600
 PROG=mg.b
 OBJS=mg.o crt0.o c_timers.o print_results.o \
 	 randdp.o c_print_results.o wtime.o
@@ -34,13 +35,13 @@ $(PROG): $(OBJS)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 test: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
-				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
-				   HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
-
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
+				HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 clean:
 	rm -rf $(PROG) *.o

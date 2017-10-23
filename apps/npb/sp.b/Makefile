@@ -7,7 +7,7 @@ CC=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_TOOLCHAIN)/bin/x86_64-hermit-ld
 CFLAGS=-Wall -g -isystem $(MUSL_LOCAL_INSTALL) -O3 -mcmodel=medium \
 	  -Wno-unused-variable -Wno-maybe-uninitialized -Wno-misleading-indentation\
-	  -Wno-parentheses -Wno-format
+	  -Wno-parentheses -Wno-format -Wno-unused-but-set-variable
 LDFLAGS=-static
 LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/x86_64-hermit/lib/libm.a \
@@ -23,6 +23,7 @@ OBJS=sp.o add.o adi.o error.o exact_rhs.o crt0.o c_timers.o print_results.o \
 	 sp.o txinvr.o tzetar.o verify.o x_solve.o y_solve.o z_solve.o \
 	 randdp.o c_print_results.o wtime.o
 
+FREQ=3600
 VERBOSE=0
 ISLE=uhyve
 KVM=1
@@ -36,13 +37,13 @@ $(PROG): $(OBJS)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 test: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
-				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
-				   HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
-
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
+				HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 clean:
 	rm -rf $(PROG) *.o

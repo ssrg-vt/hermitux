@@ -18,8 +18,9 @@ LIBS= $(MUSL_LIBC) \
 PROG=is.b
 OBJS=is.o crt0.o c_timers.o c_print_results.o wtime.o
 
+FREQ=3600
 VERBOSE=0
-ISLE=qemu
+ISLE=uhyve
 KVM=1
 
 all: $(PROG)
@@ -31,13 +32,13 @@ $(PROG): $(OBJS)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 test: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
-				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
-				   HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
-
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
+				HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 clean:
 	rm -rf $(PROG) *.o

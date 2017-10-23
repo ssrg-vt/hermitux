@@ -21,6 +21,7 @@ OBJS=bt.o crt0.o c_timers.o c_print_results.o wtime.o add.o adi.o error.o \
 	 exact_rhs.o exact_solution.o initialize.o rhs.o set_constants.o \
 	 solve_subs.o verify.o x_solve.o y_solve.o z_solve.o print_results.o
 
+FREQ=3600
 VERBOSE=0
 ISLE=uhyve
 KVM=1
@@ -34,13 +35,13 @@ $(PROG): $(OBJS)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 test: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
-				   $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 gdb: clean $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 HERMIT_ISLE=$(ISLE) \
-				   HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
-
+	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
+				HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 clean:
 	rm -rf $(PROG) *.o
