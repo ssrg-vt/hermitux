@@ -19,6 +19,7 @@
 - `clock_gettime`: **TODO**, for now just returns `-ENOSYS` (musl is then falling back on gettimeofday which is implemented
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
 - `nanosleep`: just translates to a `sys_msleep` for now, I don't take care of any potential interruption by a signal (would need to set the `rem` parameter
+- `brk`: implemented. we can now dynamically allocate up to 128k, yay! Sizes superior to that will be a call to mmap ...
 
 ## `Syscall` catch impact
 
