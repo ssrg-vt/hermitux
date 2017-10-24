@@ -1,0 +1,12 @@
+This is a stupid malloc debugger.
+
+malloc will always round up to a full page and then mmap one more page
+than that.  It will then allocate the space in a way that makes the
+allocation end at one page, thus causing access behind the array border
+to segfault.
+
+realloc will malloc new memory, copy the old contents, and then mprotect
+the old memory away, so referencing it will cause a segfault, too.
+
+This is a big drain on resources and will slow down your program.  But
+it may prove useful in finding bad memory references in your code.

@@ -1,0 +1,4 @@
+
+CFLAGS+=-mpowerpc-gpopt -mpowerpc-gfxopt -Os
+VPATH:=ppc:syscalls.s:$(VPATH)
+LIBOBJ+=$(OBJDIR)/__CAS.o

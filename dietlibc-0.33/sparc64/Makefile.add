@@ -1,0 +1,3 @@
+CFLAGS+=-m64 -Os
+VPATH:=sparc64:syscalls.s:$(VPATH)
+LIBOBJ+=$(patsubst %,$(OBJDIR)/%,__time.o)

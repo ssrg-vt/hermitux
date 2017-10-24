@@ -1,0 +1,3 @@
+CFLAGS+=-Os -fomit-frame-pointer
+VPATH:=parisc:syscalls.s:$(VPATH)
+DIETLIBC_OBJ += $(OBJDIR)/dyncall.o

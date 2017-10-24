@@ -1,0 +1,5 @@
+
+CFLAGS+=-mcpu=supersparc -Os
+VPATH:=sparc:syscalls.s:$(VPATH)
+LIBOBJ+=$(OBJDIR)/udiv.o $(OBJDIR)/umul.o $(OBJDIR)/urem.o
+LIBOBJ+=$(OBJDIR)/rem.o $(OBJDIR)/sdiv.o

@@ -1,0 +1,5 @@
+
+CFLAGS+=-Os -Iinclude -fomit-frame-pointer -fstrict-aliasing
+VPATH:=alpha:syscalls.s:$(VPATH)
+
+LIBOBJ+=$(patsubst %,$(OBJDIR)/%,divq.o divl.o remq.o reml.o __time.o __alarm.o __CAS.o)

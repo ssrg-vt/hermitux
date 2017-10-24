@@ -1,0 +1,40 @@
+DYN-LINKER
+
+  This is the Dynamic linker for the dietlibc.
+  Written from scratch by Olaf Dreesen.
+
+Fri Sep 13 16:28:42 CEST 2002
+THIS CODE IS OBSOLETE ! DON'T USE IT ANYMORE
+
+
+
+Replacement for standard ld.so
+
+It is still test-code only and depends on dietlibc/libdl code
+
+
+Mon Mar 11 19:44:20 CET 2002
+
+This is now near obsolete code...
+
+
+Thu Nov  1 17:35:15 MET 2001
+
+now "interact" with the loaded libdietc.so ....
+environ is of copy relocation type.
+(I think this has to be done different...)
+
+
+Mon Oct 22 14:55:51 MEST 2001
+
+added a little helper-code to "interact" with a loaded libdl.so ....
+
+
+Thu Jun 21 16:03:52 MEST 2001
+
+1. STATUS: it works on i386.
+	ARM is in progress
+	other no code available
+
+	basicaly look to the libdl README. all supported there schould work
+	here.

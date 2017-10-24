@@ -1,0 +1,16 @@
+memccpy
+memchr
+memcmp
+memcpy
+mempcpy
+memrchr
+strcasecmp
+strcmp
+strcspn
+strlen
+strncat
+strncpy
+strpbrk
+strrchr
+strspn
+strstr

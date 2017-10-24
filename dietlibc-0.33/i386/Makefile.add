@@ -1,0 +1,10 @@
+
+M:=$(shell ./findcflags.sh $(CC))
+LIBOBJ+=$(OBJDIR)/__ten.o $(OBJDIR)/md5asm.o $(OBJDIR)/__restore_rt.o \
+$(OBJDIR)/__CAS.o
+LIBMATH+=acos.o asin.o atan.o ceil.o cos.o exp.o exp10.o exp2.o expm1.o fabs.o floor.o hypot.o log.o log2.o log10.o sin.o sqrt.o copysign.o sincos.o __half.o ldexp.o ilogb.o cbrt.o log1p.o fmod.o libm2.o atan2.o tan.o
+LIBMATH:=$(filter-out acosh.o asinh.o atanh.o cbrt.o copysign.o exp10.o exp2.o expm1.o ilogb.o log2.o,$(LIBMATH))
+#CFLAGS+=-march=i386 -Os -fomit-frame-pointer -malign-functions=0 -malign-jumps=0 -malign-loops=0 -mpreferred-stack-boundary=2
+CFLAGS+=$(M)
+VPATH:=i386:syscalls.s:$(VPATH)
+LIBGMON_OBJS+=$(OBJDIR)/mcount.o
