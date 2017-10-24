@@ -87,4 +87,20 @@ Setup:
 Everything -O3, class B:
 BT, CG, IS, EP, MG, SP, UA
 
-Results: see results/npb and the graph. KVM is always slightly slower that uhyve, true for stdev to (higher on KVM). Linux is a bit slower thatn the other 2.
+## Other C libraries
+
+### Glibc
+Seems hard to compile with hermit infrastructure, better to wait until the 
+loader is ready
+
+### Dietlibc
+Compiles fine, hello world working. However, it does not support not having the
+VDSO...
+
+## PARSEC
+
+### Blackscholes:
+usign mmap ...
+
+## ERRNO
+Need to implement it!
