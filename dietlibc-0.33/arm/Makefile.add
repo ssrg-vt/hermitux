@@ -1,9 +1,0 @@
-
-LIBOBJ+=$(OBJDIR)/md5asm.o $(OBJDIR)/__aeabi_unwind_cpp.o
-LIBOBJ+=$(OBJDIR)/__fadvise.o $(OBJDIR)/arm_fadvise.o
-CFLAGS+=-Os -fomit-frame-pointer -fstrict-aliasing
-#ifdef __ARM_EABI__
-#CFLAGS+=-mabi=aapcs-linux -mno-thumb-interwork
-#endif
-VPATH:=arm:syscalls.s:$(VPATH)
-LIBGMON_OBJS+=$(OBJDIR)/mcount.o

@@ -1,6 +1,0 @@
-
-CFLAGS+=-Os -mpowerpc64
-VPATH:=ppc64:syscalls.s:$(VPATH)
-LIBOBJ+=$(OBJDIR)/__CAS.o
-
-CC+=-m64

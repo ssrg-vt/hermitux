@@ -1,6 +1,0 @@
-ifeq ($(CROSS),mips-linux-)
-ENDIAN=-EL
-endif
-CFLAGS+=$(ENDIAN) -Os -march=mips2
-VPATH:=mips:syscalls.s:$(VPATH)
-LIBOBJ+=$(OBJDIR)/pread64.o $(OBJDIR)/pwrite64.o $(OBJDIR)/divdi3.o

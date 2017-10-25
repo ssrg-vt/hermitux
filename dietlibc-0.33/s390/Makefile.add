@@ -1,4 +1,0 @@
-
-CFLAGS+=-Os # -fomit-frame-pointer -fstrict-aliasing
-VPATH:=s390:syscalls.s:$(VPATH)
-LIBOBJ+=$(OBJDIR)/__waitpid.o

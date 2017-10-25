@@ -1,2 +1,0 @@
-VPATH:=ia64:syscalls.s:$(VPATH)
-LIBOBJ+=$(OBJDIR)/__time.o $(OBJDIR)/__waitpid.o $(OBJDIR)/__nice.o $(OBJDIR)/__alarm.o $(OBJDIR)/__CAS.o
