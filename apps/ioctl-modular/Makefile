@@ -15,13 +15,13 @@ LIBS= $(MUSL_LIBC) \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtbegin.o \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crti.o \
 	 $(HERMIT_TOOLCHAIN)/lib/gcc/x86_64-hermit/6.3.0/crtn.o
+LINKER_SCRIPT=ls.x
 
 PROG=ioctl
 OBJS=$(PROG).o crt0.o
 DISABLED_SYSCALLS=mmap brk ioctl nanosleep fcntl unlink gettimeofday \
 				  arch_prctl set_tid_address clock_gettime read write \
 				  open close lseek readv writev
-
 FREQ=3600
 VERBOSE=0
 ISLE=qemu
@@ -34,8 +34,8 @@ kernel:
 	./syscall-disabler.py -o libhermit.a -s $(DISABLED_SYSCALLS) \
 		-c ../../hermit-compiler
 
-$(PROG): $(OBJS)
-	$(LD) $(OBJS) $(LIBS) -o $@ $(LDFLAGS)
+$(PROG): kernel $(OBJS)
+	$(LD) -v  $(OBJS) $(LIBS) -o $@ $(LDFLAGS) -T $(LINKER_SCRIPT)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
