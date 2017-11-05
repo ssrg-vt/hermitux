@@ -91,6 +91,10 @@ Setup:
 Everything -O3, class B:
 BT, CG, IS, EP, MG, SP, UA
 
+## Other applications
+- Postmark: working! **TODO** performance evaluation
+- blackscholes: something is wrong with argc/argv
+
 ## Other C libraries
 
 ### Glibc
@@ -102,9 +106,6 @@ Compiles fine, hello world working. However, it does not support not having the
 VDSO...
 
 ## PARSEC
-
-### Blackscholes:
-usign mmap ...
 
 ## ERRNO
 Need to implement it!
