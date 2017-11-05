@@ -22,7 +22,7 @@
 - `brk`: implemented. we can now dynamically allocate up to 128k, yay! Sizes superior to that will be a call to mmap ...
 - `fcntl`: **TODO**
 - `unlink`: Implemented! (uhyve & qemu)
-- getpriority: implemented
+- `getpriority`: implemented
 
 ## `Syscall` catch impact
 
