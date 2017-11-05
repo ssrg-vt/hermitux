@@ -22,7 +22,8 @@ def prepare_and_parse_cmdl(argv):
     parser.add_argument("-o", "--output", required=True, 
         help="Output libhermit.a")
     parser.add_argument("-s", "--syscalls", required=True, nargs='+',
-        help="List of syscalls to disable")
+        help="List of syscalls to disable. Set this to 'none' to disable no" +
+        " syscall")
     parser.add_argument("-b", "--hermit-build", help="Hermit build folder " + 
         "location (defaults to <hermit code>/build)")
     parser.add_argument("-t", "--hermit-toolchain", help="Hermit toolchain " +
@@ -62,6 +63,15 @@ if __name__ == "__main__":
     INPUT = SRC_PREFIX + "/x86_64-hermit/lib/libhermit.a"
     archiver = TOOLCHAIN + "/bin/x86_64-hermit-ar"
     
+    if "none" in SYSCALLS:
+        if len(SYSCALLS) != 1:
+            er("'none' is exclusive with other values for -s")
+            sys.exit(-1)
+        else:
+            print "'none' provided, just copying " + INPUT + " to " + OUTPUT
+            shutil.copyfile(INPUT, OUTPUT)
+            exit(0)
+
     # Copy the original lib to a temporary file
     shutil.copyfile(INPUT, TMP)
 

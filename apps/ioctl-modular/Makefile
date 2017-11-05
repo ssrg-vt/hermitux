@@ -19,12 +19,18 @@ LINKER_SCRIPT=ls.x
 
 PROG=ioctl
 OBJS=$(PROG).o crt0.o
-DISABLED_SYSCALLS=mmap brk ioctl nanosleep fcntl unlink gettimeofday \
-				  arch_prctl set_tid_address clock_gettime read write \
-				  open close lseek readv writev
+DISABLED_SYSCALLS=brk clock_gettime clone close fcntl gethostname \
+				  getprio get_ticks ioctl kill lseek msleep nanosleep open \
+				  rcce_fini rcce_init rcce_malloc read readv sbrk \
+				  sem_cancelablewait sem_destroy sem_init sem_post \
+				  sem_timedwait sem_wait setprio signal spinlock_destroy \
+				  spinlock_init spinlock_lock spinlock_unlock stat unlink \
+				  write writev yield
+# Syscalls we cannot disable: getpid exit
+#DISABLED_SYSCALLS=ioctl
 FREQ=3600
 VERBOSE=0
-ISLE=qemu
+ISLE=uhyve
 KVM=0
 
 all: kernel $(PROG)
@@ -39,6 +45,9 @@ $(PROG): kernel $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
+
+readelf: all
+	readelf -SW $(PROG) | grep -E 'text|bss|data'
 
 test: clean $(PROG)
 	HERMIT_FREQ=$(FREQ) HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) \
