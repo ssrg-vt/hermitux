@@ -16,13 +16,13 @@
   - `TIOCGWINSZ`: it's supposed to return the size of the window in characters and pixel. Hermitcore only use serial output so I don't think this matters much, I hardcoded a 24 * 80 window specs to be returned
 - `arch_prctl`: musl use it to set the tls address in the `FS` register, for now it is just doing nothing silently, probably need to implement it in the future **TODO**
 - `set_tid_address`: musl use it too, doing nothing silently for now, probably need to implement it later **TODO**
-- `clock_gettime`: **TODO**, for now just returns `-ENOSYS` (musl is then falling back on gettimeofday which is implemented
+- `clock_gettime`: done
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
 - `nanosleep`: just translates to a `sys_msleep` for now, I don't take care of any potential interruption by a signal (would need to set the `rem` parameter
 - `brk`: implemented. we can now dynamically allocate up to 128k, yay! Sizes superior to that will be a call to mmap ...
 - `fcntl`: **TODO**
 - `unlink`: Implemented! (uhyve & qemu)
-- getpriority: implemented
+- `getpriority`: implemented
 
 ## `Syscall` catch impact
 
