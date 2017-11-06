@@ -30,30 +30,33 @@
 ```C
 #include /* ... */
 
+extern int sys_ioctl(unsigned int fd, unsigned int cmd, unsigned long arg); 
+
+#define SYSCATCH
 #define ITERATIONS	10000
 
-inline static unsigned long long rdtsc(void) {
-	unsigned long lo, hi;
-	asm volatile ("rdtsc" : "=a"(lo), "=d"(hi) :: "memory");
-	return ((unsigned long long) hi << 32ULL | (unsigned long long) lo);
-}
+inline static unsigned long long rdtsc(void) { /* ... */ }
 
 int main(int argc, char** argv)
 {
 	int i;
 	unsigned long long start, stop;
 	struct winsize sz;
+	char buf[128];
 
 	start = rdtsc();
 	for(i=0; i<ITERATIONS; i++) {
-		/* the following being replaced by sys_ioctl( ... ) in the non-catch
-         * version */
+#ifdef SYSCATCH
 		ioctl(0, TIOCGWINSZ, &sz);
+#else
+		sys_ioctl(0, TIOCGWINSZ, (unsigned long)&sz);
+#endif /* SYSCATCH */
 		(void)sz;
 	}
 	stop = rdtsc();
 
-	printf("%llu\n", stop - start);
+	sprintf(buf, "Result: %llu\n", stop - start);
+	write(1, buf, strlen(buf));
 
 	return 0;
 }
