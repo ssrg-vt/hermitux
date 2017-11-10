@@ -7,6 +7,8 @@
 
 - **VDSO**: need to disable it somehow, for application calling `gettimeofday` musl tries to access the VDSO and generates a page fault.
   - For now it's fixed, the issue goes away when I call musl initialization functions from the crt file.
+  
+- `char ** environ` pointer not working the same way as newlib
 
 2. Syscalls implemented in HermitCore:
 
