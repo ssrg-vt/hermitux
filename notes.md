@@ -139,7 +139,7 @@ Need to implement it!
    easy, it can be complicated for other (i.e. the fact that a 64bit address
    can only come from rax) --> see with Daniel for more detailed description.
 
-   B. But it below 0x400000:
+   B. Put it below 0x400000:
    It's a convention for non-PIE programs to start at 0x400000 in Linux, this
    address was arbitrarily chosen and there is nothing below. Source:
    https://gist.github.com/CMCDragonkai/10ab53654b2aa6ce55c11cfc5b2432a4
