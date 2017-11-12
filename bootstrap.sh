@@ -5,6 +5,7 @@ HERMIT_REPO=git@github.com:danchiba/hermit-compiler.git
 HERMIT_BRANCH=pierre
 MUSL_REPO=git@github.com:ssrg-vt/musl-hermitux.git
 MUSL_BRANCH=hermitux
+MUSL_REPO2=git://git.musl-libc.org/musl
 
 if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 	echo "Hermit toolchain not found..."
@@ -34,3 +35,12 @@ mkdir -p prefix
 LD=/opt/hermit/bin/x86_64-hermit-gcc CC=/opt/hermit/bin/x86_64-hermit-gcc CFLAGS=-g ./configure --prefix=prefix --disable-shared
 make -j`nproc` install
 cd -
+
+# 3. ANOTHER MUSL
+git clone $MUSL_REPO2
+cd musl
+mkdir build
+cd build
+./configure --prefix=$PWD/../prefix --disable-shared
+make -j`nproc` install
+cd ../..

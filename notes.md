@@ -114,3 +114,51 @@ VDSO...
 
 ## ERRNO
 Need to implement it!
+
+## LOADER
+1. All references are hardcoded in the application as we only have the binary.
+   We don't want to disassemble as it is a complex problem (involving finding
+   and reifying all references to moved data/code), and it's not an exact 
+   science: some programs just cannto be reassembled. With obfuscation it's 
+   even worse.
+
+   So, we assume the application should use the address space as it wants: by
+   convention, it is the regular section of the address space given by linux
+   to application (doc/x86/mm.txt for the actual values), the lower part of
+   the address space.
+ 
+2. It means we have to relocate the hermitcore kernel, currently using the
+   entire address space cause it's a single address space kernel, to somewhere
+   it will not be overwritten by the loaded application at load and run time.
+
+   We have to choice:
+   A. Put it at the same location as linux (highest part of the address space):
+   the issue here is that gcc can generate code to address these high 
+   addresses only with mmodel=large (medium too?) -> it's ok for C code, but for
+   assembly we need to rewrite it by hand and while for most instruction it's 
+   easy, it can be complicated for other (i.e. the fact that a 64bit address
+   can only come from rax) --> see with Daniel for more detailed description.
+
+   B. But it below 0x400000:
+   It's a convention for non-PIE programs to start at 0x400000 in Linux, this
+   address was arbitrarily chosen and there is nothing below. Source:
+   https://gist.github.com/CMCDragonkai/10ab53654b2aa6ce55c11cfc5b2432a4
+   it is sufficient to put HC there so we put it there
+
+3. Using uhyve, During kernel initialization we also load each loadable section
+   from the linux binary. In particular, the .text will start at 0x400000
+
+4. After the kernel is initialized and before we start to the program entry 
+   point, we need to setup the stack: indeed, before the main function the c 
+   library performs some initialization adn access auxv. See hermitux.c for more
+   detais about how to setup the stack. We use inline assembly to push
+   argc, argv, envp and auxvs
+
+5. We use inline assembly to jump to the program entry point. Some boilerplate 
+   code copy the value of the stack pointer (pointing to the beginning of the
+   memory region containing argc, argv, envp, auxv) in rdi (register containing
+   the first argument during a function call), then call the C library 
+   initialization function. This first (and only) parameter is then used
+   to reconstruct argc, argv, envp, and auxv, which are then passed to 
+   the application when the C library is done initializaing anf give control
+   to the app

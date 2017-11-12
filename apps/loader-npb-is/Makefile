@@ -1,0 +1,29 @@
+HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
+MUSL_GCC=../../musl/prefix/bin/musl-gcc
+
+CFLAGS=-g
+LDFLAGS=-static
+
+KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
+VERBOSE=1
+ISLE=uhyve
+KVM=0
+
+all: is.b
+
+is.b: is.c c_print_results.c c_timers.c wtime.c
+	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
+
+test: 
+	make -B is.b
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+				is.b
+
+gdb:
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
+				HERMIT_ISLE=$(ISLE) HERMIT_KVM=$(KVM) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+
+clean:
+	rm -rf *.o is.b
