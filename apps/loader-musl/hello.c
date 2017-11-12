@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+extern char **environ;
 
 #define GET_REG( var, reg, size ) asm volatile("mov"size" %%"reg", %0" : "=m" (var) )
 #define GET_REG64( var, reg ) GET_REG( var, reg, "q")
@@ -16,6 +20,11 @@ int main(int argc, char **argv) {
 
 	for(i=0; i<argc; i++)
 		printf("argv[%d] == %s\n", i, argv[i]);
+
+	printf("user env variable: %s\n", getenv("USER"));
+	printf("environ[0]: %s\n", environ[0]);
+	printf("environ[1]: %s\n", environ[1]);
+	printf("environ[2]: %s\n", environ[2]);
 
 	GET_RSP(rsp);
 	for(i=0; i<PRINT_STACK_SIZE; i+=4) {
