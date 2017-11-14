@@ -16,6 +16,7 @@ $(PROG): $(PROG).c
 	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 
 test: $(PROG) 
+	make -B $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG) 1 2 3 4 5 6

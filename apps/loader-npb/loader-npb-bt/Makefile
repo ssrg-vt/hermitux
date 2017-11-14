@@ -4,16 +4,18 @@ MUSL_GCC=../../../musl/prefix/bin/musl-gcc
 CFLAGS=-g -O3
 LDFLAGS=-static
 
-PROG=is
+PROG=bt
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=0
+VERBOSE=1
 ISLE=uhyve
 KVM=0
 
 all: $(PROG)
 
-$(PROG): c_print_results.c c_timers.c is.c wtime.c
+$(PROG): add.c adi.c bt.c c_print_results.c c_timers.c error.c \
+	exact_rhs.c exact_solution.c initialize.c print_results.c rhs.c \
+	set_constants.c solve_subs.c verify.c wtime.c x_solve.c y_solve.c z_solve.c
 	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 
 objdump:
@@ -32,4 +34,5 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG)
+
 

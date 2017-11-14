@@ -1,29 +1,29 @@
-HERMIT_LOCAL_INSTALL=../../../hermit-compiler/prefix
-MUSL_GCC=../../../musl/prefix/bin/musl-gcc
+HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
+MUSL_GCC=../../musl/prefix/bin/musl-gcc
 
-CFLAGS=-g -O3
+CFLAGS=-g
 LDFLAGS=-static
 
-PROG=is
-
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=0
+VERBOSE=1
 ISLE=uhyve
 KVM=0
 
+PROG=blackscholes
+
 all: $(PROG)
 
-$(PROG): c_print_results.c c_timers.c is.c wtime.c
+$(PROG): $(PROG).c
 	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 
-objdump:
-	objdump --source $(PROG) > objdump.txt
-
-test: $(PROG)
+test: 
 	make -B $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG)
+
+objdump:
+	objdump --source $(PROG) > objdump.txt && vim objdump.txt
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
@@ -32,4 +32,3 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG)
-

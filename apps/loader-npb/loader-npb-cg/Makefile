@@ -1,19 +1,19 @@
 HERMIT_LOCAL_INSTALL=../../../hermit-compiler/prefix
 MUSL_GCC=../../../musl/prefix/bin/musl-gcc
 
-CFLAGS=-g -O3
+CFLAGS=-g -O3 -mcmodel=large
 LDFLAGS=-static
 
-PROG=is
+PROG=cg
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=0
+VERBOSE=1
 ISLE=uhyve
 KVM=0
 
 all: $(PROG)
 
-$(PROG): c_print_results.c c_timers.c is.c wtime.c
+$(PROG): cg.c c_print_results.c c_timers.c print_results.c randdp.c wtime.c
 	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 
 objdump:
@@ -32,4 +32,5 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG)
+
 
