@@ -16,7 +16,7 @@
 - `exit_group`: for now this just calls exit **TODO**: that probably won't work in a multi-threaded environment
 - `ioctl`: this really depends on the actual command  executed by ioctl! Thus, I plan to implement command by command. For now I only experimented with simple programs so I only have `TIOCGWINSZ`
   - `TIOCGWINSZ`: it's supposed to return the size of the window in characters and pixel. Hermitcore only use serial output so I don't think this matters much, I hardcoded a 24 * 80 window specs to be returned
-- `arch_prctl`: musl use it to set the tls address in the `FS` register, for now it is just doing nothing silently, probably need to implement it in the future **TODO**
+- `arch_prctl`: musl use it to set the tls address in the `FS` register, it is now implemented for the `SET_FS`, `SET_GS`, `GET_FS` and `GET_GS` operations!
 - `set_tid_address`: musl use it too, doing nothing silently for now, probably need to implement it later **TODO**
 - `clock_gettime`: done
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
@@ -139,7 +139,7 @@ Need to implement it!
    easy, it can be complicated for other (i.e. the fact that a 64bit address
    can only come from rax) --> see with Daniel for more detailed description.
 
-   B. But it below 0x400000:
+   B. Put it below 0x400000:
    It's a convention for non-PIE programs to start at 0x400000 in Linux, this
    address was arbitrarily chosen and there is nothing below. Source:
    https://gist.github.com/CMCDragonkai/10ab53654b2aa6ce55c11cfc5b2432a4
