@@ -26,11 +26,5 @@ int main(int argc, char **argv) {
 	printf("environ[1]: %s\n", environ[1]);
 	printf("environ[2]: %s\n", environ[2]);
 
-	GET_RSP(rsp);
-	for(i=0; i<PRINT_STACK_SIZE; i+=4) {
-		uint32_t val = *(rsp+i);
-		printf("0x%lx: 0x%x\n ", (rsp+i), val);
-	}
-
 	return 0;
 }

@@ -1,13 +1,14 @@
-HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
-MUSL_GCC=../../musl/prefix/bin/musl-gcc
+HERMIT_LOCAL_INSTALL=../../../hermit-compiler/prefix
+MUSL_GCC=../../../musl/prefix/bin/musl-gcc
 
-CFLAGS=-g
+CFLAGS=-g -O3
 LDFLAGS=-static
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=1
+VERBOSE=0
 ISLE=uhyve
 KVM=0
+STRIP?=1
 
 all: is.b
 
@@ -16,6 +17,9 @@ is.b: is.c c_print_results.c c_timers.c wtime.c
 
 test: 
 	make -B is.b
+ifeq ($(STRIP),1)
+	strip is.b
+endif
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				is.b
