@@ -144,6 +144,9 @@ Need to implement it!
    address was arbitrarily chosen and there is nothing below. Source:
    https://gist.github.com/CMCDragonkai/10ab53654b2aa6ce55c11cfc5b2432a4
    it is sufficient to put HC there so we put it there
+   
+   In addition, we have to move the heap which started before after (kernel_start 
+   + kernel_size) to (kernel_start + kernel_size + linux_binary_size)
 
 3. Using uhyve, During kernel initialization we also load each loadable section
    from the linux binary. In particular, the .text will start at 0x400000
