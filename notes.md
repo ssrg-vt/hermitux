@@ -16,7 +16,8 @@
 - `exit_group`: for now this just calls exit **TODO**: that probably won't work in a multi-threaded environment
 - `ioctl`: this really depends on the actual command  executed by ioctl! Thus, I plan to implement command by command. For now I only experimented with simple programs so I only have `TIOCGWINSZ`
   - `TIOCGWINSZ`: it's supposed to return the size of the window in characters and pixel. Hermitcore only use serial output so I don't think this matters much, I hardcoded a 24 * 80 window specs to be returned
-- `arch_prctl`: musl use it to set the tls address in the `FS` register, it is now implemented for the `SET_FS`, `SET_GS`, `GET_FS` and `GET_GS` operations!
+- `arch_prctl`: musl use it to set the tls address in the `FS` register, it is now implemented for the `SET_FS`, `SET_GS`, `GET_FS` and `GET_GS` operations! The way it works is as follows:
+  - When an arch_prctl syscall is received, we cannot directly write the updated value in FS: indeed, becasue of our hooking system, a system call is executed followign an interrupt, meaning that on interrupt return, registers saved on the stack when the interrupt was first received will be restored. These include FS value, so we'll end up overwriting the new value we recently set. Thus, what we do is that we update the saved registers on the stack (accessible to a data structure similar to pt_regs in Linux), and let the system restore them, and it will retore the udpated value of FS.
 - `set_tid_address`: musl use it too, doing nothing silently for now, probably need to implement it later **TODO**
 - `clock_gettime`: done
 - `gettimeofday`: implemented, I used the hermitcore implementation which was originally present in newlib itself. Note that with qemu the time management seems somehow wrong, but not with uhyve.
