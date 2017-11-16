@@ -1,1 +1,1 @@
-../../../tools/Makefile.template
+../../../tools/Makefile.template.perf-eval

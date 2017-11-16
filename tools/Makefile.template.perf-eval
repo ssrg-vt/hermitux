@@ -3,6 +3,9 @@ HERMITUX_BASE=/home/pierre/Desktop/hermitux
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 MUSL_GCC=$(HERMITUX_BASE)/musl/prefix/bin/musl-gcc
 
+# get chrono here https://github.com/olivierpierre/chrono
+CHRONO=/usr/local/bin/chrono
+
 CFLAGS=-g -O3
 LDFLAGS=-static
 
@@ -19,19 +22,19 @@ STRIP=1
 all: $(PROG)
 
 $(PROG): $(SRC)
-	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
+	@$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 ifeq ($(STRIP),1)
-	strip $(PROG)
+	@strip $(PROG)
 endif
 
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
-	make -B $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) $(ARGS)
+	@make -B $(PROG) --no-print-directory
+	@HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+				HERMIT_KVM=$(KVM) $(CHRONO) $(HERMIT_LOCAL_INSTALL)/bin/proxy \
+				$(KERNEL) $(PROG) $(ARGS) | grep -e "Time in" -e "chrono"
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \

@@ -1,0 +1,41 @@
+ Time in seconds =                     3.53
+chrono: 4885940
+ Time in seconds =                     3.53
+chrono: 4864300
+ Time in seconds =                     3.55
+chrono: 4910184
+ Time in seconds =                     3.61
+chrono: 4977524
+ Time in seconds =                     3.53
+chrono: 4863587
+ Time in seconds =                     3.52
+chrono: 4855555
+ Time in seconds =                     3.83
+chrono: 5211216
+ Time in seconds =                     3.84
+chrono: 5256975
+ Time in seconds =                     3.69
+chrono: 5084266
+ Time in seconds =                     3.81
+chrono: 5202340
+------- HERMITUX ABOVE, LINUX BELOW ---------------------
+ Time in seconds =                     3.62
+chrono: 4931444
+ Time in seconds =                     3.79
+chrono: 5032949
+ Time in seconds =                     3.56
+chrono: 4842205
+ Time in seconds =                     3.53
+chrono: 4775024
+ Time in seconds =                     3.47
+chrono: 4696271
+ Time in seconds =                     3.47
+chrono: 4705701
+ Time in seconds =                     3.47
+chrono: 4713223
+ Time in seconds =                     3.49
+chrono: 4728483
+ Time in seconds =                     3.47
+chrono: 4700849
+ Time in seconds =                     3.47
+chrono: 4724811

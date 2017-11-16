@@ -1,0 +1,41 @@
+ Time in seconds =                    19.02
+chrono: 19230121
+ Time in seconds =                    19.08
+chrono: 19293740
+ Time in seconds =                    18.79
+chrono: 19002979
+ Time in seconds =                    19.11
+chrono: 19318921
+ Time in seconds =                    19.77
+chrono: 19983629
+ Time in seconds =                    19.61
+chrono: 19828989
+ Time in seconds =                    18.01
+chrono: 18221071
+ Time in seconds =                    18.10
+chrono: 18310339
+ Time in seconds =                    19.51
+chrono: 19732930
+ Time in seconds =                    20.01
+chrono: 20238225
+------- HERMITUX ABOVE, LINUX BELOW ---------------------
+ Time in seconds =                    19.40
+chrono: 19580207
+ Time in seconds =                    19.27
+chrono: 19441008
+ Time in seconds =                    18.03
+chrono: 18212791
+ Time in seconds =                    17.83
+chrono: 18011566
+ Time in seconds =                    19.05
+chrono: 19216505
+ Time in seconds =                    18.90
+chrono: 19067889
+ Time in seconds =                    18.94
+chrono: 19116612
+ Time in seconds =                    18.71
+chrono: 18882957
+ Time in seconds =                    19.08
+chrono: 19252587
+ Time in seconds =                    18.72
+chrono: 18889759
