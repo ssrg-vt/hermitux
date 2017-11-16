@@ -39,8 +39,7 @@ cd -
 # 3. ANOTHER MUSL
 git clone $MUSL_REPO2
 cd musl
-mkdir build
-cd build
+mkdir -p prefix
 ./configure --prefix=$PWD/../prefix --disable-shared
 make -j`nproc` install
-cd ../..
+cd -
