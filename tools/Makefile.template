@@ -7,10 +7,11 @@ CFLAGS=-g -O3
 LDFLAGS=-static
 
 SRC := $(shell ls *.c)
+OBJ=$(SRC:.c=.o)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=0
+VERBOSE=1
 ISLE=uhyve
 KVM=0
 STRIP=1
