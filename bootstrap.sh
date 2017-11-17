@@ -43,3 +43,11 @@ mkdir -p prefix
 ./configure --prefix=$PWD/prefix --disable-shared
 make -j`nproc` install
 cd -
+
+# LLVM with obfuscation plugin
+git clone -b llvm-4.0 https://github.com/obfuscator-llvm/obfuscator.git
+mkdir obfuscator-build
+cd obfuscation-build
+cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_INCLUDE_TESTS=OFF ../obfuscator
+make -j`nproc`
+cd -
