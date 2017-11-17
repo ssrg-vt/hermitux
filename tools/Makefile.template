@@ -1,10 +1,14 @@
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
-MUSL_GCC=$(HERMITUX_BASE)/musl/prefix/bin/musl-gcc
+MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
+MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 
-CFLAGS=-g -O3
-LDFLAGS=-static
+# For obfuscation, add this to the CFLAGS:
+# -mllvm -fla -mllvm -sub -mllvm -bcf
+#  https://github.com/obfuscator-llvm/obfuscator
+CFLAGS=-g -O3 
+LDFLAGS=-static -nostdlib
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -16,13 +20,19 @@ ISLE=uhyve
 KVM=0
 STRIP=1
 
+# Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
+CC=$(MUSL_GCC)
+
 all: $(PROG)
 
-$(PROG): $(SRC)
-	$(MUSL_GCC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
+$(PROG): $(OBJ)
+	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
 ifeq ($(STRIP),1)
 	strip $(PROG)
 endif
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
