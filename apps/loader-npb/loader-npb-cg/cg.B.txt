@@ -1,41 +1,41 @@
- Time in seconds =                    49.26
-chrono: 52475337
- Time in seconds =                    48.24
-chrono: 51449563
- Time in seconds =                    48.16
-chrono: 51341436
- Time in seconds =                    48.41
-chrono: 51609500
- Time in seconds =                    48.30
-chrono: 51529635
- Time in seconds =                    48.07
-chrono: 51269203
- Time in seconds =                    48.84
-chrono: 52045982
- Time in seconds =                    49.07
-chrono: 52400087
- Time in seconds =                    48.64
-chrono: 51884734
- Time in seconds =                    48.98
-chrono: 52184224
+ Time in seconds =                    92.40
+chrono: 96832533
+ Time in seconds =                    91.38
+chrono: 96652017
+ Time in seconds =                    92.16
+chrono: 96554823
+ Time in seconds =                    91.85
+chrono: 96229820
+ Time in seconds =                    92.43
+chrono: 96824944
+ Time in seconds =                    92.50
+chrono: 96864711
+ Time in seconds =                    92.98
+chrono: 98456330
+ Time in seconds =                    91.66
+chrono: 96029951
+ Time in seconds =                    91.54
+chrono: 96723059
+ Time in seconds =                    91.89
+chrono: 97339147
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                    48.45
-chrono: 51905924
- Time in seconds =                    48.09
-chrono: 51274434
- Time in seconds =                    49.10
-chrono: 52217472
- Time in seconds =                    48.51
-chrono: 51605237
- Time in seconds =                    48.18
-chrono: 51257020
- Time in seconds =                    49.46
-chrono: 52561541
- Time in seconds =                    48.29
-chrono: 51371692
- Time in seconds =                    47.80
-chrono: 50884827
- Time in seconds =                    48.07
-chrono: 51121579
- Time in seconds =                    48.82
-chrono: 51912465
+ Time in seconds =                    90.90
+chrono: 95080123
+ Time in seconds =                    91.01
+chrono: 96214213
+ Time in seconds =                    91.74
+chrono: 95860289
+ Time in seconds =                    90.99
+chrono: 96349023
+ Time in seconds =                    91.58
+chrono: 95695101
+ Time in seconds =                    91.37
+chrono: 95488830
+ Time in seconds =                    91.96
+chrono: 97209008
+ Time in seconds =                    92.01
+chrono: 96122823
+ Time in seconds =                    91.37
+chrono: 95494237
+ Time in seconds =                    90.73
+chrono: 94858866

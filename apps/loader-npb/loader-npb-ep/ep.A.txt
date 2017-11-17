@@ -1,41 +1,41 @@
- Time in seconds =                    20.94
-chrono: 20976521
- Time in seconds =                    21.20
-chrono: 21236986
+ Time in seconds =                    21.18
+chrono: 21213925
+ Time in seconds =                    21.37
+chrono: 21401986
+ Time in seconds =                    21.43
+chrono: 21458803
+ Time in seconds =                    21.16
+chrono: 21193258
+ Time in seconds =                    21.15
+chrono: 21185318
+ Time in seconds =                    21.18
+chrono: 21212448
+ Time in seconds =                    21.15
+chrono: 21178349
+ Time in seconds =                    21.16
+chrono: 21197183
+ Time in seconds =                    21.19
+chrono: 21220149
  Time in seconds =                    21.14
-chrono: 21178460
- Time in seconds =                    20.83
-chrono: 20863823
- Time in seconds =                    20.87
-chrono: 20903391
- Time in seconds =                    20.82
-chrono: 20858381
- Time in seconds =                    20.83
-chrono: 20863828
- Time in seconds =                    20.87
-chrono: 20901889
- Time in seconds =                    20.83
-chrono: 20859509
- Time in seconds =                    20.88
-chrono: 20913103
+chrono: 21175788
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                    20.88
-chrono: 20876008
+ Time in seconds =                    21.11
+chrono: 21113796
+ Time in seconds =                    21.08
+chrono: 21081388
+ Time in seconds =                    21.13
+chrono: 21130422
  Time in seconds =                    21.09
-chrono: 21090692
- Time in seconds =                    20.86
-chrono: 20863735
- Time in seconds =                    20.90
-chrono: 20904012
- Time in seconds =                    21.01
-chrono: 21014197
- Time in seconds =                    21.50
-chrono: 21503633
- Time in seconds =                    21.20
-chrono: 21201501
- Time in seconds =                    20.96
-chrono: 20955660
- Time in seconds =                    21.38
-chrono: 21383821
- Time in seconds =                    20.94
-chrono: 20942106
+chrono: 21092668
+ Time in seconds =                    21.09
+chrono: 21094551
+ Time in seconds =                    21.09
+chrono: 21087175
+ Time in seconds =                    21.11
+chrono: 21114733
+ Time in seconds =                    21.09
+chrono: 21087232
+ Time in seconds =                    21.09
+chrono: 21092080
+ Time in seconds =                    21.17
+chrono: 21171714

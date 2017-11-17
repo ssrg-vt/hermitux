@@ -9,7 +9,7 @@
 #define DT_DEFAULT     0.001
 
 #define CONVERTDOUBLE  false
-#define COMPILETIME "16 Nov 2017"
+#define COMPILETIME "17 Nov 2017"
 #define NPBVERSION "3.3.1"
 #define CS1 "(none)"
 #define CS2 "(none)"

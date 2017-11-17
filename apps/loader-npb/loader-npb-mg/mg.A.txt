@@ -1,41 +1,41 @@
- Time in seconds =                     0.77
-chrono: 2104598
- Time in seconds =                     0.77
-chrono: 2121011
- Time in seconds =                     0.77
-chrono: 2105380
- Time in seconds =                     0.77
-chrono: 2107767
- Time in seconds =                     0.77
-chrono: 2090773
- Time in seconds =                     0.78
-chrono: 2116280
- Time in seconds =                     0.79
-chrono: 2153946
- Time in seconds =                     0.80
-chrono: 2210052
- Time in seconds =                     0.79
-chrono: 2132835
- Time in seconds =                     0.85
-chrono: 2266053
+ Time in seconds =                     1.12
+chrono: 2572762
+ Time in seconds =                     1.12
+chrono: 2574894
+ Time in seconds =                     0.88
+chrono: 2210856
+ Time in seconds =                     1.10
+chrono: 2485232
+ Time in seconds =                     0.87
+chrono: 2311333
+ Time in seconds =                     0.88
+chrono: 2216540
+ Time in seconds =                     0.87
+chrono: 2260056
+ Time in seconds =                     0.88
+chrono: 2210334
+ Time in seconds =                     1.12
+chrono: 2466479
+ Time in seconds =                     0.87
+chrono: 2307934
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                     0.79
-chrono: 2117304
- Time in seconds =                     0.79
-chrono: 2114310
- Time in seconds =                     0.76
-chrono: 2048796
- Time in seconds =                     0.78
-chrono: 2079634
- Time in seconds =                     0.80
-chrono: 2067291
- Time in seconds =                     0.77
-chrono: 2060040
- Time in seconds =                     0.77
-chrono: 2060819
- Time in seconds =                     0.80
-chrono: 2126363
- Time in seconds =                     0.77
-chrono: 2066001
- Time in seconds =                     0.76
-chrono: 2011956
+ Time in seconds =                     0.85
+chrono: 2044954
+ Time in seconds =                     1.05
+chrono: 2241824
+ Time in seconds =                     1.06
+chrono: 2307379
+ Time in seconds =                     0.83
+chrono: 2000748
+ Time in seconds =                     0.84
+chrono: 2001711
+ Time in seconds =                     1.05
+chrono: 2277210
+ Time in seconds =                     0.94
+chrono: 2196066
+ Time in seconds =                     0.84
+chrono: 2007877
+ Time in seconds =                     0.84
+chrono: 2007640
+ Time in seconds =                     0.83
+chrono: 1995490

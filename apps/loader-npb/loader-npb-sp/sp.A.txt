@@ -1,41 +1,41 @@
- Time in seconds =                    19.02
-chrono: 19230121
- Time in seconds =                    19.08
-chrono: 19293740
- Time in seconds =                    18.79
-chrono: 19002979
- Time in seconds =                    19.11
-chrono: 19318921
- Time in seconds =                    19.77
-chrono: 19983629
- Time in seconds =                    19.61
-chrono: 19828989
- Time in seconds =                    18.01
-chrono: 18221071
- Time in seconds =                    18.10
-chrono: 18310339
- Time in seconds =                    19.51
-chrono: 19732930
- Time in seconds =                    20.01
-chrono: 20238225
+ Time in seconds =                    24.69
+chrono: 24939445
+ Time in seconds =                    26.14
+chrono: 26389385
+ Time in seconds =                    25.36
+chrono: 25605880
+ Time in seconds =                    25.60
+chrono: 25906757
+ Time in seconds =                    25.50
+chrono: 25803797
+ Time in seconds =                    25.33
+chrono: 25581949
+ Time in seconds =                    25.37
+chrono: 25615520
+ Time in seconds =                    25.39
+chrono: 25639381
+ Time in seconds =                    25.30
+chrono: 25546901
+ Time in seconds =                    26.02
+chrono: 26271095
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                    19.40
-chrono: 19580207
- Time in seconds =                    19.27
-chrono: 19441008
- Time in seconds =                    18.03
-chrono: 18212791
- Time in seconds =                    17.83
-chrono: 18011566
- Time in seconds =                    19.05
-chrono: 19216505
- Time in seconds =                    18.90
-chrono: 19067889
- Time in seconds =                    18.94
-chrono: 19116612
- Time in seconds =                    18.71
-chrono: 18882957
- Time in seconds =                    19.08
-chrono: 19252587
- Time in seconds =                    18.72
-chrono: 18889759
+ Time in seconds =                    24.75
+chrono: 24950599
+ Time in seconds =                    24.09
+chrono: 24300758
+ Time in seconds =                    24.71
+chrono: 24912088
+ Time in seconds =                    24.74
+chrono: 24939426
+ Time in seconds =                    24.71
+chrono: 24914162
+ Time in seconds =                    24.05
+chrono: 24251420
+ Time in seconds =                    24.08
+chrono: 24280499
+ Time in seconds =                    24.46
+chrono: 24672310
+ Time in seconds =                    24.26
+chrono: 24510279
+ Time in seconds =                    24.09
+chrono: 24286531

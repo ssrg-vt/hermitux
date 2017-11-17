@@ -1,41 +1,41 @@
- Time in seconds =                    86.24
-chrono: 87033335
- Time in seconds =                    87.55
-chrono: 88341796
- Time in seconds =                    87.89
-chrono: 88686647
- Time in seconds =                    87.25
-chrono: 88045275
- Time in seconds =                    87.13
-chrono: 87929243
- Time in seconds =                    88.01
-chrono: 88839546
- Time in seconds =                    87.38
-chrono: 88199565
- Time in seconds =                    88.09
-chrono: 88964087
- Time in seconds =                    87.45
-chrono: 88272951
- Time in seconds =                    88.12
-chrono: 88916672
+ Time in seconds =                   114.58
+chrono: 115565811
+ Time in seconds =                   114.96
+chrono: 115914369
+ Time in seconds =                   116.55
+chrono: 117761258
+ Time in seconds =                   114.04
+chrono: 115252080
+ Time in seconds =                   114.28
+chrono: 115241325
+ Time in seconds =                   116.27
+chrono: 117228083
+ Time in seconds =                   113.25
+chrono: 114213070
+ Time in seconds =                   112.11
+chrono: 113070280
+ Time in seconds =                   113.02
+chrono: 114234344
+ Time in seconds =                   114.98
+chrono: 116227001
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                    87.86
-chrono: 88605842
- Time in seconds =                    87.57
-chrono: 88319727
- Time in seconds =                    81.33
-chrono: 82046878
- Time in seconds =                    86.73
-chrono: 87452081
- Time in seconds =                    80.59
-chrono: 81328081
- Time in seconds =                    86.61
-chrono: 87352662
- Time in seconds =                    89.13
-chrono: 89922262
- Time in seconds =                    87.99
-chrono: 88724579
- Time in seconds =                    88.43
-chrono: 89158964
- Time in seconds =                    81.96
-chrono: 82665420
+ Time in seconds =                   116.25
+chrono: 117373415
+ Time in seconds =                   114.97
+chrono: 115827875
+ Time in seconds =                   116.65
+chrono: 117512764
+ Time in seconds =                   115.37
+chrono: 116234805
+ Time in seconds =                   116.10
+chrono: 116958161
+ Time in seconds =                   118.26
+chrono: 119148598
+ Time in seconds =                   114.38
+chrono: 115478020
+ Time in seconds =                   118.71
+chrono: 119573934
+ Time in seconds =                   119.78
+chrono: 120670100
+ Time in seconds =                   113.81
+chrono: 114906637

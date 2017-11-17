@@ -1,41 +1,41 @@
- Time in seconds =                     0.33
-chrono: 1275113
- Time in seconds =                     0.33
-chrono: 1281167
- Time in seconds =                     0.22
-chrono: 1144599
- Time in seconds =                     0.33
-chrono: 1271727
- Time in seconds =                     0.32
-chrono: 1261003
- Time in seconds =                     0.25
-chrono: 1202873
- Time in seconds =                     0.33
-chrono: 1269198
- Time in seconds =                     0.23
-chrono: 1158455
- Time in seconds =                     0.40
-chrono: 1366753
- Time in seconds =                     0.33
-chrono: 1294261
+ Time in seconds =                     0.37
+chrono: 1309657
+ Time in seconds =                     0.37
+chrono: 1286706
+ Time in seconds =                     0.37
+chrono: 1286270
+ Time in seconds =                     0.37
+chrono: 1285368
+ Time in seconds =                     0.37
+chrono: 1286413
+ Time in seconds =                     0.37
+chrono: 1286998
+ Time in seconds =                     0.37
+chrono: 1287269
+ Time in seconds =                     0.37
+chrono: 1286100
+ Time in seconds =                     0.42
+chrono: 1337012
+ Time in seconds =                     0.42
+chrono: 1347987
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                     0.31
-chrono: 1213365
- Time in seconds =                     0.33
-chrono: 1222263
- Time in seconds =                     0.32
-chrono: 1216737
- Time in seconds =                     0.32
-chrono: 1218768
- Time in seconds =                     0.32
-chrono: 1221222
- Time in seconds =                     0.32
-chrono: 1219647
- Time in seconds =                     0.33
-chrono: 1219430
- Time in seconds =                     0.33
-chrono: 1222311
- Time in seconds =                     0.22
-chrono: 1100080
- Time in seconds =                     0.22
-chrono: 1101620
+ Time in seconds =                     0.38
+chrono: 1252844
+ Time in seconds =                     0.37
+chrono: 1232559
+ Time in seconds =                     0.37
+chrono: 1219798
+ Time in seconds =                     0.37
+chrono: 1221080
+ Time in seconds =                     0.34
+chrono: 1178532
+ Time in seconds =                     0.34
+chrono: 1178719
+ Time in seconds =                     0.34
+chrono: 1175344
+ Time in seconds =                     0.34
+chrono: 1175164
+ Time in seconds =                     0.34
+chrono: 1175150
+ Time in seconds =                     0.34
+chrono: 1174954

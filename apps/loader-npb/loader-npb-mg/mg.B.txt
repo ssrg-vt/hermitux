@@ -1,41 +1,41 @@
- Time in seconds =                     3.53
-chrono: 4885940
- Time in seconds =                     3.53
-chrono: 4864300
- Time in seconds =                     3.55
-chrono: 4910184
- Time in seconds =                     3.61
-chrono: 4977524
- Time in seconds =                     3.53
-chrono: 4863587
- Time in seconds =                     3.52
-chrono: 4855555
- Time in seconds =                     3.83
-chrono: 5211216
- Time in seconds =                     3.84
-chrono: 5256975
- Time in seconds =                     3.69
-chrono: 5084266
- Time in seconds =                     3.81
-chrono: 5202340
+ Time in seconds =                     4.04
+chrono: 5387867
+ Time in seconds =                     4.03
+chrono: 5363012
+ Time in seconds =                     4.03
+chrono: 5369808
+ Time in seconds =                     4.58
+chrono: 6016772
+ Time in seconds =                     4.02
+chrono: 5360539
+ Time in seconds =                     4.32
+chrono: 5774485
+ Time in seconds =                     4.04
+chrono: 5374012
+ Time in seconds =                     4.02
+chrono: 5363546
+ Time in seconds =                     4.54
+chrono: 5981399
+ Time in seconds =                     4.02
+chrono: 5360182
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                     3.62
-chrono: 4931444
- Time in seconds =                     3.79
-chrono: 5032949
- Time in seconds =                     3.56
-chrono: 4842205
- Time in seconds =                     3.53
-chrono: 4775024
- Time in seconds =                     3.47
-chrono: 4696271
- Time in seconds =                     3.47
-chrono: 4705701
- Time in seconds =                     3.47
-chrono: 4713223
- Time in seconds =                     3.49
-chrono: 4728483
- Time in seconds =                     3.47
-chrono: 4700849
- Time in seconds =                     3.47
-chrono: 4724811
+ Time in seconds =                     4.40
+chrono: 5668601
+ Time in seconds =                     3.89
+chrono: 5053452
+ Time in seconds =                     3.88
+chrono: 5046077
+ Time in seconds =                     4.41
+chrono: 5662944
+ Time in seconds =                     3.88
+chrono: 5050911
+ Time in seconds =                     3.88
+chrono: 5046706
+ Time in seconds =                     3.87
+chrono: 5039331
+ Time in seconds =                     3.88
+chrono: 5049044
+ Time in seconds =                     3.90
+chrono: 5065459
+ Time in seconds =                     3.86
+chrono: 5027211

@@ -1,41 +1,41 @@
- Time in seconds =                   174.17
-chrono: 175662711
- Time in seconds =                   171.31
-chrono: 172776657
- Time in seconds =                   171.98
-chrono: 173330509
- Time in seconds =                   174.29
-chrono: 175728496
- Time in seconds =                   173.51
-chrono: 174991826
- Time in seconds =                   174.34
-chrono: 175743326
- Time in seconds =                   172.64
-chrono: 174097695
- Time in seconds =                   172.42
-chrono: 173849779
- Time in seconds =                   173.33
-chrono: 174789373
- Time in seconds =                   174.99
-chrono: 176442947
+ Time in seconds =                   205.60
+chrono: 207620001
+ Time in seconds =                   207.82
+chrono: 209445643
+ Time in seconds =                   209.00
+chrono: 210843989
+ Time in seconds =                   203.74
+chrono: 205868566
+ Time in seconds =                   204.72
+chrono: 206349089
+ Time in seconds =                   204.24
+chrono: 206255079
+ Time in seconds =                   209.98
+chrono: 211632994
+ Time in seconds =                   206.43
+chrono: 208070879
+ Time in seconds =                   206.50
+chrono: 208513227
+ Time in seconds =                   207.04
+chrono: 208685949
 ------- HERMITUX ABOVE, LINUX BELOW ---------------------
- Time in seconds =                   176.03
-chrono: 177419752
- Time in seconds =                   173.09
-chrono: 174505196
- Time in seconds =                   169.56
-chrono: 170903297
- Time in seconds =                   169.63
-chrono: 170980892
- Time in seconds =                   167.83
-chrono: 169108579
- Time in seconds =                   173.01
-chrono: 174385449
- Time in seconds =                   175.43
-chrono: 176841612
- Time in seconds =                   170.50
-chrono: 171862836
- Time in seconds =                   169.87
-chrono: 171148468
- Time in seconds =                   164.38
-chrono: 165689250
+ Time in seconds =                   204.55
+chrono: 206131622
+ Time in seconds =                   206.99
+chrono: 208867577
+ Time in seconds =                   206.45
+chrono: 208270437
+ Time in seconds =                   206.96
+chrono: 208693646
+ Time in seconds =                   207.63
+chrono: 209179294
+ Time in seconds =                   207.75
+chrono: 209717658
+ Time in seconds =                   208.84
+chrono: 210363627
+ Time in seconds =                   206.88
+chrono: 208400953
+ Time in seconds =                   206.02
+chrono: 207570697
+ Time in seconds =                   207.43
+chrono: 209400252
