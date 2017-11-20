@@ -1,3 +1,5 @@
 hermit-compiler
 musl-hermitux
 musl
+obfuscator
+obfuscator-build
