@@ -1,0 +1,98 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A_test_index_array	is.c	/^         A_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+A_test_rank_array	is.c	/^         A_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+B_test_index_array	is.c	/^         B_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+B_test_rank_array	is.c	/^         B_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+CC	npbparams.h	9;"	d
+CFLAGS	Makefile	/^CFLAGS=-g -O3$/;"	m
+CFLAGS	npbparams.h	10;"	d
+CHRONO	Makefile	/^CHRONO=\/usr\/local\/bin\/chrono$/;"	m
+CLASS	is.c	66;"	d	file:
+CLASS	npbparams.h	1;"	d
+CLINK	npbparams.h	11;"	d
+CLINKFLAGS	npbparams.h	12;"	d
+COMPILETIME	npbparams.h	7;"	d
+C_INC	npbparams.h	14;"	d
+C_LIB	npbparams.h	13;"	d
+C_test_index_array	is.c	/^         C_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+C_test_rank_array	is.c	/^         C_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+D_test_index_array	is.c	/^         D_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+D_test_rank_array	is.c	/^         D_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+HERMITUX_BASE	Makefile	/^HERMITUX_BASE=\/home\/pierre\/Desktop\/hermitux$/;"	m
+HERMIT_LOCAL_INSTALL	Makefile	/^HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)\/hermit-compiler\/prefix$/;"	m
+INT_TYPE	is.c	/^typedef  int  INT_TYPE;$/;"	t	file:
+INT_TYPE	is.c	/^typedef  long INT_TYPE;$/;"	t	file:
+ISLE	Makefile	/^ISLE=uhyve$/;"	m
+KERNEL	Makefile	/^KERNEL=$(HERMIT_LOCAL_INSTALL)\/x86_64-hermit\/extra\/tests\/hermitux$/;"	m
+KVM	Makefile	/^KVM=0$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS=-static$/;"	m
+MAX_ITERATIONS	is.c	140;"	d	file:
+MAX_KEY	is.c	134;"	d	file:
+MAX_KEY_LOG_2	is.c	104;"	d	file:
+MAX_KEY_LOG_2	is.c	114;"	d	file:
+MAX_KEY_LOG_2	is.c	124;"	d	file:
+MAX_KEY_LOG_2	is.c	75;"	d	file:
+MAX_KEY_LOG_2	is.c	85;"	d	file:
+MAX_KEY_LOG_2	is.c	94;"	d	file:
+MUSL_GCC	Makefile	/^MUSL_GCC=$(HERMITUX_BASE)\/musl\/prefix\/bin\/musl-gcc$/;"	m
+NPBVERSION	npbparams.h	8;"	d
+NUM_BUCKETS	is.c	135;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	105;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	115;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	125;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	76;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	86;"	d	file:
+NUM_BUCKETS_LOG_2	is.c	95;"	d	file:
+NUM_KEYS	is.c	136;"	d	file:
+OBJ	Makefile	/^OBJ=$(SRC:.c=.o)$/;"	m
+PROG	Makefile	/^PROG?=prog$/;"	m
+SIZE_OF_BUFFERS	is.c	137;"	d	file:
+SRC	Makefile	/^SRC := $(shell ls *.c)$/;"	m
+STRIP	Makefile	/^STRIP=1$/;"	m
+S_test_index_array	is.c	/^         S_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+S_test_rank_array	is.c	/^         S_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+TEST_ARRAY_SIZE	is.c	141;"	d	file:
+TOTAL_KEYS	is.c	130;"	d	file:
+TOTAL_KEYS	is.c	132;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	103;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	113;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	123;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	74;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	84;"	d	file:
+TOTAL_KEYS_LOG_2	is.c	93;"	d	file:
+USE_BUCKETS	is.c	59;"	d	file:
+VERBOSE	Makefile	/^VERBOSE?=0$/;"	m
+W_test_index_array	is.c	/^         W_test_index_array[TEST_ARRAY_SIZE] = $/;"	v
+W_test_rank_array	is.c	/^         W_test_rank_array[TEST_ARRAY_SIZE] = $/;"	v
+bucket_ptrs	is.c	/^         bucket_ptrs[NUM_BUCKETS];$/;"	v
+bucket_size	is.c	/^INT_TYPE bucket_size[NUM_BUCKETS],                    $/;"	v
+c_print_results	c_print_results.c	/^void c_print_results( char   *name,$/;"	f
+create_seq	is.c	/^void	create_seq( double seed, double a )$/;"	f
+elapsed	c_timers.c	/^static double start[64], elapsed[64];$/;"	v	file:
+elapsed_time	c_timers.c	/^static double elapsed_time( void )$/;"	f	file:
+full_verify	is.c	/^void full_verify( void )$/;"	f
+key_array	is.c	/^INT_TYPE key_array[SIZE_OF_BUFFERS],    $/;"	v
+key_buff1	is.c	/^         key_buff1[MAX_KEY],    $/;"	v
+key_buff2	is.c	/^         key_buff2[SIZE_OF_BUFFERS],$/;"	v
+key_buff_ptr_global	is.c	/^INT_TYPE *key_buff_ptr_global;         \/* used by full_verify to get *\/$/;"	v
+main	is.c	/^int main( int argc, char **argv )$/;"	f
+partial_verify_vals	is.c	/^         partial_verify_vals[TEST_ARRAY_SIZE];$/;"	v
+passed_verification	is.c	/^int      passed_verification;$/;"	v
+randlc	is.c	/^double	randlc( double *X, double *A )$/;"	f
+rank	is.c	/^void rank( int iteration )$/;"	f
+start	c_timers.c	/^static double start[64], elapsed[64];$/;"	v	file:
+test_index_array	is.c	/^INT_TYPE test_index_array[TEST_ARRAY_SIZE],$/;"	v
+test_rank_array	is.c	/^         test_rank_array[TEST_ARRAY_SIZE],$/;"	v
+timer_clear	c_timers.c	/^void timer_clear( int n )$/;"	f
+timer_read	c_timers.c	/^double timer_read( int n )$/;"	f
+timer_start	c_timers.c	/^void timer_start( int n )$/;"	f
+timer_stop	c_timers.c	/^void timer_stop( int n )$/;"	f
+wtime	wtime.c	/^void wtime(double *t)$/;"	f
+wtime	wtime.h	11;"	d
+wtime	wtime.h	7;"	d
+wtime	wtime.h	9;"	d
