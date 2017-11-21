@@ -1,0 +1,1 @@
+rumprun kvm -M 1G -g "-nographic -vga none -enable-kvm" -i prog

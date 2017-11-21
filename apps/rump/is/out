@@ -1,0 +1,5 @@
+rumprun kvm -M 1G -g "-nographic -vga none -enable-kvm" -i prog
+Makefile:20: recipe for target 'run' failed
+Makefile:20: recipe for target 'run' failed
+Makefile:20: recipe for target 'run' failed
+Makefile:20: recipe for target 'run' failed
