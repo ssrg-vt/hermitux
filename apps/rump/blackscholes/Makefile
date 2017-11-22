@@ -1,10 +1,10 @@
-CFLAGS  = -O3 -g
+CFLAGS  = -O3 -g -DENABLE_PARSEC_HOOKS -I.
 LDFLAGS=-lm
 TARGET = prog
 CC=x86_64-rumprun-netbsd-gcc
 BAKE=rumprun-bake
 RUN=rumprun
-MEM=1G
+MEM=22G
 
 SRC := $(shell ls *.c)
 
@@ -16,9 +16,11 @@ $(TARGET): $(TARGET).compiled
 $(TARGET).compiled: $(SRC)
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
-run: $(TARGET)
-	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i $(TARGET)
-	
+run: filesystem $(TARGET)
+	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i -b fs.iso,/fs $(TARGET)
+
+filesystem:
+	genisoimage -l -r -o fs.iso fs
 
 clean:
 	rm -rf *.o $(TARGET) $(TARGET).compiled

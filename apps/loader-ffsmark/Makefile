@@ -7,7 +7,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O3 -DENABLE_PARSEC_HOOKS -I. -Wno-format
+CFLAGS=-g
 LDFLAGS=-static -nostdlib
 
 SRC := $(shell ls *.c)
@@ -18,7 +18,7 @@ KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
-STRIP?=1
+STRIP?=0
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
@@ -39,9 +39,9 @@ objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
-	HERMIT_MEM=1G HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) chrono $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) 1 in_10M.txt out
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+				$(PROG) $(ARGS)
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
@@ -50,4 +50,6 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG)
+	rm -rf s1* s2* s3* s4* s5* s6* s7* s8* s9*
+	rm -rf 1* 2* 3* 4* 5* 6* 7* 8* 9*
 

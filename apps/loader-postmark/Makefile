@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=/home/pierre/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -19,7 +19,7 @@ VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
-ARGS=postmark.script
+ARGS?=postmark.script
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)

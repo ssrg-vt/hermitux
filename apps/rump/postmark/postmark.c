@@ -190,6 +190,8 @@ Versions:
 #include <time.h>
 #include <fcntl.h>
 
+#include "rdtsc.h"
+
 #ifdef _WIN32
 /* FFSMark */
 #error "MS Windows is not supported by FFSMark"
@@ -339,7 +341,7 @@ extern unsigned long genrand ();
 extern void sgenrand ();
 
 /* FFSMark usec measures */
-struct timeval ffsmark_start, ffsmark_end, ffsmark_transaction_start,
+double ffsmark_start, ffsmark_end, ffsmark_transaction_start,
   ffsmark_transaction_end;
 
 /* converts integer values to byte/kilobyte/megabyte strings */
@@ -739,62 +741,62 @@ verbose_report (fp, end_time, start_time, t_end_time, t_start_time, deleted)
   //time_t elapsed,t_elapsed;
   double elapsed_double, t_elapsed_double, interval_double;
   //int interval;
-  struct timeval res;
+  double res;
 
   //elapsed=diff_time(end_time,start_time);
   //t_elapsed=diff_time(t_end_time,t_start_time);
 
-  fprintf (fp, "Time:\n");
+  printf ("Time:\n");
 
   /* FFSMark */
   //fprintf(fp,"\t%ld seconds total\n",elapsed);
-  timersub (&ffsmark_end, &ffsmark_start, &res);
-  fprintf (fp, "\t%lu.%06lu seconds total\n", res.tv_sec, res.tv_usec);
-  elapsed_double = res.tv_sec + (res.tv_usec / 1000000.0);
+  res = ticks_to_sec(ffsmark_end - ffsmark_start);
+  printf ("\t%lf seconds total\n", res);
+  elapsed_double = res;
 
   /* FFSMark */
   //fprintf(fp,"\t%ld seconds of transactions (%ld per second)\n",t_elapsed,
   //  transactions/t_elapsed);
-  timersub (&ffsmark_transaction_end, &ffsmark_transaction_start, &res);
-  t_elapsed_double = res.tv_sec + (res.tv_usec / 1000000.0);
-  fprintf (fp, "\t%lu.%06lu seconds of transactions (%lf per second)\n",
-	   res.tv_sec, res.tv_usec, (double) transactions / t_elapsed_double);
+  res = ticks_to_sec(ffsmark_transaction_end - ffsmark_transaction_start);
+  t_elapsed_double = res;
+  printf ("\t%lf seconds of transactions (%lf per second)\n",
+	   res, (double) transactions / res);
 
 
-  fprintf (fp, "\nFiles:\n");
-  fprintf (fp, "\t%d created (%lf per second)\n", files_created,
+  printf ( "\nFiles:\n");
+  printf ( "\t%d created (%lf per second)\n", files_created,
 	   (double) files_created / elapsed_double);
 
   //interval=diff_time(t_start_time,start_time);
-  timersub (&ffsmark_transaction_start, &ffsmark_start, &res);
-  interval_double = res.tv_sec + (res.tv_usec / 1000000.0);
+  res = ticks_to_sec(ffsmark_transaction_start - ffsmark_start); 
+  interval_double = res;
 
-  fprintf (fp, "\t\tCreation alone: %d files (%lf per second)\n",
+  printf ( "\t\tCreation alone: %d files (%lf per second)\n",
 	   simultaneous, (double) simultaneous / interval_double);
-  fprintf (fp, "\t\tMixed with transactions: %d files (%lf per second)\n",
+  printf ( "\t\tMixed with transactions: %d files (%lf per second)\n",
 	   files_created - simultaneous,
 	   (double) (files_created - simultaneous) / t_elapsed_double);
-  fprintf (fp, "\t%d read (%lf per second)\n", files_read,
+  printf ( "\t%d read (%lf per second)\n", files_read,
 	   (double) files_read / t_elapsed_double);
-  fprintf (fp, "\t%d appended (%lf per second)\n", files_appended,
+  printf ( "\t%d appended (%lf per second)\n", files_appended,
 	   (double) files_appended / t_elapsed_double);
-  fprintf (fp, "\t%d deleted (%lf per second)\n", files_created,
+  printf ( "\t%d deleted (%lf per second)\n", files_created,
 	   (double) files_created / elapsed_double);
 
   //interval=diff_time(end_time,t_end_time);
-  timersub (&ffsmark_end, &ffsmark_transaction_end, &res);
-  interval_double = res.tv_sec + (res.tv_usec / 1000000.0);
-  fprintf (fp, "\t\tDeletion alone: %d files (%lf per second)\n", deleted,
+  res = ticks_to_sec(ffsmark_end - ffsmark_transaction_end);
+  interval_double = res;
+  printf ( "\t\tDeletion alone: %d files (%lf per second)\n", deleted,
 	   (double) deleted / interval_double);
-  fprintf (fp, "\t\tMixed with transactions: %d files (%lf per second)\n",
+  printf ( "\t\tMixed with transactions: %d files (%lf per second)\n",
 	   files_deleted - deleted,
 	   (double) (files_deleted - deleted) / t_elapsed_double);
 
-  fprintf (fp, "\nData:\n");
-  fprintf (fp, "\t%s read ", scalef (bytes_read));
-  fprintf (fp, "(%s per second)\n", scalef (bytes_read / elapsed_double));
-  fprintf (fp, "\t%s written ", scalef (bytes_written));
-  fprintf (fp, "(%s per second)\n", scalef (bytes_written / elapsed_double));
+  printf ( "\nData:\n");
+  printf ( "\t%s read ", scalef (bytes_read));
+  printf ( "(%s per second)\n", scalef (bytes_read / elapsed_double));
+  printf ( "\t%s written ", scalef (bytes_written));
+  printf ( "(%s per second)\n", scalef (bytes_written / elapsed_double));
 
   ffsmark_core_verb_report(fp);
 }
@@ -812,15 +814,12 @@ terse_report (fp, end_time, start_time, t_end_time, t_start_time, deleted)
   struct timeval res;
 
   //elapsed=diff_time(end_time,start_time);
-  timersub (&ffsmark_end, &ffsmark_start, &res);
   elapsed_double = res.tv_sec + (res.tv_usec / 1000000.0);
 
   //t_elapsed=diff_time(t_end_time,t_start_time);
-  timersub (&ffsmark_transaction_end, &ffsmark_transaction_start, &res);
   t_elapsed_double = res.tv_sec + (res.tv_usec / 1000000.0);
 
   //interval=diff_time(t_start_time,start_time);
-  timersub (&res, &ffsmark_transaction_start, &ffsmark_start);
   interval_double = res.tv_sec + (res.tv_usec / 1000000.0);
 
   fprintf (fp, "%lf %lf %.2lf ", elapsed_double, t_elapsed_double,
@@ -1272,11 +1271,7 @@ cli_run (param)			/* none */
   time (&start_time);		/* store start time */
 
   /* FFSMark */
-  if (gettimeofday (&ffsmark_start, NULL))
-    {
-      perror ("gettimeofday");
-      exit (EXIT_FAILURE);
-    }
+  ffsmark_start = rdtsc();
 
   /* create files in specified directory until simultaneous number */
   printf ("Creating files...");
@@ -1294,21 +1289,14 @@ cli_run (param)			/* none */
 
   time (&t_start_time);
 
+
   /* FFSMark */
-  if (gettimeofday (&ffsmark_transaction_start, NULL))
-    {
-      perror ("gettimeofday");
-      exit (EXIT_FAILURE);
-    }
+  ffsmark_transaction_start = rdtsc();
 
   incomplete = run_transactions (buffered_io);
 
   /* FFSMark */
-  if (gettimeofday (&ffsmark_transaction_end, NULL))
-    {
-      perror ("gettimeofday");
-      exit (EXIT_FAILURE);
-    }
+  ffsmark_transaction_end = rdtsc();
 
   time (&t_end_time);
 
@@ -1331,11 +1319,7 @@ cli_run (param)			/* none */
   time (&end_time);
 
   /* FFSMark */
-  if (gettimeofday (&ffsmark_end, NULL))
-    {
-      perror ("gettimeofday");
-      exit (EXIT_FAILURE);
-    }
+  ffsmark_end = rdtsc();
 
   /* FFSMark */
   if (ffsmark_hooks_pre_subdirs_deletion ())
@@ -1362,9 +1346,9 @@ cli_run (param)			/* none */
       location_index = NULL;
     }
 
-  if (param)
+/*  if (param)
     if ((fp = fopen (param, "a")) == NULL)
-      fprintf (stderr, "Error: Cannot direct output to file '%s'\n", param);
+      fprintf (stderr, "Error: Cannot direct output to file '%s'\n", param); */
 
   if (!fp)
     fp = stdout;
@@ -1380,6 +1364,7 @@ cli_run (param)			/* none */
   free (file_table);
   free (read_buffer);
   free (file_source);
+
 
   return (1);			/* return 1 unless exit requested, then return 0 */
 }
@@ -1568,9 +1553,19 @@ main (argc, argv)
   /* FFSMark */
   ffsmark_reset_config();
 
-  if (read_config_file ((argc == 2) ? argv[1] : ".pmrc", buffer))
-    while (cli_read_line (buffer, MAX_LINE) && cli_parse_line (buffer))
-      ;
+//  if (read_config_file ((argc == 2) ? argv[1] : ".pmrc", buffer))
+//    while (cli_read_line (buffer, MAX_LINE) && cli_parse_line (buffer))
+//      ;
+
+	cli_set_size("256000 256000");
+	cli_set_number("1000");
+	cli_set_read("16384");
+	cli_set_write("16384");
+	cli_set_transactions("2000");
+
+	cli_run();
+	verbose_report();
+	cli_quit();
 
   return 0;
 }
