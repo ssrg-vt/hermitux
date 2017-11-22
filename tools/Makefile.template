@@ -15,10 +15,11 @@ OBJ=$(SRC:.c=.o)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE?=1
+VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
+ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
