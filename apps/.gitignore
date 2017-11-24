@@ -1,2 +1,4 @@
 *.o
 prog
+loader-sqlite
+loader-web-server
