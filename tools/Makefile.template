@@ -22,7 +22,7 @@ STRIP?=1
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
-CC?=$(MUSL_GCC)
+CC=$(MUSL_GCC)
 
 all: $(PROG)
 
