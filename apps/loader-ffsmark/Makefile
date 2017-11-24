@@ -7,7 +7,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O3
+CFLAGS=-g
 LDFLAGS=-static -nostdlib
 
 SRC := $(shell ls *.c)
@@ -18,7 +18,7 @@ KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
-STRIP?=1
+STRIP?=0
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
@@ -50,5 +50,6 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG)
-	rm -rf s*
+	rm -rf s1* s2* s3* s4* s5* s6* s7* s8* s9*
+	rm -rf 1* 2* 3* 4* 5* 6* 7* 8* 9*
 

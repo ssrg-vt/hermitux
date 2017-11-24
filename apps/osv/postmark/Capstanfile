@@ -12,7 +12,7 @@ base: cloudius/osv-base
 #
 # The command line passed to OSv to start up the application.
 #
-cmdline: /tools/hello.so
+cmdline: /tools/hello.so /tools/script
 
 #
 # The command to use to build the application.  In this example, we just use
@@ -25,3 +25,4 @@ build: make
 #
 files:
   /tools/hello.so: hello.so
+  /tools/script: script

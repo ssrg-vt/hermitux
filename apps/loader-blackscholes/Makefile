@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=/home/pierre/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -7,7 +7,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O3 -DENABLE_PARSEC_HOOKS -I.
+CFLAGS=-g -O3 -DENABLE_PARSEC_HOOKS -I. -Wno-format
 LDFLAGS=-static -nostdlib
 
 SRC := $(shell ls *.c)
@@ -41,7 +41,7 @@ objdump:
 test: $(PROG)
 	HERMIT_MEM=1G HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) chrono $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) 1 in_64K.txt out
+				$(PROG) 1 in_10M.txt out
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \

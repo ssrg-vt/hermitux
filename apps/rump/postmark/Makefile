@@ -4,7 +4,7 @@ TARGET = prog
 CC=x86_64-rumprun-netbsd-gcc
 BAKE=rumprun-bake
 RUN=rumprun
-MEM=1G
+MEM=4G
 
 SRC := $(shell ls *.c)
 
