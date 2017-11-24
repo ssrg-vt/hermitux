@@ -4,7 +4,7 @@ TARGET = prog
 CC=x86_64-rumprun-netbsd-gcc
 BAKE=rumprun-bake
 RUN=rumprun
-MEM=2G
+MEM=4G
 
 SRC := $(shell ls *.c)
 
@@ -17,7 +17,7 @@ $(TARGET).compiled: $(SRC)
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 run: $(TARGET)
-	$(RUN) kvm -M $(MEM) -g "-nographic -vga none -enable-kvm" -i $(TARGET)
+	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i $(TARGET)
 	
 
 clean:

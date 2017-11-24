@@ -1,0 +1,7 @@
+set number 5000
+set size 131072 131072
+set transactions 20000
+set read 512
+set write 512
+run
+quit

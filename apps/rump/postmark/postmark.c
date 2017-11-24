@@ -1128,7 +1128,7 @@ run_transactions (buffered)
 	  else			/* delete file */
 	    delete_file (find_used_file ());
 	}
-
+	
       if ((i % percent) == 0)	/* if another tenth of the work is done... */
 	{
 	  putchar ('.');	/* print progress indicator */
@@ -1557,11 +1557,11 @@ main (argc, argv)
 //    while (cli_read_line (buffer, MAX_LINE) && cli_parse_line (buffer))
 //      ;
 
-	cli_set_size("256000 256000");
-	cli_set_number("1000");
-	cli_set_read("16384");
-	cli_set_write("16384");
-	cli_set_transactions("2000");
+	cli_set_size("131072 131072");
+	cli_set_number("5000");
+	cli_set_read("4096");
+	cli_set_write("4096");
+	cli_set_transactions("20000");
 
 	cli_run();
 	verbose_report();

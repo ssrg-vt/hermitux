@@ -19,7 +19,7 @@ VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
-ARGS?=postmark.script
+ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
