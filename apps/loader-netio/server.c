@@ -55,9 +55,9 @@ int server_main(int argc, char *argv[])
 			    sizeof(int));    /* length of option value */
     int c = bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
     //    printf("result = %d\n",c);
-     int i=100;
-    while(i!=-1){
-     i--;
+     int i2=100;
+    while(i2!=-1){
+     i2--;
       listen(listenfd, 10);
       
 
