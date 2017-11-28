@@ -1,0 +1,6 @@
+Must have a local install of osv from sources (do not use capstan for this 
+experiment)
+
+
+From the root of osv sources:
+sudo ./scripts/run.py -i ~/.capstan/instances/qemu/netio/disk.qcow2 -n -v
