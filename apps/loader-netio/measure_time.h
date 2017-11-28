@@ -3,6 +3,8 @@
 
 #define FREQ 3300000000
 #define NANO_SECONDS_IN_SEC  1000000000
+#define ITER	10000
+
 //rdtscp wrapper
 static inline uint64_t RDTSCP()
 {

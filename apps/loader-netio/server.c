@@ -55,9 +55,6 @@ int server_main(int argc, char *argv[])
 			    sizeof(int));    /* length of option value */
     int c = bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
     //    printf("result = %d\n",c);
-     int i=100;
-    while(i!=-1){
-     i--;
       listen(listenfd, 10);
       
 
@@ -81,55 +78,45 @@ int server_main(int argc, char *argv[])
 	{
 	  sendBuff[i] = (char)(rand()%256);
 	}
-      if(eval_type)
-	{
-	  begin = RDTSCP();
+
 	  int n;
-	  numBytes = 0;
-	  while(numBytes < buff_length)
-          {
+	  begin = RDTSCP();
+	  for(int iter=0; iter<ITER; iter++)
+	  {
+	    numBytes = 0;
+	    while(numBytes < buff_length)
+            {
                 if ((n = write(connfd, sendBuff, buff_length-numBytes)) > 0)
 			numBytes+=n;
-	  }
-	  printf("Server Bytes written: %d\n",numBytes);
+	    }
 	  
+	    //printf("Server Bytes written: %d\n",numBytes);
+	  }
+
+	  end = RDTSCP();
+          double time = ((double)(end-begin))/((double)FREQ);
+          printf("\nRDTSCP: %f",time);
+          printf("\nTx Bandwidth: %f MBytes/s\n", ITER*buff_length/(1024.0*1024.0*time));
+
 	  shutdown(connfd,1);
 	  
-	  numBytes = 0;
-	  while (numBytes < buff_length)
-	  {
+	  begin = RDTSCP();
+	  for(int iter=0; iter<ITER; iter++)
+	  { 
+	    numBytes = 0;
+	    while (numBytes < buff_length)
+	    {
 		if ((n = read(connfd, recvBuff_server, buff_length-numBytes)) > 0)
 			numBytes+=n;
 	    }
+
+	    //printf("Server Bytes read: %d\n",numBytes);
+          }
 	  end = RDTSCP();
-	  double time = ((double)(end-begin))/((double)FREQ);
+	  time = ((double)(end-begin))/((double)FREQ);
 	  printf("\nRDTSCP: %f",time);
-	  printf("\nBandwidth: %f MBytes/s\n", buff_length/(1024.0*1024.0*time));
-	}
-      else
-	{
-	  clock_gettime(CLOCK_MONOTONIC, &begints);
-	  write(connfd, sendBuff, buff_length);
-	  //printf("Server Bytes written: %d\n",buff_length);
-	  
-	  shutdown(connfd,1);
-	  
-	  int n;
-	  while ( (n = read(connfd, ack_recieve_buffer, 1)) > 0)
-	    {
-	      numBytes+=n;
-	    }
-	  clock_gettime(CLOCK_MONOTONIC, &endts);
-	  struct timespec tmpts = TimeSpecDiff(&endts, &begints);
-	  uint64_t nsecElapsed = tmpts.tv_sec * 1000000000LL + tmpts.tv_nsec;
-	  float abc = buff_length/(float)nsecElapsed;
-	  printf("\nclockgettime: %f",abc);
-	  
-	}
+	  printf("\nRx Bandwidth: %f MBytes/s\n", ITER*buff_length/(1024.0*1024.0*time));
       
-      //printf("Server Bytes received: %d\n",numBytes);
-      
-         }
     close(connfd);
     close(listenfd);
     return 0;

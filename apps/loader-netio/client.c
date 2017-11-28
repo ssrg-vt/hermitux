@@ -30,7 +30,7 @@ int client_main(int argc, char *argv[])
     char sendBuff_client[buff_length-1];
     char ack_buf[1];
 
-    printf("bufffer length %d\n", buff_length);
+    printf("buffer length %d\n", buff_length);
 
     memset(ack_buf, '0',sizeof(ack_buf));
     memset(recvBuff, '0',sizeof(recvBuff));
@@ -79,29 +79,36 @@ int client_main(int argc, char *argv[])
        return 1;
     } 
 
-    numBytes=0;
-    while (numBytes < buff_length)
+    for(int iter=0; iter<ITER; iter++)
     {
+      numBytes=0;
+      while (numBytes < buff_length)
+      {
 	if ((n = read(sockfd, recvBuff, buff_length-numBytes)) > 0)
 		numBytes+=n;
+      }
+
+      //printf("Client Bytes received: %d\n", numBytes);
     }
 
-    printf("Client Bytes received: %d\n", numBytes);
-    shutdown(sockfd,0);
+      shutdown(sockfd,0);
 
-    printf("now writing\n");
+      printf("now writing\n");
 
     //	sendBuff_client[buff_length-3] = 'e';
     //	sendBuff_client[buff_length-2] = 'f';
     //	sendBuff_client[buff_length-1] = '\0';
     //	sendBuff_client[0]='g';
-     numBytes=0;
-     while (numBytes < buff_length)
+     for(int iter=0; iter<ITER; iter++)
      {
-	if ((n = write(sockfd, recvBuff, buff_length-numBytes)) > 0)
+       numBytes=0;
+       while (numBytes < buff_length)
+       {
+ 	 if ((n = write(sockfd, recvBuff, buff_length-numBytes)) > 0)
 		numBytes+=n;
+      }
+      //printf("Client bytes sent:%d\n",buff_length);
      }
-     printf("Client bytes sent:%d\n",buff_length);
      close(sockfd);
     return 0;
 }
