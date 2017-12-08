@@ -165,4 +165,22 @@ Need to implement it!
    initialization function. This first (and only) parameter is then used
    to reconstruct argc, argv, envp, and auxv, which are then passed to 
    the application when the C library is done initializaing anf give control
-   to the app
+   to the app. GlibC expects some destructor passed by the dynamic loader in
+   %rdx at that point, we need to clear it otherwise there is garbage value in
+   that register and the CPU ends up jumping to it at application exit time.
+   
+ ## Compatibility
+ 
+- PARSEC:
+  - blackscholes (C)
+  - bodytrack (C++)
+  - canneal (C++)
+  - freqmine (C++)
+  - swaptions (C++)
+  - canneals (C++)
+  - streamcluster (C++)
+
+- NPB (fortran):
+  - cg
+  - ep
+  - ft
