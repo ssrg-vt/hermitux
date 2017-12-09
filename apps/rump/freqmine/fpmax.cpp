@@ -64,6 +64,10 @@ static int omp_get_max_threads() {return 1;}
 #include <hooks.h>
 #endif
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #define LINT sizeof(int)
 
 int** ITlen;
@@ -121,11 +125,29 @@ int main(int argc, char **argv)
 	__parsec_bench_begin(__parsec_freqmine);
 #endif
 	
-	if (argc < 3)
+/*	if (argc < 3)
 	{
 	  cout << "usage: " << argv[0] << " <infile> <MINSUP> [<outfile>]\n";
 	  exit(1);
-	}
+	} */
+
+	argc = 3;
+	char **fake_argv = (char **)malloc(3 * sizeof(char *));
+	for(i=0; i<3; i++)
+		fake_argv[i] = (char *)malloc(128 * sizeof(char));
+	strcpy(fake_argv[0], argv[0]);
+	argv = fake_argv;
+
+#if 0
+	/* native */
+	strcpy(fake_argv[1], "/fs/webdocs_250k.dat");
+	strcpy(fake_argv[2], "11000");
+#endif
+
+	/* simLarge */
+	strcpy(fake_argv[1], "/fs/kosarak_990k.dat");
+	strcpy(fake_argv[2], "790");
+
 	THRESHOLD = atoi(argv[2]);
 
 	Data* fdat=new Data(argv[1]);

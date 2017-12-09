@@ -9,9 +9,9 @@ Contents : data set management
 Data::Data(char *filename)
 {
 #ifndef BINARY
-  in = fopen(filename,"r+t");
+  in = fopen(filename,"r");
 #else
-  in = fopen(filename, "r+b");
+  in = fopen(filename, "rb");
 #endif
 }
 

@@ -1,10 +1,10 @@
 CFLAGS  = -O3 -g -I.
-LDFLAGS=-lm
+LDFLAGS=
 TARGET = prog
 CC=x86_64-rumprun-netbsd-g++
 BAKE=rumprun-bake
 RUN=rumprun
-MEM=22G
+MEM=10G
 
 SRC := $(shell ls *.cpp)
 
