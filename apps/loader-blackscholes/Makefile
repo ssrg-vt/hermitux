@@ -18,7 +18,7 @@ KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
-STRIP?=1
+STRIP?=0
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
