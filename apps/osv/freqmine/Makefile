@@ -3,7 +3,7 @@
 # This work is open source software, licensed under the terms of the
 # BSD license as described in the LICENSE file in the top-level directory.
 
-CXXFLAGS  = -O3 -g -Wall -fPIC $(INCLUDES) -I. -std=c++11 
+CXXFLAGS  = -O3 -g -Wall -fPIC $(INCLUDES) -I. -std=c++11 -DENABLE_PARSEC_HOOKS
 
 TARGET = hello
 

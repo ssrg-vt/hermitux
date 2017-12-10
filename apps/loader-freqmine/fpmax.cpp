@@ -61,7 +61,7 @@ static int omp_get_max_threads() {return 1;}
 #endif //_OPENMP
 
 #ifdef ENABLE_PARSEC_HOOKS
-#include <hooks.h>
+#include "hooks.h"
 #endif
 
 #define LINT sizeof(int)

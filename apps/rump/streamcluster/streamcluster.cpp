@@ -1994,6 +1994,7 @@ int main(int argc, char **argv)
     exit(1);
   } */
 
+	int i;
 	argc = 10;
 	char **fake_argv = (char **)malloc(10 * sizeof(char *));
 	for(i=0; i<10; i++)
@@ -2014,7 +2015,18 @@ int main(int argc, char **argv)
 	strcpy(fake_argv[9], "1");
 #endif 
 
-	10 20 128 16384 16384 1000 none output.txt 1
+	/* simMedium */
+	strcpy(fake_argv[1], "10");
+	strcpy(fake_argv[2], "20");
+	strcpy(fake_argv[3], "64");
+	strcpy(fake_argv[4], "8192");
+	strcpy(fake_argv[5], "8192");
+	strcpy(fake_argv[6], "1000");
+	strcpy(fake_argv[7], "none");
+	strcpy(fake_argv[8], "output.txt");
+	strcpy(fake_argv[9], "1");
+
+#if 0
 	/* simlarge */
 	strcpy(fake_argv[1], "10");
 	strcpy(fake_argv[2], "20");
@@ -2025,6 +2037,7 @@ int main(int argc, char **argv)
 	strcpy(fake_argv[7], "none");
 	strcpy(fake_argv[8], "output.txt");
 	strcpy(fake_argv[9], "1");
+#endif 
 
   kmin = atoi(argv[1]);
   kmax = atoi(argv[2]);
