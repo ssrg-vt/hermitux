@@ -33,7 +33,7 @@ using namespace tbb;
 #endif
 
 #ifdef ENABLE_PARSEC_HOOKS
-#include <hooks.h>
+#include "hooks.h"
 #endif
 
 using namespace std;

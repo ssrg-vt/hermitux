@@ -1,11 +1,11 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=/home/pierre/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g
+CFLAGS=-g -O3 -DENABLE_PARSEC_HOOKS
 LDFLAGS=-static
 
 SRC := $(shell ls *.cpp)

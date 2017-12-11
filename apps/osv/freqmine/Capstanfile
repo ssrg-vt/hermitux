@@ -12,7 +12,7 @@ base: cloudius/osv-base
 #
 # The command line passed to OSv to start up the application.
 #
-cmdline: /tools/hello.so /kosarak_990k.dat 790
+cmdline: /tools/hello.so kosarak_500k.dat 410
 
 #
 # The command to use to build the application.  In this example, we just use
@@ -27,3 +27,7 @@ files:
   /tools/hello.so: hello.so
   /webdocs_250k.dat: webdocs_250k.dat
   /kosarak_990k.dat: kosarak_990k.dat
+  /kosarak_500k.dat: kosarak_500k.dat
+
+#simlarge: /kosarak_990k.dat 790
+#simmedium: ./kosarak_500k.dat 410 

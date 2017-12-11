@@ -7,9 +7,10 @@ CXXFLAGS  = -O3 -g -Wall -fPIC $(INCLUDES) -I. -std=c++11 -DENABLE_PARSEC_HOOKS
 
 TARGET = hello
 
-OBJ_FILES = $(SRC:.cpp=.o)
+OBJ_FILES = $(SRC:.cpp=.o) $(SRC_C:.c=.o)
 
 SRC := $(shell ls *.cpp)
+SRC_C := $(shell ls *.c)
 
 quiet = $(if $V, $1, @echo " $2"; $1)
 very-quiet = $(if $V, $1, @$1)

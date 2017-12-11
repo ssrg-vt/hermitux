@@ -1,4 +1,4 @@
-CFLAGS  = -O3 -g -I.
+CFLAGS  = -O3 -g -I. -DENABLE_PARSEC_HOOKS
 LDFLAGS=
 TARGET = prog
 CC=x86_64-rumprun-netbsd-g++

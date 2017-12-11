@@ -144,9 +144,17 @@ int main(int argc, char **argv)
 	strcpy(fake_argv[2], "11000");
 #endif
 
+#if 1 
 	/* simLarge */
 	strcpy(fake_argv[1], "/fs/kosarak_990k.dat");
 	strcpy(fake_argv[2], "790");
+#endif
+
+#if 0
+	/* simMedium */
+	strcpy(fake_argv[1], "/fs/kosarak_500k.dat");
+	strcpy(fake_argv[2], "790");
+#endif
 
 	THRESHOLD = atoi(argv[2]);
 

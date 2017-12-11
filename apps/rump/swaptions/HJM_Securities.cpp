@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
 	strcpy(fake_argv[0], argv[0]);
 	argv = fake_argv;
 
-#if 0
+#if 1
 	/* simlarge */
 	strcpy(fake_argv[1], "-ns");
 	strcpy(fake_argv[2], "64");
@@ -174,6 +174,16 @@ int main(int argc, char *argv[])
 	strcpy(fake_argv[6], "1");
 #endif 
 
+#if 0
+	/* simmedium */
+	strcpy(fake_argv[1], "-ns");
+	strcpy(fake_argv[2], "32");
+	strcpy(fake_argv[3], "-sm");
+	strcpy(fake_argv[4], "20000");
+	strcpy(fake_argv[5], "-nt");
+	strcpy(fake_argv[6], "1");
+#endif 
+#if 0
 	/* native */
 	strcpy(fake_argv[1], "-ns");
 	strcpy(fake_argv[2], "128");
@@ -181,7 +191,7 @@ int main(int argc, char *argv[])
 	strcpy(fake_argv[4], "1000000");
 	strcpy(fake_argv[5], "-nt");
 	strcpy(fake_argv[6], "1");
-
+#endif
         for (int j=1; j<argc; j++) {
 	  if (!strcmp("-sm", argv[j])) {NUM_TRIALS = atoi(argv[++j]);}
 	  else if (!strcmp("-nt", argv[j])) {nThreads = atoi(argv[++j]);} 

@@ -6,7 +6,9 @@ BAKE=rumprun-bake
 RUN=rumprun
 MEM=22G
 
-SRC := $(shell ls *.cpp)
+SRC_CPP := $(shell ls *.cpp)
+SRC_C := $(shell ls *.c)
+SRC = $(SRC_CPP) $(SRC_C)
 
 all: $(TARGET)
 
@@ -16,11 +18,8 @@ $(TARGET): $(TARGET).compiled
 $(TARGET).compiled: $(SRC)
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
-run: filesystem $(TARGET)
-	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i -b fs.iso,/fs $(TARGET)
-
-filesystem:
-	genisoimage -l -r -o fs.iso fs
+run: $(TARGET)
+	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i  $(TARGET)
 
 clean:
 	rm -rf *.o $(TARGET) $(TARGET).compiled
