@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=/home/pierre/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 
@@ -37,10 +37,10 @@ test: $(PROG)
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG) $(ARGS)
 
-gdb:
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
-				HERMIT_ISLE=qemu HERMIT_KVM=0 \
-				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+test-native: $(PROG)
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 HERMIT_MEM=3G \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+				$(PROG) 1 15000 2000 2500000.nets 6000
 
 clean:
 	rm -rf *.o $(PROG)
