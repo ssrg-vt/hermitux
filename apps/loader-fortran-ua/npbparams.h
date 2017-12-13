@@ -1,18 +1,26 @@
-c CLASS = A
+c CLASS = B
 c  
 c  
 c  This file is generated automatically by the setparams utility.
 c  It sets the number of processors and the class of the NPB
 c  in this directory. Do not modify it by hand.
 c  
-        integer problem_size, niter_default
-        parameter (problem_size=64, niter_default=200)
-        double precision dt_default
-        parameter (dt_default = 0.0008d0)
+        integer          lelt, lmor, refine_max, fre_default
+        integer          niter_default, nmxh_default
+        character        class_default
+        double precision alpha_default
+        parameter(  lelt=8800,
+     >             lmor=334600,
+     >              refine_max=7,
+     >              fre_default=5,
+     >              niter_default=200,
+     >              nmxh_default=10,
+     >              class_default="B",
+     >              alpha_default=0.076d0 )
         logical  convertdouble
         parameter (convertdouble = .false.)
         character compiletime*11
-        parameter (compiletime='11 Dec 2017')
+        parameter (compiletime='09 Dec 2017')
         character npbversion*5
         parameter (npbversion='3.3.1')
         character cs1*8

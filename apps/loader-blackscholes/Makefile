@@ -41,7 +41,7 @@ objdump:
 test: $(PROG)
 	HERMIT_MEM=1G HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) chrono $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) 1 in_10M.txt out
+				$(PROG) 1 in_64K.txt out
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \

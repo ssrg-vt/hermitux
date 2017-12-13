@@ -31,10 +31,10 @@ objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
-	@make -B $(PROG) --no-print-directory
-	@HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+	make -B $(PROG) --no-print-directory
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(CHRONO) $(HERMIT_LOCAL_INSTALL)/bin/proxy \
-				$(KERNEL) $(PROG) $(ARGS) | grep -e "Time in" -e "chrono"
+				$(KERNEL) $(PROG) $(ARGS) 
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \

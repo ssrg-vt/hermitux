@@ -8,7 +8,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O3
-LDFLAGS=-static -nostdlib
+LDFLAGS=-static -lm
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -22,15 +22,19 @@ STRIP?=1
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
-CC=$(MUSL_GCC)
-
+#CC=$(MUSL_GCC)
+#CC=clang
+CC=gcc
 all: $(PROG)
 
-$(PROG): $(OBJ)
-	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
-ifeq ($(STRIP),1)
-	strip $(PROG)
-endif
+$(PROG): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
+
+#$(PROG): $(OBJ)
+#	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
+#ifeq ($(STRIP),1)
+#	strip $(PROG)
+#endif
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@

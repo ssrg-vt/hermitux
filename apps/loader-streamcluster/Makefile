@@ -34,7 +34,7 @@ objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+	HERMIT_MEM=5G HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG) $(ARGS)
 

@@ -3,13 +3,24 @@ HERMITUX_BASE=/home/pierre/Desktop/hermitux
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
+GLIBC_PREFIX=/home/pierre/Desktop/glibc-build/prefix
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O3
-LDFLAGS=-static -lm
+LDFLAGS=-static -lm -nostdlib
+LIBS= /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a $(GLIBC_PREFIX)/lib/crt1.o \
+	 $(GLIBC_PREFIX)/lib/crti.o \
+	 -L/home/pierre/Desktop/glibc-build/prefix/lib \
+	 -L/usr/lib/gcc/x86_64-linux-gnu/6/ \
+	 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginT.o \
+	 -start-group -lgcc -lgcc_eh -lc --end-group \
+	/usr/lib/gcc/x86_64-linux-gnu/6/crtend.o \
+	/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+
 SRC := $(shell ls *.c)
+OBJ=$(SRC:.c=.o)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
@@ -17,15 +28,15 @@ VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=0
-ARGS?=1 in_64K.txt out
+ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=gcc
 
 all: $(PROG)
 
-$(PROG): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
+$(PROG): $(OBJ)
+	ld -static -o $(PROG) $(OBJ) $(LIBS) $(LDFLAGS)
 ifeq ($(STRIP),1)
 	strip $(PROG)
 endif
