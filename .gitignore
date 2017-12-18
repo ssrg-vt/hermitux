@@ -3,3 +3,7 @@ musl-hermitux
 musl
 obfuscator
 obfuscator-build
+hermitux-kernel
+syscall-rewriter
+
+*~

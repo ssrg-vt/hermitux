@@ -1,4 +1,5 @@
 *.o
 prog
+prog_fast
 loader-sqlite
 loader-web-server
