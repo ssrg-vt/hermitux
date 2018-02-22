@@ -17,9 +17,11 @@ PROG?=prog
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
-KVM=0
 STRIP?=1
 ARGS?=
+
+# Set this to 1 to enable gdb support, see tools/hermit-gdb
+DEBUG=0
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 #CC=$(MUSL_GCC)
@@ -44,13 +46,8 @@ objdump:
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) $(ARGS)
-
-gdb:
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
-				HERMIT_ISLE=qemu HERMIT_KVM=0 \
-				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_DEBUG=$(DEBUG) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+		$(PROG) $(ARGS)
 
 clean:
 	rm -rf *.o $(PROG)
