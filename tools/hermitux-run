@@ -1,9 +1,13 @@
 #!/bin/sh
 
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
-HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermit-compiler/prefix
-KERNEL=$HERMIT_LOCAL_INSTALL/x86_64-hermit/extra/tests/hermitux
+# Use this script for quick and easy run of a linux binary as a unikernel
 
+# Set this variable to hermitux codebase directory
+HERMITUX_BASE=/home/pierre/Desktop/hermitux
+# Set this to the hermitux install path 
+HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermit-compiler/prefix
+
+KERNEL=$HERMIT_LOCAL_INSTALL/x86_64-hermit/extra/tests/hermitux
 VERBOSE=1
 
 HERMIT_VERBOSE=$VERBOSE HERMIT_ISLE=uhyve HERMIT_TUX=1 \
