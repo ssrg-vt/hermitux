@@ -83,9 +83,17 @@ hypervisor the guest page tables.
   similar fashion as qemu `-S` parameter), making boot process debugging 
   possible, including the part written in assembly.
 
-- TODO hardware breakpoints?
-- TODO watchpoints? conditional breakpoints?
-- TODO interrupt?
+- Hardware breakpoints are supported (uhyve can access and modify the VCPU 
+  state)
+
+- Watchpoint and conditional breakpoints work
+
+- Interrupting the VM while it executes is not supported. It could probably be 
+  done but would involve a complete redesign of the GDB stub as a thread 
+  separated from uhyve execution flow (in order to received GDB asynchronous
+  interrupt requests
+
+- Multi-threading: not supported for now.
 
 ## Usage
 
