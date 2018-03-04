@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/hermitux
+HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 
