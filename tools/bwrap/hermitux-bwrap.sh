@@ -19,24 +19,14 @@ cp -f $1 $TMP_FOLDER
 (exec bwrap \
 	  --ro-bind /usr /usr \
 	  --ro-bind /lib /lib \
-	  --ro-bind /lib64 /lib64 \
-	  --ro-bind /bin /bin \
-	  --ro-bind /sbin /sbin \
 	  --dev-bind /dev /dev \
+	  --ro-bind /lib64 /lib64 \
 	  --bind $TMP_FOLDER /tmp \
       --dir /var \
-      --symlink ../tmp var/tmp \
       --proc /proc \
       --ro-bind /etc/resolv.conf /etc/resolv.conf \
-      --chdir / \
       --unshare-all \
-      --share-net \
       --die-with-parent \
-      --dir /run/user/$(id -u) \
-      --setenv XDG_RUNTIME_DIR "/run/user/`id -u`" \
-      --setenv PS1 "bwrap-demo$ " \
-      --file 11 /etc/passwd \
-      --file 12 /etc/group \
 	  --setenv HERMIT_ISLE "uhyve" \
 	  --setenv HERMIT_TUX "1" \
       /tmp/proxy /tmp/hermitux /tmp/syscall_asm) \
