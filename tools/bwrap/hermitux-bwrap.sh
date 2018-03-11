@@ -17,19 +17,14 @@ cp -f $KERNEL $TMP_FOLDER
 cp -f $1 $TMP_FOLDER
 
 (exec bwrap \
-	  --ro-bind /usr /usr \
-	  --ro-bind /lib /lib \
 	  --dev-bind /dev /dev \
-	  --ro-bind /lib64 /lib64 \
 	  --bind $TMP_FOLDER /tmp \
-      --dir /var \
       --proc /proc \
-      --ro-bind /etc/resolv.conf /etc/resolv.conf \
       --unshare-all \
       --die-with-parent \
 	  --setenv HERMIT_ISLE "uhyve" \
 	  --setenv HERMIT_TUX "1" \
-      /tmp/proxy /tmp/hermitux /tmp/syscall_asm) \
+      /tmp/proxy /tmp/hermitux /tmp/$1 ${@:2}) \
     11< <(getent passwd $UID 65534) \
     12< <(getent group $(id -g) 65534)
 
