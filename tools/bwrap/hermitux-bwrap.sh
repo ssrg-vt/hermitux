@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Bubblewrap is needed to run uhyve sandboxed, on debian: sudo apt install
+# bubblewrap
+
 # Set this variable to the base install path
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
