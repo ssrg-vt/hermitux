@@ -22,11 +22,11 @@ cp -f $1 $TMP_FOLDER
 (exec bwrap \
 	  --dev-bind /dev/kvm /dev/kvm \
 	  --bind $TMP_FOLDER /tmp \
-      --proc /proc \
       --unshare-all \
       --die-with-parent \
 	  --setenv HERMIT_ISLE "uhyve" \
 	  --setenv HERMIT_TUX "1" \
+	  --setenv HERMIT_SECCOMP "1" \
       /tmp/proxy /tmp/hermitux /tmp/$1 ${@:2}) \
     11< <(getent passwd $UID 65534) \
     12< <(getent group $(id -g) 65534)
