@@ -20,7 +20,7 @@ cp -f $KERNEL $TMP_FOLDER
 cp -f $1 $TMP_FOLDER
 
 (exec bwrap \
-	  --dev-bind /dev /dev \
+	  --dev-bind /dev/kvm /dev/kvm \
 	  --bind $TMP_FOLDER /tmp \
       --proc /proc \
       --unshare-all \
