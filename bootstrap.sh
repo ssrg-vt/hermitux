@@ -2,7 +2,6 @@
 set -euo pipefail
 
 HERMIT_REPO=git@github.com:danchiba/hermit-compiler.git
-HERMIT_BRANCH=pierre
 MUSL_REPO=git@github.com:ssrg-vt/hermitux-musl.git
 
 if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
@@ -11,7 +10,7 @@ if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 fi
 
 # 1. HERMITCORE
-git clone $HERMIT_REPO --branch $HERMIT_BRANCH
+git clone $HERMIT_REPO
 cd hermit-compiler
 git submodule init
 git submodule update
