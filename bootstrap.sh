@@ -27,7 +27,7 @@ cd ..
 cd ..
 
 # 2. MUSL
-git clone $MUSL_REPO
+git clone $MUSL_REPO musl
 cd musl
 mkdir -p prefix
 ./configure --prefix=$PWD/prefix --disable-shared
