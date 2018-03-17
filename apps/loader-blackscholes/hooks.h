@@ -15,11 +15,11 @@ inline uint64_t rdtsc(void);
 inline void __parsec_bench_begin(enum __parsec_benchmark __bench) {};
 inline void __parsec_bench_end() {};
 
-inline void __parsec_roi_begin() {
+static inline void __parsec_roi_begin() {
 	start = rdtsc();
 }
 
-inline void __parsec_roi_end() {
+static inline void __parsec_roi_end() {
 	stop = rdtsc();
 	printf("Time spent in ROI: %f\n", ticks_to_sec(stop - start));
 }
