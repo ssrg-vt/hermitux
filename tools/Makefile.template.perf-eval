@@ -4,7 +4,7 @@ HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
 MUSL_GCC=$(HERMITUX_BASE)/musl/prefix/bin/musl-gcc
 
 # get chrono here https://github.com/olivierpierre/chrono
-CHRONO=/usr/local/bin/chrono
+CHRONO=
 
 CFLAGS=-g -O3
 LDFLAGS=-static
