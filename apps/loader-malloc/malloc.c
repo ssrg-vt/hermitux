@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE	(128)
+/* The followign will use brk */
+// #define SIZE	(128)
+
+/* The following will rather use mmap */
+#define SIZE	(1024*1024*1024)
 
 int main(void) {
 	char *ptr;
