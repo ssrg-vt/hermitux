@@ -4,6 +4,7 @@
   - HermitCore prerequisites (https://github.com/RWTH-OS/HermitCore)
   - HermitCore toolchain installed in /opt/hermit (the one coming from the
   debian repositories mentionned in HermitCore GitHub repositories works fine)
+  - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
 
 ## Steps
 
