@@ -21,10 +21,11 @@ STRIP?=1
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
 ARGS?=
+CPUS?=1
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
-DEBUG=0
+DEBUG?=0
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
@@ -50,7 +51,8 @@ objdump:
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
+	HERMIT_CPUS=$(CPUS) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+	$(PROG) $(ARGS)
 
 clean:
 	rm -rf *.o $(PROG)

@@ -8,7 +8,7 @@ void* thread_func(void* arg)
 	int id = *((int*) arg);
 
 	printf("Hello Thread!!! id = %d\n", id);
-
+	sleep(1);
 	return 0;
 }
 
@@ -28,9 +28,14 @@ int main(int argc, char** argv)
 		} else printf("Create thread %d\n", i);
 	}
 
+	sleep(2);
+
+	printf("trying to join\n");
 	/* wait until all threads have terminated */
 	for(i=0; i<MAX_THREADS; i++)
 		pthread_join(threads[i], NULL);	
+
+	printf("joined\n");
 
 	return 0;
 }
