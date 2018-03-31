@@ -5,11 +5,18 @@
 
 #define MAX_THREADS 4
 
+__thread int thr_data = 4;
+__thread int thr_bss;
+
 void* thread_func(void* arg)
 {
 	int id = *((int*) arg);
 
+	thr_data = id;
+	thr_bss = id;
+
 	printf("[%d] Hello Thread!!! arg = %d\n", getpid(), id);
+	printf("[%d] tdata = %d, tbss = %d\n", getpid(), thr_data, thr_bss);
 	printf("[%d] Going to sleep\n", getpid());
 	sleep(1);
 	printf("[%d] Sleep done, exiting\n", getpid());
@@ -34,10 +41,6 @@ int main(int argc, char** argv)
 
 
 	printf("[%d] Going to sleep\n", getpid());
-	/* Pierre: if we sleep 2 seconds here, we leave enough time for the other
-	 * threads to exit so the pthread_join on the next lines will need no
-	 * synchronization, i.e. no call to futex. Comment the sleep(2) to 
-	 * trigger the calls to futex. */
 	sleep(2);
 
 	printf("[%d] Sleep done, trying to join\n", getpid());
