@@ -3,6 +3,8 @@ set -euo pipefail
 
 HERMIT_REPO=git@github.com:danchiba/hermit-compiler.git
 MUSL_REPO=git@github.com:ssrg-vt/hermitux-musl.git
+LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
+LIBIOMP_BRANCH=release_40
 
 if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 	echo "Hermit toolchain not found..."
@@ -33,10 +35,21 @@ mkdir -p prefix
 make -j`nproc` install
 cd -
 
-# LLVM with obfuscation plugin (disabled by default)
+# 3. LLVM with obfuscation plugin (disabled by default as it takes a lot of time)
 # git clone -b llvm-4.0 https://github.com/obfuscator-llvm/obfuscator.git
 # mkdir obfuscator-build
 # cd obfuscation-build
 # cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_INCLUDE_TESTS=OFF ../obfuscator
 # make -j`nproc`
 # cd -
+
+# 4. Libiomp
+git clone $LIBIOMP_REPO libiomp
+cd libiomp
+git checkout $LIBIOMP_BRANCH
+mkdir -p build
+cd build
+cmake -DLIBOMP_ENABLE_SHARED=OFF ..
+make -j`nproc`
+cd ..
+cd ..
