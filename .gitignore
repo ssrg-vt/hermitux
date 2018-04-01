@@ -3,3 +3,4 @@ musl-hermitux
 musl
 obfuscator
 obfuscator-build
+libiomp
