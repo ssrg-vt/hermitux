@@ -46,6 +46,7 @@ cd -
 # 4. Libiomp
 git clone $LIBIOMP_REPO libiomp
 cd libiomp
+git checkout $LIBIOMP_BRANCH
 mkdir -p build
 cd build
 cmake -DLIBOMP_ENABLE_SHARED=OFF ..
