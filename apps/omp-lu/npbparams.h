@@ -1,1 +1,0 @@
-npbparams-A.h
