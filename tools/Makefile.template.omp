@@ -23,6 +23,7 @@ STRIP?=1
 SECCOMP?=0
 ARGS?=
 CPUS?=4
+MEM?=4G
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
@@ -51,7 +52,7 @@ objdump:
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) HERMIT_MEM=$(MEM) \
 	HERMIT_CPUS=$(CPUS) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 	$(PROG) $(ARGS)
 
