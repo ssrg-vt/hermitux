@@ -36,7 +36,6 @@ static inline int insert_records(uint32_t record_num, sqlite3 *db) {
 	float f;
 	char q[256];
 
-//	strcpy(str, "test");
 	str[STR_FIELD_SIZE-1] = '\0';
 
 	for(i=0; i<record_num; i++) {
@@ -69,22 +68,6 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-#if 0
-	char *sql = "DROP TABLE IF EXISTS Cars;" 
-                "CREATE TABLE Cars(Id INT, Name TEXT, Price INT);" 
-                "INSERT INTO Cars VALUES(1, 'Audi', 52642);" 
-                "INSERT INTO Cars VALUES(2, 'Mercedes', 57127);" 
-                "INSERT INTO Cars VALUES(3, 'Skoda', 9000);" 
-                "INSERT INTO Cars VALUES(4, 'Volvo', 29000);" 
-                "INSERT INTO Cars VALUES(5, 'Bentley', 350000);" 
-                "INSERT INTO Cars VALUES(6, 'Citroen', 21000);" 
-                "INSERT INTO Cars VALUES(7, 'Hummer', 41400);" 
-                "INSERT INTO Cars VALUES(8, 'Volkswagen', 21600);";
-
-	if(execute_query(sql, db))
-		return -1;
-#endif
-
 	if(create_table(db))
 		return -1;
 
@@ -105,7 +88,6 @@ int main(int argc, char *argv[])
 	printf("Retrieval took: %ld.%06lds\n", res.tv_sec, res.tv_usec);
 
 	sqlite3_close(db);
-
 
 	return 0;
 }

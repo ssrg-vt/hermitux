@@ -1,5 +1,4 @@
 *.o
 prog
-loader-sqlite
 loader-web-server
 npbparams.h
