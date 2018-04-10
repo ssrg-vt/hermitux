@@ -9,5 +9,9 @@ musl-hermitux
 musl
 obfuscator
 obfuscator-build
+
 prog
 prog_fast
+
+libiomp
+

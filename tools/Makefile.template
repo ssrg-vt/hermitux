@@ -24,7 +24,7 @@ ARGS?=
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
-DEBUG=0
+DEBUG?=0
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
