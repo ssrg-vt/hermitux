@@ -1,5 +1,13 @@
+*~
+#*
+
+hermitux-kernel
+syscall-rewriter
+syscall-identification
 hermit-compiler
 musl-hermitux
 musl
 obfuscator
 obfuscator-build
+prog
+prog_fast
