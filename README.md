@@ -1,6 +1,8 @@
 # Hermitux test environment
 
 ## Prerequisites
+  - Recommended system: Debian 9 (GlibC support is not assured on newer 
+    distributions)
   - HermitCore prerequisites (https://github.com/RWTH-OS/HermitCore)
   - HermitCore toolchain installed in /opt/hermit (the one coming from the
   debian repositories mentionned in HermitCore GitHub repositories works fine)
