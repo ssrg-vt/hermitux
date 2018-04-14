@@ -2,10 +2,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <sys/time.h>
+#include <stdlib.h>
 
 #include "sqlite3.h"
 
-#define RECORD_NUM		1000000
+#define RECORD_NUM		200000
 #define TABLE_NAME		"test_table"
 #define STR_FIELD_SIZE	128
 
@@ -33,7 +34,7 @@ int create_table(sqlite3 *db) {
 static inline int insert_records(uint32_t record_num, sqlite3 *db) {
 	uint32_t i;
 	char str[STR_FIELD_SIZE];
-	float f;
+	float f = (float)rand()/(float)(RAND_MAX/5.0);
 	char q[256];
 
 	str[STR_FIELD_SIZE-1] = '\0';
@@ -58,7 +59,6 @@ static inline int retrieve_records(sqlite3 *db) {
 int main(int argc, char *argv[])
 {
 	sqlite3 *db;
-	char *err_msg = 0;
 	int ret;
 	struct timeval start, stop, res;
 
