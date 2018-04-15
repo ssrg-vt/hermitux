@@ -14,10 +14,11 @@ OBJ=$(SRC:.c=.o)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE=0
+VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
+PROF?=0
 
 all: $(PROG)
 
@@ -33,7 +34,8 @@ objdump:
 test: $(PROG)
 	make -B $(PROG) --no-print-directory
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) $(CHRONO) $(HERMIT_LOCAL_INSTALL)/bin/proxy \
+				HERMIT_PROFILE=$(PROF) HERMIT_KVM=$(KVM) $(CHRONO) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy \
 				$(KERNEL) $(PROG) $(ARGS) 
 
 gdb:
