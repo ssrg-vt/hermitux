@@ -17,9 +17,11 @@ PROG?=prog
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
-STRIP?=1
+STRIP?=0
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
+# Enable the profiler when != from 0, use this number as the number of samples per second
+PROF?=0
 ARGS?=
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
@@ -50,8 +52,9 @@ objdump:
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG)
+	rm -rf *.o $(PROG) hermitux-prof.txt
 
