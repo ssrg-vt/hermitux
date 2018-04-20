@@ -12,6 +12,31 @@ file_blacklist = ['crti.s', 'crtn.s']
 DEFAULT_REPORT_FILE="hermitux-prof.txt"
 HERMITUX_APP_LOAD=0x400000
 
+
+# Print iterations progress
+def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_length=50):
+    """
+    Call in a loop to create terminal progress bar
+
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        bar_length  - Optional  : character length of bar (Int)
+    """
+    str_format = "{0:." + str(decimals) + "f}"
+    percents = str_format.format(100 * (iteration / float(total)))
+    filled_length = int(round(bar_length * iteration / float(total)))
+    bar = 'X' * filled_length + '-' * (bar_length - filled_length)
+
+    sys.stdout.write('\r%s |%s| %s%s %s' % (prefix, bar, percents, '%', suffix)),
+
+    if iteration == total:
+        sys.stdout.write('\n')
+    sys.stdout.flush()
+
 def decode_funcname(dwarfinfo, address):
     for CU in dwarfinfo.iter_CUs():
         for DIE in CU.iter_DIEs():
@@ -55,6 +80,7 @@ if __name__ == "__main__":
     report_file = DEFAULT_REPORT_FILE
     samples = {}
     total_samples = 0
+    read_total_samples = 0
 
     parser = argparse.ArgumentParser(description="Produce a report based on " +
             "a hermitux profiler sample file")
@@ -74,6 +100,11 @@ if __name__ == "__main__":
         print("Usage:\n%s <report file>", sys.argv[0])
         sys.exit(-1)
 
+    with open(report_file) as f:
+        for i, l in enumerate(f):
+            pass
+        read_total_samples = i + 1 - 2 
+
     with open(report_file, "r") as f_report:
         binary = f_report.readline().replace("\n", "")
         kernel = f_report.readline().replace("\n", "")
@@ -91,10 +122,13 @@ if __name__ == "__main__":
         dwarf_binary = elf_binary.get_dwarf_info()
         dwarf_kernel = elf_kernel.get_dwarf_info()
 
+        print_progress(0, read_total_samples, prefix='Analyzing samples:', suffix='Complete')
         for line in f_report:
             total_samples += 1
             addr = int(line.replace("\n", ""), 16)
 
+            print_progress(total_samples, read_total_samples, prefix='Analyzing samples:', suffix='Complete')
+            
             if addr in samples.keys():
                 samples[addr]["occurences"] += 1
             else:
@@ -106,7 +140,11 @@ if __name__ == "__main__":
                     # Application code
                     funcname = decode_funcname(dwarf_binary, addr)
                     filename, line = decode_file_line(dwarf_binary, addr)
-                
+
+                if funcname is None or filename is None or line is None:
+                    print "Error: could not access Dwarf info, please enable -g and disable -O3"
+                    os.exit(-1)
+               
                 samples.update({addr : {"funcname" : funcname, "filename" : 
                     filename,  "line" : line, "occurences" : 1}})
        
