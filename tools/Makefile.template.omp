@@ -51,6 +51,7 @@ objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
+	OMP_NUM_THREADS=$(CPUS) \
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) HERMIT_MEM=$(MEM) \
 	HERMIT_CPUS=$(CPUS) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
