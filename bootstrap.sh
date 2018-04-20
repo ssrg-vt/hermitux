@@ -13,7 +13,7 @@ fi
 
 # 1. HERMITCORE
 git clone $HERMIT_REPO
-cd hermit-compiler
+cd hermitux-kernel
 git submodule init
 git submodule update
 

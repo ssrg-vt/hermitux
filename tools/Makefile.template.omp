@@ -1,6 +1,6 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=/tmp/hermitux
 
-HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 LIBIOMP_INSTALL_DIR=$(HERMITUX_BASE)/libiomp/build/runtime/src
