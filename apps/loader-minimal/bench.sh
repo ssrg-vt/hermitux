@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
-HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermitux-kernel/prefix
 KERNEL=$HERMIT_LOCAL_INSTALL/x86_64-hermit/extra/tests/hermitux
 
 ITERATIONS=10

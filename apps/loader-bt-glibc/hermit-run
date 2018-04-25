@@ -1,7 +1,7 @@
 #!/bin/sh
 
 HERMITUX_BASE=/home/pierre/hermitux
-HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$HERMITUX_BASE/hermitux-kernel/prefix
 KERNEL=$HERMIT_LOCAL_INSTALL/x86_64-hermit/extra/tests/hermitux
 
 VERBOSE=1
