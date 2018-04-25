@@ -3,3 +3,4 @@ prog
 loader-web-server
 npbparams.h
 hermitux-prof.txt
+perf.data
