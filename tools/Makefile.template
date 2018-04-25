@@ -20,7 +20,8 @@ ISLE=uhyve
 STRIP?=0
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
-# Enable the profiler when != from 0, use this number as the number of samples per second
+# Enable the profiler when != 0, use this number as the number of samples per
+# second. Remeber to add -g and remove -O3 for compile flags
 PROF?=0
 ARGS?=
 

@@ -4,3 +4,4 @@ musl
 obfuscator
 obfuscator-build
 libiomp
+hermitux-kernel
