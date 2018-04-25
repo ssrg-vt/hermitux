@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #define tux_start_address	0x400000
 
 extern const unsigned long long tux_entry;
@@ -11,8 +9,6 @@ int main(int argc, char** argv, char **environ)
 {
 	unsigned long long int libc_argc = argc -1;
 	int i, envc;
-
-	printf("hello\n");
 
 	envc = 0;
 	for (char **env = environ; *env; ++env) envc++;

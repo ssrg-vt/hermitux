@@ -1,10 +1,9 @@
 HERMIT_INSTALL=/opt/hermit
 CC=$(HERMIT_INSTALL)/bin/x86_64-hermit-gcc
 LD=$(HERMIT_INSTALL)/bin/x86_64-hermit-ld
-LIBS=../../hermitux-kernel/prefix/x86_64-hermit/lib/libhermit.a \
-	$(HERMIT_INSTALL)/x86_64-hermit/lib/libc.a
+LIBS=../../hermitux-kernel/prefix/x86_64-hermit/lib/libhermit.a
 
-CFLAGS= -g -O3
+CFLAGS= -Os
 LDFLAGS=-static
 
 all:
