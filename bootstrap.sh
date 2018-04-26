@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-HERMIT_REPO=git@github.com:danchiba/hermit-compiler.git
+HERMIT_REPO=git@github.com:ssrg-vt/hermitux-kernel.git
 MUSL_REPO=git@github.com:ssrg-vt/hermitux-musl.git
 LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
 LIBIOMP_BRANCH=release_40
@@ -13,7 +13,7 @@ fi
 
 # 1. HERMITCORE
 git clone $HERMIT_REPO
-cd hermit-compiler
+cd hermitux-kernel
 git submodule init
 git submodule update
 

@@ -19,9 +19,12 @@ KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 KERNEL_LIGHT=$(HERMITUX_BASE)/apps/hermitux-super-light/hermitux-light
 VERBOSE?=1
 ISLE=uhyve
-STRIP?=1
+STRIP?=0
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
+# Enable the profiler when != 0, use this number as the number of samples per
+# second. Remeber to add -g and remove -O3 for compile flags
+PROF?=0
 ARGS?=
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
@@ -52,6 +55,7 @@ objdump:
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 test_fast: $(PROG)
@@ -65,5 +69,5 @@ test_modular: $(PROG)
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL_LIGHT) $(PROG) $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG)
+	rm -rf *.o $(PROG) hermitux-prof.txt
 

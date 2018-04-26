@@ -1,6 +1,6 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=$(HOME)/Desktop/hermitux
 
-HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 LIBIOMP_INSTALL_DIR=$(HERMITUX_BASE)/libiomp/build/runtime/src
@@ -51,6 +51,7 @@ objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
+	OMP_NUM_THREADS=$(CPUS) \
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) HERMIT_MEM=$(MEM) \
 	HERMIT_CPUS=$(CPUS) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \

@@ -1,6 +1,6 @@
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
-HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_GCC=$(HERMITUX_BASE)/musl/prefix/bin/musl-gcc
 DIET=../../dietlibc/bin-x86_64/dietlibc.a
 

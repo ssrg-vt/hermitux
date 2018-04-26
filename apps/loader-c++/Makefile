@@ -1,6 +1,6 @@
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
-HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
