@@ -1,6 +1,6 @@
-HERMITUX_BASE=/home/pierre/hermitux
+HERMITUX_BASE=/home/danchiba/Documents/HermiTux/hermitux
 
-HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 
@@ -13,12 +13,13 @@ LDFLAGS=-static -nostdlib
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
 PROG?=prog
+PROG_FAST?=prog_fast
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
-STRIP?=1
+STRIP?=0
 ARGS?=
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
@@ -42,6 +43,11 @@ test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG) $(ARGS)
+
+test_fast: $(PROG)
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+				$(PROG_FAST) $(ARGS)
 
 gdb:
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
