@@ -1,4 +1,3 @@
-
 #define tux_start_address	0x400000
 
 extern const unsigned long long tux_entry;
@@ -14,7 +13,7 @@ int main(int argc, char** argv, char **environ)
 
 	envc = 0;
 	for (char **env = environ; *env; ++env) envc++;
-	
+
 	for(i=0; i<38*2; i++)
 		asm volatile("pushq %0" : : "i" (0x00));
 
