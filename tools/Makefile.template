@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/danchiba/Documents/HermiTux/hermitux
+HERMITUX_BASE=$(HOME)/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -13,11 +13,9 @@ LDFLAGS=-static -lm
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
 PROG?=prog
-PROG_FAST?=prog_fast
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-KERNEL_LIGHT=$(HERMITUX_BASE)/apps/hermitux-super-light/hermitux-light
-VERBOSE?=1
+VERBOSE?=0
 ISLE=uhyve
 STRIP?=0
 # Enable the fine-grained seccomp filter:
@@ -37,11 +35,11 @@ CC=$(MUSL_GCC)
 #CC=gcc
 all: $(PROG)
 
-# $(PROG): $(SRC)
-# 	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
+$(PROG): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
 
-$(PROG): $(OBJ)
-	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
+#$(PROG): $(OBJ)
+#	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
 #ifeq ($(STRIP),1)
 #	strip $(PROG)
 #endif
@@ -57,16 +55,6 @@ test: $(PROG)
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
 	HERMIT_PROFILE=$(PROF) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
-
-test_fast: $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG_FAST) $(ARGS)
-
-test_modular: $(PROG)
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL_LIGHT) $(PROG) $(ARGS)
 
 clean:
 	rm -rf *.o $(PROG) hermitux-prof.txt
