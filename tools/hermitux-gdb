@@ -11,7 +11,7 @@
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
 # These should not need to be modified
-HERMIT_INSTALL=$HERMITUX_BASE/hermit-compiler/prefix
+HERMIT_INSTALL=$HERMITUX_BASE/hermitux-kernel/prefix
 HERMITUX_KERNEL=$HERMIT_INSTALL/x86_64-hermit/extra/tests/hermitux
 
 if [ "$#" == "0" ]; then
