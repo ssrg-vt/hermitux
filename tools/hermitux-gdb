@@ -8,7 +8,7 @@
 # set HERMITUX_BASE below.
 
 # Set this variable to hermitux install path
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=$HOME/Desktop/hermitux
 
 # These should not need to be modified
 HERMIT_INSTALL=$HERMITUX_BASE/hermitux-kernel/prefix
