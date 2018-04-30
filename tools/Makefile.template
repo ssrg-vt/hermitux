@@ -17,6 +17,7 @@ PROG?=prog
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
+# Should the binary be stripped?
 STRIP?=0
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
@@ -33,16 +34,14 @@ DEBUG?=0
 CC=$(MUSL_GCC)
 #CC=clang
 #CC=gcc
+
 all: $(PROG)
 
 $(PROG): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
-
-#$(PROG): $(OBJ)
-#	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
-#ifeq ($(STRIP),1)
-#	strip $(PROG)
-#endif
+ifeq ($(STRIP),1)
+	strip $(PROG)
+endif
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
@@ -57,5 +56,5 @@ test: $(PROG)
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG) hermitux-prof.txt
+	rm -rf *.o $(PROG) hermitux-prof.txt checkpoint/
 
