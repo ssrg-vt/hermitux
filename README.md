@@ -29,6 +29,9 @@ make test
 ## Template Makefile
 TODO describe here
 
+## `hermit-run`
+TODO describe here
+
 ## Features
 
 - Debugging: TODO describe here
