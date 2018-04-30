@@ -9,6 +9,9 @@
   - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
   - PyElfTools to interpret profiling results `sudo pip install pyelftools`
 
+TODO here: put prerequisites for syscall rewriting and identification (cmake
+with curl support)
+
 ## Steps
 
 1. Install everything with the bootstrap script:
@@ -22,3 +25,11 @@
 cd apps/loader-npb/loader-npb-is
 make test
 ```
+
+## Template Makefile
+TODO describe here
+
+## Features
+
+- Debugging: TODO describe here
+- Profiling: TODO describe here
