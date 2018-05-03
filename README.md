@@ -9,6 +9,7 @@
   - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
   - PyElfTools to interpret profiling results `sudo pip install pyelftools`
   - For fortran test application, you will need the `gfortran` debian package
+  - Clang/LLVM to test this compiler, we recommend the following version to also test the obfuscation options: https://github.com/obfuscator-llvm/obfuscator
 
 TODO here: put prerequisites for syscall rewriting and identification (cmake
 with curl support)
