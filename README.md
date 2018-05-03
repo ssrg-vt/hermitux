@@ -3,7 +3,7 @@
 ## Prerequisites
   - Recommended system: Debian 9 (GlibC support is not assured on newer 
     distributions)
-  - [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements)
+  - `build-essential` and `gfortran` debian packages, plus [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements)
   - [HermitCore toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain) installed in /opt/hermit (the one coming from the
   debian repositories mentionned in HermitCore GitHub repositories works fine, you might need to install the `apt-transport-https` debian package before downloading the toolchain packages)
   - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
