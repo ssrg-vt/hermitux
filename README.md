@@ -3,9 +3,9 @@
 ## Prerequisites
   - Recommended system: Debian 9 (GlibC support is not assured on newer 
     distributions)
-  - [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements) (you might need to install the `apt-transport-https` debian package first)
-  - HermitCore toolchain installed in /opt/hermit (the one coming from the
-  debian repositories mentionned in HermitCore GitHub repositories works fine)
+  - [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements)
+  - [HermitCore toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain) installed in /opt/hermit (the one coming from the
+  debian repositories mentionned in HermitCore GitHub repositories works fine, you might need to install the `apt-transport-https` debian package before downloading the toolchain packages)
   - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
   - PyElfTools to interpret profiling results `sudo pip install pyelftools`
 
