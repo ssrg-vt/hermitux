@@ -3,11 +3,13 @@
 ## Prerequisites
   - Recommended system: Debian 9 (GlibC support is not assured on newer 
     distributions)
-  - HermitCore prerequisites (https://github.com/RWTH-OS/HermitCore)
-  - HermitCore toolchain installed in /opt/hermit (the one coming from the
-  debian repositories mentionned in HermitCore GitHub repositories works fine)
+  - `build-essential` debian package, plus [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements)
+  - [HermitCore toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain) installed in /opt/hermit (the one coming from the
+  debian repositories mentionned in HermitCore GitHub repositories works fine, you might need to install the `apt-transport-https` debian package before downloading the toolchain packages)
   - Libseccomp sources (on debian/ubuntu: libseccomp-dev)
   - PyElfTools to interpret profiling results `sudo pip install pyelftools`
+  - For fortran test application, you will need the `gfortran` debian package
+  - Clang/LLVM to test this compiler, we recommend the following version to also test the obfuscation options: https://github.com/obfuscator-llvm/obfuscator
 
 TODO here: put prerequisites for syscall rewriting and identification (cmake
 with curl support)
