@@ -27,6 +27,7 @@ PROF?=0
 ARGS?=
 MINIFS=0
 MEM?=2G
+HOSTLOAD?=.minifs
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
@@ -58,7 +59,7 @@ test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
 	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
-	HERMIT_MEM=$(MEM) \
+	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 clean:
