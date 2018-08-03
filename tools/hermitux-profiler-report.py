@@ -103,7 +103,7 @@ if __name__ == "__main__":
     with open(report_file) as f:
         for i, l in enumerate(f):
             pass
-        read_total_samples = i + 1 - 2 
+        read_total_samples = i + 1 - 2
 
     with open(report_file, "r") as f_report:
         binary = f_report.readline().replace("\n", "")
@@ -128,7 +128,7 @@ if __name__ == "__main__":
             addr = int(line.replace("\n", ""), 16)
 
             print_progress(total_samples, read_total_samples, prefix='Analyzing samples:', suffix='Complete')
-            
+
             if addr in samples.keys():
                 samples[addr]["occurences"] += 1
             else:
@@ -144,10 +144,10 @@ if __name__ == "__main__":
                 if funcname is None or filename is None or line is None:
                     print "Error: could not access Dwarf info, please enable -g and disable -O3"
                     os.exit(-1)
-               
-                samples.update({addr : {"funcname" : funcname, "filename" : 
+
+                samples.update({addr : {"funcname" : funcname, "filename" :
                     filename,  "line" : line, "occurences" : 1}})
-       
+
         print "hermitux-profiler: read {} samples".format(total_samples)
 
         if not args.sort_by_func:
@@ -156,7 +156,7 @@ if __name__ == "__main__":
             print "------------------------------------------------------"
             printed = 0
             for s in reversed(sorted(samples.iteritems(), key=lambda (x, y): y["occurences"])):
-                print "{0:<10} {1:>8} {2:>4} {3:<12} {4:<10}".format("0x" + format(s[0], 
+                print "{0:<10} {1:>8} {2:>4} {3:<12} {4:<10}".format("0x" + format(s[0],
                     "x"), s[1]["occurences"], str((s[1]["occurences"] * 100) / total_samples) + "%",
                     s[1]["filename"] + ":" + str(s[1]["line"]), s[1]["funcname"])
                 printed += 1
@@ -171,7 +171,7 @@ if __name__ == "__main__":
                     sorted_func.update({identifier : sample["occurences"]})
                 else:
                     sorted_func[identifier] += sample["occurences"]
-            
+
             print "{0:<20} {1:>8} {2:>8}".format("file:function", "samples", "%")
             print "------------------------------------------------------"
             for s in reversed(sorted(sorted_func.items(), key=operator.itemgetter(1))):

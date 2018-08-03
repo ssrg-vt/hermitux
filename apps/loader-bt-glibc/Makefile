@@ -1,23 +1,14 @@
-HERMITUX_BASE=/home/pierre/hermitux
+HERMITUX_BASE=$(HOME)/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
-GLIBC_PREFIX=/home/pierre/glibc-build/prefix
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O3
-LDFLAGS=-static -lm #-nostdlib -lc -lgcc
-LIBS= /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a $(GLIBC_PREFIX)/lib/crt1.o \
-	 $(GLIBC_PREFIX)/lib/crti.o \
-	 -L/home/pierre/Desktop/glibc-build/prefix/lib \
-	 -L/usr/lib/gcc/x86_64-linux-gnu/6/ \
-	 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginT.o \
-	 -start-group -lgcc -lgcc_eh -lc --end-group \
-	/usr/lib/gcc/x86_64-linux-gnu/6/crtend.o \
-	/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+LDFLAGS=-static -lm
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -26,21 +17,33 @@ PROG?=prog
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
-KVM=0
-STRIP?=0
+STRIP?=1
+# Enable the fine-grained seccomp filter:
+SECCOMP?=0
+# Enable the profiler when != 0, use this number as the number of samples per
+# second. Remeber to add -g and remove -O3 for compile flags
+PROF?=0
 ARGS?=
 
+# Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
+# to disable stripping and -O3 to be able to debug.
+DEBUG?=0
+
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
+#CC=$(MUSL_GCC)
+#CC=clang
 CC=gcc
 
 all: $(PROG)
 
 $(PROG): $(SRC)
-	gcc $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
-#	ld -static -o $(PROG) $(OBJ) $(LIBS) $(LDFLAGS)
-#ifeq ($(STRIP),1)
-#	strip $(PROG)
-#endif
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
+ifeq ($(STRIP),1)
+	strip $(PROG)
+endif
+
+#$(PROG): $(OBJ)
+#	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
@@ -50,14 +53,10 @@ objdump:
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) $(ARGS)
-
-gdb:
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
-				HERMIT_ISLE=qemu HERMIT_KVM=0 \
-				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) \
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG)
+	rm -rf *.o $(PROG) hermitux-prof.txt
 

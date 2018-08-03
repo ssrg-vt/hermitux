@@ -11,6 +11,17 @@ if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 	exit 1
 fi
 
+if [ -e hermitux-kernel ] || [ -e libiomp ] || [ -e musl ]; then
+	read -p "Delete hermitux-kernel/ libiomp/ musl/ ? " -n 1 -r
+	echo
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		    rm -rf hermitux-kernel/ libiomp/ musl/
+	else
+		echo "Exiting."
+		exit
+	fi
+fi
+
 # 1. HERMITCORE
 git clone $HERMIT_REPO
 cd hermitux-kernel

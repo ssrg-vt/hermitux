@@ -44,6 +44,7 @@ int fptr(void) {
 	FILE *fp;
 	int bytes_written, bytes_read, ret;
 	char buf[STR_SIZE] = "ghijkl";
+	int buf_len = strlen(buf);
 
 	fp = fopen(TARGET_FILE, "rw+");
 	if(!fp) {
@@ -52,8 +53,8 @@ int fptr(void) {
 		return -1;
 	}
 
-	bytes_written = fwrite(buf, 1, STR_SIZE, fp);
-	if(bytes_written != STR_SIZE) {
+	bytes_written = fwrite(buf, 1, buf_len, fp);
+	if(bytes_written != buf_len) {
 		perror("write");
 		ret = -2;
 		goto out_close;
@@ -65,8 +66,8 @@ int fptr(void) {
 		goto out_close;
 	}
 
-	bytes_read = fread(buf, 1, STR_SIZE, fp);
-	if(bytes_read != STR_SIZE) {
+	bytes_read = fread(buf, 1, buf_len, fp);
+	if(bytes_read != buf_len) {
 		perror("fread");
 		ret = -3;
 		goto out_close;
@@ -83,7 +84,8 @@ out_close:
 
 int rdwr_fd(void) {
 	int fd, bytes_written, bytes_read, ret;
-	char buf[STR_SIZE] = "abcdef\n";
+	char buf[STR_SIZE] = "abcdef";
+	int buf_len = strlen(buf);
 
 	fd = open(TARGET_FILE, O_RDWR | O_TRUNC | O_CREAT, 0600);
 	if(fd == -1) {
@@ -91,8 +93,8 @@ int rdwr_fd(void) {
 		return -1;
 	}
 
-	bytes_written = write(fd, buf, strlen(buf));
-	if (bytes_written != strlen(buf)) {
+	bytes_written = write(fd, buf, buf_len);
+	if (bytes_written != buf_len) {
 		perror("write");
 		ret = -2;
 		goto out_close;
@@ -106,8 +108,8 @@ int rdwr_fd(void) {
 		goto out_close;
 	}
 
-	bytes_read = read(fd, buf, STR_SIZE);
-	if (bytes_read != STR_SIZE) {
+	bytes_read = read(fd, buf, buf_len);
+	if (bytes_read != buf_len) {
 		perror("read");
 		ret = -4;
 		goto out_close;

@@ -1,3 +1,6 @@
+# Note that for usign hermitux_light, the kernel cmake must first be called
+# with -DNO_NET=1
+
 HERMITUX_BASE=/home/pierre/Desktop/hermitux
 HERMIT_TOOLCAHIN_INSTALL=/opt/hermit
 

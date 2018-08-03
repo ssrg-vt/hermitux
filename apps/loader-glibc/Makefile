@@ -9,15 +9,7 @@ GLIBC_PREFIX=/home/pierre/Desktop/glibc-build/prefix
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O3
-LDFLAGS=-static #-nostdlib -lc -lgcc
-#LIBS= /usr/lib/gcc/x86_64-linux-gnu/6/libgcc.a $(GLIBC_PREFIX)/lib/crt1.o \
-	 $(GLIBC_PREFIX)/lib/crti.o \
-	 -L/home/pierre/Desktop/glibc-build/prefix/lib \
-	 -L/usr/lib/gcc/x86_64-linux-gnu/6/ \
-	 /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginT.o \
-	 -start-group -lgcc -lgcc_eh -lc --end-group \
-	/usr/lib/gcc/x86_64-linux-gnu/6/crtend.o \
-	/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+LDFLAGS=-static
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -36,7 +28,7 @@ CC=gcc
 all: $(PROG)
 
 $(PROG): $(SRC)
-	gcc $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
 #	ld -static -o $(PROG) $(OBJ) $(LIBS) $(LDFLAGS)
 #ifeq ($(STRIP),1)
 #	strip $(PROG)
