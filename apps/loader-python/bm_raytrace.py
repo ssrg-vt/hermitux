@@ -389,4 +389,4 @@ if __name__ == "__main__":
     bench_raytrace(10, DEFAULT_WIDTH, DEFAULT_HEIGHT, None)
     stop = utime.ticks_ms()
 
-    print("Time: " + str(stop-start))
+    print(str(stop-start))

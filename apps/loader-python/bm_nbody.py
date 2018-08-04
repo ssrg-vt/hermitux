@@ -149,4 +149,4 @@ if __name__ == '__main__':
     bench_nbody(LOOPS, DEFAULT_REFERENCE, DEFAULT_ITERATIONS)
     stop = utime.ticks_ms()
 
-    print("Time: " + str(stop-start))
+    print(str(stop-start))

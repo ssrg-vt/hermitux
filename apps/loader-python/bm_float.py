@@ -60,4 +60,4 @@ if __name__ == "__main__":
     points = POINTS
     benchmark(points)
     stop = utime.ticks_ms();
-    print("Time: " + str(stop - start));
+    print(str(stop - start));
