@@ -1,0 +1,5 @@
+0) Compile the server with make
+1) setup the tap interface with setup-tap.sh
+2) launch the server with ./hermitux.sh
+3) you can test with:
+./redis-benchmark -c 1 -h 10.0.5.2 -p 8000

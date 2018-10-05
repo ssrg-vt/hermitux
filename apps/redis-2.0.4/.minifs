@@ -1,0 +1,2 @@
+#Format: <path on the host>;<destination path on the guest>
+redis.conf;redis.conf
