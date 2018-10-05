@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/hermitux
+HERMITUX_BASE=/home/pierre/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -10,22 +10,25 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 CFLAGS=-g -O2
 LDFLAGS=-static -nostdlib
 
-SRC := $(shell ls *.c)
+SRC := server.c
 OBJ=$(SRC:.c=.o)
-PROG?=prog
+PROG?=server
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
-ARGS?=
+ARGS?='-s 4096 0 8000'
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
 #CC=../../obfuscator-build/bin/clang
 
-all: $(PROG)
+all: $(PROG) client
+
+client: client.c
+	gcc client.c -o client
 
 $(PROG): $(OBJ)
 	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
@@ -50,5 +53,5 @@ gdb:
 				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
 
 clean:
-	rm -rf *.o $(PROG)
+	rm -rf *.o $(PROG) client
 
