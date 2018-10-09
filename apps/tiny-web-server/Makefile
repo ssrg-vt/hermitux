@@ -7,7 +7,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O1
+CFLAGS=-g -O3
 LDFLAGS=-static -lm
 
 SRC := $(shell ls *.c)

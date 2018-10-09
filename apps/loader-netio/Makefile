@@ -13,13 +13,14 @@ LDFLAGS=-static -nostdlib
 SRC := server.c
 OBJ=$(SRC:.c=.o)
 PROG?=server
+PROF=0
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
 KVM=0
 STRIP?=1
-ARGS?='-s 4096 0 8000'
+ARGS?='-s 40960 0 8000'
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
@@ -44,7 +45,8 @@ objdump:
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 HERMIT_NETIF=tap100 \
-				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
+				HERMIT_KVM=$(KVM) HERMIT_PROFILE=$(PROF) \
+				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG) $(ARGS)
 
 gdb:

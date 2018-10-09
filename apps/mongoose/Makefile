@@ -7,7 +7,7 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O1
+CFLAGS=-g -O2
 LDFLAGS=-static -lm
 
 SRC := $(shell ls *.c)
@@ -23,7 +23,7 @@ STRIP?=0
 SECCOMP?=0
 # Enable the profiler when != 0, use this number as the number of samples per
 # second. Remeber to add -g and remove -O3 for compile flags
-PROF?=0
+PROF?=
 ARGS?=
 MINIFS?=0
 MEM?=2G
