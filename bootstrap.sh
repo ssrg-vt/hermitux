@@ -7,7 +7,8 @@ LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
 LIBIOMP_BRANCH=release_40
 
 if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
-	echo "Hermit toolchain not found..."
+	echo "Hermit toolchain not found, please follow these instructions:"
+	echo "https://github.com/hermitcore/libhermit#hermitcore-cross-toolchain"
 	exit 1
 fi
 
