@@ -29,6 +29,8 @@ MINIFS?=0
 MEM?=2G
 HOSTLOAD?=.minifs
 NETIF?=tap100
+IP?=192.168.1.12
+GATEWAY?=192.168.1.1
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
@@ -61,7 +63,7 @@ test: $(PROG)
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
 	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
 	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
-	HERMIT_NETIF=$(NETIF) \
+	HERMIT_NETIF=$(NETIF) HERMIT_IP=$(IP) HERMIT_GATEWAY=$(GATEWAY) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 clean:
