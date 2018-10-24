@@ -33,12 +33,52 @@ TODO describe here
 ## `hermit-run`
 TODO describe here
 
+## Networking
+
+In order to enable network for the unikernel you need to create a _tap_
+interface. Moreover, to get access to the unikernel from outside the host, you
+need to bridge that interface with the physical interface of the host.
+
+To that aim, use the following commands:
+
+```bash
+# Create the bridge br0
+sudo ip link add br0 type bridge
+
+# Add the physical interface to the bridge (change the physical interface
+# name enp0s31f6 to the correct one on your machine)
+sudo ip link set enp0s31f6 master br0
+
+# At that point you will loose internet connection on the host, to get it back:
+sudo dhclient br0
+
+# Create the tap interface
+sudo ip tuntap add tap100 mode tap
+
+# Set the ip addr for the tap interface on your LAN (it will be the ip address
+# of the unikernel, here I use 192.168.1.4
+sudo ip addr add 192.168.1.4 broadcast 192.168.1.255 dev tap100
+
+# Enable proxy ARP for the tap interface
+sudo bash -c 'echo 1 > /proc/sys/net/ipv4/conf/tap100/proxy_arp'
+
+# Enable the tap interface
+sudo ip link set dev tap100 up
+
+# Add it to the bridge
+sudo ip link set tap100 master br0
+
+# Next you can launch the unikernel, you need to correctly set the
+# network-related environment variables:
+HERMIT_NETIF=tap100 HERMIT_IP=192.168.1.4 HERMIT_GATEWAY=192.168.1.1
+
+```
+
 ## Features
 
 - Debugging: TODO describe here
 - Profiling: TODO describe here
 - secure container: TODO describe here
 - Checkpoint/restart: TODO describe here
-- ASLR: use that toolchain and add the following in `config.mak`:
-  `GCC_CONFIG += --enable-default-pie`
-  then compile with the toolchain compiler an duse these flags: `-pie -static`
+- ASLR: see apps/loader-pie
+
