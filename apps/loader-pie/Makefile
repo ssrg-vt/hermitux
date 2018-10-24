@@ -37,14 +37,24 @@ DEBUG?=0
 # To get a static pie executable it is not easy, you need this toolchain:
 # https://github.com/richfelker/musl-cross-make and this fix:
 # https://github.com/richfelker/musl-cross-make/issues/47
-CC=/tmp/musl-cross-make/prefix/bin/x86_64-linux-musl-gcc
+CC=./musl-cross-make/prefix/bin/x86_64-linux-musl-gcc
 #CC=$(MUSL_GCC)
 #CC=clang
 #CC=gcc
 
 all: $(PROG)
 
-$(PROG): $(SRC)
+$(CC):
+	git clone https://github.com/richfelker/musl-cross-make.git
+	cd musl-cross-make; \
+		cp config.mak.dist config.mak; \
+		echo "TARGET = x86_64-linux-musl" >> config.mak; \
+		echo "OUTPUT = $(PWD)/musl-cross-make/prefix" >> config.mak; \
+		echo "GCC_CONFIG += --enable-default-pie" >> config.mak; \
+		make -j`nproc`; \
+		make install
+
+$(PROG): $(CC) $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
 
 objdump:
@@ -62,4 +72,7 @@ test: $(PROG)
 
 clean:
 	rm -rf *.o $(PROG) hermitux-prof.txt checkpoint/
+
+superclean: clean
+	rm -rf musl-cross-make
 
