@@ -7,8 +7,8 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O1 -shared -Wl,-Bstatic -Wl,-Bsymbolic -v
-LDFLAGS=-lm
+CFLAGS=-g -O2
+LDFLAGS=-static -pie
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -34,14 +34,18 @@ HOSTLOAD?=.minifs
 DEBUG?=0
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
-CC=$(MUSL_GCC)
+# To get a static pie executable it is not easy, you need this toolchain:
+# https://github.com/richfelker/musl-cross-make and this fix:
+# https://github.com/richfelker/musl-cross-make/issues/47
+CC=/tmp/musl-cross-make/prefix/bin/x86_64-linux-musl-gcc
+#CC=$(MUSL_GCC)
 #CC=clang
 #CC=gcc
 
 all: $(PROG)
 
 $(PROG): $(SRC)
-	./test.sh
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
 
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt

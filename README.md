@@ -39,3 +39,6 @@ TODO describe here
 - Profiling: TODO describe here
 - secure container: TODO describe here
 - Checkpoint/restart: TODO describe here
+- ASLR: use that toolchain and add the following in `config.mak`:
+  `GCC_CONFIG += --enable-default-pie`
+  then compile with the toolchain compiler an duse these flags: `-pie -static`
