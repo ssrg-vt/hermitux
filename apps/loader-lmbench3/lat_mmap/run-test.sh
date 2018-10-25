@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Linux:
-./prog -N 10000 10000000 x
+./prog -N 100 1232896 x
 
 # Hermitux
-ARGS="-N 10000 10000000 x" make test
+ARGS="-N 100 1232896 x" make test
