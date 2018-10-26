@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
 	munmap(addr, MAP_LEN);
 
 	/* File mapping at specific address */
-	addr = mmap(REQUESTED_ADDR, MAP_LEN, PROT_READ | PROT_WRITE, MAP_PRIVATE,
+	addr = mmap((void *)REQUESTED_ADDR, MAP_LEN, PROT_READ | PROT_WRITE, MAP_PRIVATE,
 			fd, 0x0);
 	printf("File mapping at specific address 0x%llx: %p\n", REQUESTED_ADDR,
 			addr);
