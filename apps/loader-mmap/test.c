@@ -10,9 +10,12 @@
 void access_memory(void *addr, size_t len) {
 	char *ptr = addr;
 	size_t i;
+	volatile char j;
 
-	for(i=0; i<len; i++)
+	for(i=0; i<len; i++) {
 		*(ptr + i) = 'x';
+		j = *(ptr + i);
+	}
 }
 
 int main(int argc, char *argv[]) {
