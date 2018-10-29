@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +15,9 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	printf("readlink on /proc/self/exe returns %s\n", buf);
+	buf[bytes] = '\0';
+
+	printf("readlink on /proc/self/exe returns %d (%s)\n", bytes, buf);
 
 	return 0;
 }
