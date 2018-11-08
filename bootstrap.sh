@@ -43,7 +43,7 @@ cd ..
 git clone $MUSL_REPO musl
 cd musl
 mkdir -p prefix
-./configure --prefix=$PWD/prefix --disable-shared
+./configure --prefix=$PWD/prefix
 make -j`nproc` install
 cd -
 
