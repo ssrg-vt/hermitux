@@ -1,4 +1,4 @@
-set number 5000
+set number 3000
 set transactions 20000
 set buffering true
 set size 131072 131072
