@@ -54,8 +54,11 @@ $(PROG)-dyn: $(SRC)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
-objdump:
+objdump: $(PROG)
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
+
+objdump-dyn: $(PROG)-dyn
+	objdump --source $(PROG)-dyn > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 objdump-kernel:
 	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
