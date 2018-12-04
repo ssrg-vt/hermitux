@@ -1,5 +1,6 @@
 *.o
 prog
+prog-dyn
 loader-web-server
 npbparams.h
 hermitux-prof.txt

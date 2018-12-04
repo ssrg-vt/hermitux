@@ -3,12 +3,14 @@ HERMITUX_BASE=$(HOME)/Desktop/hermitux
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
+DLSO=$(MUSL_PREFIX)/lib/libc.so
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O1
 LDFLAGS=-static -lm
+LDFLAGS_DYN=-pie -lm
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -46,6 +48,9 @@ ifeq ($(STRIP),1)
 	strip $(PROG)
 endif
 
+$(PROG)-dyn: $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG)-dyn $(LDFLAGS_DYN)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
@@ -61,6 +66,13 @@ test: $(PROG)
 	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
 	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
+
+test-dyn: $(PROG)-dyn
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
+	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
 
 clean:
 	rm -rf *.o $(PROG) hermitux-prof.txt checkpoint/
