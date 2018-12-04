@@ -75,5 +75,5 @@ test-dyn: $(PROG)-dyn
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG) hermitux-prof.txt checkpoint/
+	rm -rf *.o $(PROG) $(PROG)-dyn hermitux-prof.txt checkpoint/
 
