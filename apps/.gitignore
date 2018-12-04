@@ -1,5 +1,7 @@
 *.o
 prog
-prog_fast
-loader-sqlite
+prog-dyn
 loader-web-server
+npbparams.h
+hermitux-prof.txt
+perf.data

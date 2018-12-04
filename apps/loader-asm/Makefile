@@ -1,4 +1,4 @@
-HERMIT_LOCAL_INSTALL=../../hermit-compiler/prefix
+HERMIT_LOCAL_INSTALL=../../hermitux-kernel/prefix
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE=0

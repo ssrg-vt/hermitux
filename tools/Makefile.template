@@ -1,14 +1,16 @@
-HERMITUX_BASE=/home/danchiba/Documents/HermiTux/hermitux
+HERMITUX_BASE=$(HOME)/Desktop/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
+DLSO=$(MUSL_PREFIX)/lib/libc.so
 
 # For obfuscation, add this to the CFLAGS:
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
-CFLAGS=-g -O3
-LDFLAGS=-static -nostdlib
+CFLAGS=-g -O1
+LDFLAGS=-static -lm
+LDFLAGS_DYN=-pie -lm
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
@@ -18,31 +20,56 @@ PROG_FAST?=prog_fast
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
 ISLE=uhyve
-KVM=1
+# Should the binary be stripped?
 STRIP?=0
+# Enable the fine-grained seccomp filter:
+SECCOMP?=0
+# Enable the profiler when != 0, use this number as the number of samples per
+# second. Remeber to add -g and remove -O3 for compile flags
+PROF?=0
 ARGS?=
+MINIFS?=0
+MEM?=2G
+HOSTLOAD?=.minifs
+
+# Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
+# to disable stripping and -O3 to be able to debug.
+DEBUG?=0
 
 # Can be $(MUSL_GCC) or clang (and also the obfuscated version of clang)
 CC=$(MUSL_GCC)
+#CC=clang
+#CC=gcc
 
 all: $(PROG)
 
-$(PROG): $(OBJ)
-	ld -o $(PROG) $(OBJ) $(MUSL_PREFIX)/lib/crt1.o $(MUSL_PREFIX)/lib/libc.a $(LDFLAGS)
+$(PROG): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
 ifeq ($(STRIP),1)
 	strip $(PROG)
 endif
 
+$(PROG)-dyn: $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(PROG)-dyn $(LDFLAGS_DYN)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
-objdump:
+objdump: $(PROG)
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
+
+objdump-dyn: $(PROG)-dyn
+	objdump --source $(PROG)-dyn > /tmp/objdump.txt && vim /tmp/objdump.txt
+
+objdump-kernel:
+	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
-				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-				$(PROG) $(ARGS)
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
+	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
 test_fast: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
@@ -56,4 +83,14 @@ gdb:
 
 clean:
 	rm -rf *.o $(PROG) $(PROG_FAST)
+
+test-dyn: $(PROG)-dyn
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
+	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
+
+clean:
+	rm -rf *.o $(PROG) $(PROG)-dyn hermitux-prof.txt checkpoint/
 

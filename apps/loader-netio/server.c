@@ -12,7 +12,7 @@
 #include "measure_time.h"
 //4, 16, 64, 256, 1K, 4K, 16K, 64K, 256K, and 512K bytes.
 
-int server_main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   uint64_t cpuid = 3;
 
@@ -23,17 +23,17 @@ int server_main(int argc, char *argv[])
     uint64_t begin, end;
     struct timespec begints, endts;
     int port_number;
-    if(argc!=5)
-      {
-	printf("Incorrect usage: %s -s <Buffer length> <Eval type>: 1 for RDTSCP\n",argv[0]);
-	return 1;
-      }
-    buff_length = atoi(argv[2]);
+//    if(argc!=5)
+//      {
+//	printf("%d Incorrect usage: %s -s <Buffer length> <Eval type>: 1 for RDTSCP\n", argc, argv[0]);
+//	return 1;
+//      }
+    buff_length = 40960;
     char sendBuff[buff_length];
     char recvBuff_server[buff_length];
     char ack_recieve_buffer[1];
-    eval_type = atoi(argv[3]);
-    port_number = atoi(argv[4]);
+    eval_type = 1;
+    port_number = 8000;
 
     listenfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);//will it call TCP?
     memset(&serv_addr, '0', sizeof(serv_addr));

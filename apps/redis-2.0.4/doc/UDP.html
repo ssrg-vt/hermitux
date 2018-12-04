@@ -1,0 +1,182 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="page">
+        
+            <div id='header'>
+            <a href="index.html">
+            <img style="border:none" alt="Redis Documentation" src="redis.png">
+            </a>
+            </div>
+        
+            <div id="pagecontent">
+                <div class="index">
+<!-- This is a (PRE) block.  Make sure it's left aligned or your toc title will be off. -->
+<b>UDP: Contents</b><br>&nbsp;&nbsp;<a href="#UDP Protocol">UDP Protocol</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Higher level description of the protocol">Higher level description of the protocol</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Request Packets">Request Packets</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Reply Packet">Reply Packet</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Request ACK packet and ACK packet">Request ACK packet and ACK packet</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Fast parsing of multi bulk replies">Fast parsing of multi bulk replies</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Congestion Control">Congestion Control</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Unreliable operations">Unreliable operations</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Example Packets">Example Packets</a>
+                </div>
+                
+                <h1 class="wikiname">UDP</h1>
+
+                <div class="summary">
+                    
+                </div>
+
+                <div class="narrow">
+                    &iuml;&raquo;&iquest;Revision 3.2, Salvatore Sanfilippo, 12 June 2010.<h1><a name="UDP Protocol">UDP Protocol</a></h1>The default and usually the preferred way for a client to chat with a Redis server is using the TCP protocol described in the <a href="ProtocolSpecification.html">Protocol Specification</a>. In some environments the trade off of switching to a less reliable and not feature complete protocol running over UDP in order to improve latency is a good idea, so starting from Redis 2.2 there is support for a binary UDP protocol.<br/><br/>Examples of environments where a low latency, high load, possibly less reliable Redis service is required are caching, data logging, real time games.<br/><br/>The UDP protocol supports all the <b>stateless</b> Redis commands, so commands like MULTI, EXEC, WATCH, SELECT, are not supported.<h2><a name="Higher level description of the protocol">Higher level description of the protocol</a></h2>The Redis UDP protocol is a request/reply protocol with optional support for
+reliability. By default the server listens for requests in the UDP port
+6379. The basic query involves the following two steps:<br/><br/><ul><li> The client sends a &quot;request packet&quot; to the server.</li><li> The server replies with a &quot;reply packet&quot; to the client.</li></ul>
+As the request or reply packet can be lost, the query may fail in two different ways: the command was not executed, or the reply was never delivered to the client.<br/><br/>The UDP protocol supports reliability using the following schema: if the
+reply was not received by the client, it is possible to send an &quot;ACK request&quot;
+packet that asks the Redis server to confirm if a given request was processed
+or not.<br/><br/>The Redis server is able to remember if a given request was processed for
+a maximum time of 10 seconds.<h2><a name="Request Packets">Request Packets</a></h2>The UDP request packet is sent by the client to the server, in order to run
+a specific command. The server will reply to a request packet with
+a reply packet.<br/><br/>The following is a summary of the request packet format:
+<pre class="codeblock python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                          Request ID                           |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |    Opcode     |     Flags     |         Payload length        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |        Number of arguments    |           Database ID         |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                         Request Data                          |
+   \                                                               \
+   \                                                               \
+   |                         Request Data                          |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+                      Request Packet Format Summary
+
+                              Figure 1.
+</pre>
+The first 64 bits are common to all the UDP protocol packets, with the
+exception of the latest 16 bits (Payload length in the request packet)
+that is packet specific.<br/><br/>The following is a description of every field:
+<ul><li> <b>Request ID</b> - a 32 bit unsigned integer in network byte order, representing an unique identifier of the request issued by the client. The reply packet that the server will send to the client will contain the same request ID so that the client will be able to match requests and replies.</li><li> <b>Opcode</b> - the operation code, used to identify the role of this packet in the Redis UDP protocol. For the request packet the opcode value is 1.</li><li> <b>Flags</b> - optional flags used in order to signal some special information about this request to the Redis server. Will be discussed later.</li><li> <b>Payload length</b> - the total length in bytes, as a 16 bit unsigned integer in network byte order, of the &quot;Request Data&quot; section.</li><li> <b>Number of arguments</b> - the number of arguments contained in the &quot;Request Data&quot; section, as a 16 bit unsigned integer in network byte order.</li><li> <b>Database ID</b> - the ID of the Redis database the command will be executed against, as unsigned 16 bit integer in network byte order.</li><li> <b>Request Data</b> - the request itself.</li></ul>
+The &quot;Request Data&quot; field is the request command itself, composed of the number of arguments specified in the &quot;Number of arguments&quot; field above. Every argument in the &quot;Request Data&quot; section is encoded as follows:
+<pre class="codeblock python python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |        Argument Length        |                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+   |                                                               |
+   \                       Argument Payload                        \
+   \                                                               \
+   |                                                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</pre>
+Multiple arguments are simply glued together one after the other. The Argument Length field is a 16 bit usigned integer in network by order. The Argument Payload is the argument itself, and is simply a binary string of the specified length.<br/><br/>The following is a list of the supported request flags:
+<ul><li> <b>NOREPLY</b> - If bit 7 (0x01) of the flags byte is set, the Redis server will process the request but will not generate a reply packet. This is useful in order to lower the network bandwidth and CPU usage when the client is not interested in the reply.</li><li> <b>NOACK</b> - if bit 6 (0x02) of the flags byte is set, the Redis sever will not try to remember that this packet was processed. It will not be possible to issue an &quot;ACK request&quot; packet about this request, but the Redis server will use less CPU and memory to process the request. This is useful when reliability is not needed.</li><li> <b>AUTH</b> - if bit 5 (0x04) of the flags byte is set, the request data contains an additional argument, positioned before all the other arguments, (that is also counted in the &quot;Number of arguments&quot; field) that is used to specify an authentication password for servers running with &quot;requirepass&quot; directive on.</li></ul>
+<h2><a name="Reply Packet">Reply Packet</a></h2>The reply packet is generated by the Redis server when a command received by 
+a request packet is processed, and the result is ready to be delivered back to the client.<br/><br/>A reply packet contains the reply of the processed command in the exact same format used by TCP replies, documented in the <a href="ProtocolSpecification.html">Protocol Specification</a>.<br/><br/>There are several reasons why a binary format is not used in order to encode replies:
+<ul><li> The reply format used in the TCP protocol is well understood and trivial to implement (Redis replies can be nested arrays of elements, so encoding and decoding this elements in binary format can be error prone, complex and possibly not much faster).</li><li> Most of the overhead using the TCP protocol is not due to parsing the reply itself. The TCP reply format uses prefixed length in all the places, so there is no need to perform slow byte per byte processing or alike, like it happens in json or other not easy to parse formats.</li><li> One of the most common replies, the &quot;Bulk Reply&quot;, can be parsed very efficiently when received inside an UDP packet, because we know the total length of the reply beforehand.</li></ul>
+The maximum length of a Reply Packet is 65507 bytes (including the header), while the maximum length of a Reply Packet payload (the actual reply) is 65499 bytes (that is, the maximum UDP packet size minus the reply packet 8 bytes header).<br/><br/>The following is a summary of the reply packet format:
+<pre class="codeblock python python python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                          Request ID                           |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |    Opcode     |     Flags     |         Payload length        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                          Reply  Data                          |
+   \                                                               \
+   \                                                               \
+   |                          Reply Data                           |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+                      Reply Packet Format Summary
+
+                              Figure 2.
+</pre>
+The following is a description of every field:
+<ul><li> <b>Request ID</b> - this field is copied from the request packet. The client can match the request and reply thanks to this field.</li><li> <b>Opcode</b> - the operation code, used to identify the role of this packet in the Redis UDP protocol. For the reply packet the opcode value is 2.</li><li> <b>Flags</b> - optional flags used in order to signal some special information about this reply to the Redis client. Will be discussed later.</li><li> <b>Payload length</b> - the total length in bytes, as a 16 bit unsigned integer in network byte order, of the &quot;Reply Data&quot; section.</li><li> <b>Reply Data</b> - the actual reply, in the same format as used in the TCP protocol as documented in the <a href="ProtocolSpecification.html">Redis Protocol Specification</a>.</li></ul>
+The following is a list of the supported request flags:
+<ul><li> <b>TRUNC</b> - If bit 4 (0x08) of the flags byte is set, the &quot;Reply Data&quot; section is truncated, as the reply generated by the server was bigger than the maximum amount of data that can be transfered into a reply packet (65499 bytes). The client should reissue the request using the TCP protocol, or attempt to parse a truncated reply if this is possible in the context of the application.</li></ul>
+<h2><a name="Request ACK packet and ACK packet">Request ACK packet and ACK packet</a></h2>Clients may request an acknowledge regarding a command recently issued.
+Imagine the following sequence of events:
+<ul><li> The client sends a write operation to the server using a request packet.</li><li> The server replies using a reply packet that gets lost.</li><li> The client will wait for the reply, that will never arrive as the UDP packet was lost. Eventually a timeout will expire.</li></ul>Now compare the above with the following sequence of events:
+<ul><li> The client sends a write operation to the server using a request packet.</li><li> The UDP packet is lost and never reaches the server, that will never reply.</li><li> The client will wait for the reply, that will never arrive as the UDP packet was lost. Eventually a timeout will expire.</li></ul>While in the first case the write operation was correctly completed, in the second case it was not. Reissuing the operation is not save: for instance if the command sent by the request was an LPUSH operation, reissuing the request will cause a duplicated element to be present in the list.<br/><br/>The Redis UDP protocol implements an explicit form of Acknowledge that is used in order for a client to be able to distinguish between the two conditions having as a result a missed reception of the reply.<br/><br/>The client can ask to the server if a request having a specific &quot;Request ID&quot; was processed or not using a request ACK packet.<br/><br/>The following is a summary of the request ack packet format:
+<pre class="codeblock python python python python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                          Request ID                           |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |    Opcode     |                  Not Used                     |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+                  Request Ack Packet Format Summary
+
+                              Figure 3.
+</pre>
+The following is a description of every field:
+<ul><li> <b>Request ID</b> - this field is the request packet ID that we want to be acknowledged about.</li><li> <b>Opcode</b> - the operation code, used to identify the role of this packet in the Redis UDP protocol. For the request ACK packet the opcode value is 3.</li></ul>The remaining 24 bits are reserved for future use.<br/><br/>The Redis server will reply to a request ACK packet with an ACK packet:<br/><br/>The following is a summary of the ack packet format:
+<pre class="codeblock python python python python python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                          Request ID                           |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |    Opcode     |       Ack     |           Not used            |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+                      Ack Packet Format Summary
+
+                              Figure 4.
+</pre>
+The following is a description of every field:
+<ul><li> <b>Request ID</b> - this field is the request packet ID that the server is acknowledging.</li><li> <b>Opcode</b> - the operation code, used to identify the role of this packet in the Redis UDP protocol. For the ACK packet the opcode value is 4.</li><li> <b>Ack</b> - the actual acknowledge value: this is set to 0 if the Server did not processed a request with the specified ID in the latest 10 seconds. Otherwise it is set to 1.</li></ul>The remaining 16 bits are reserved for future use.<br/><br/>Note that the ability to acknowledge an operation takes memory Server side. This is why a Redis Server is able to correctly reply to an Ack request for packets received up to 10 seconds from the reception of the Request itself.<br/><br/>After 10 seconds the Server will forget about the processed operation, and will reply to Ack request packets with an Ack reply where the Ack field is set to 0, as if the request was never processed.<br/><br/>As the Redis UDP protocol is intended to be used in low latency conditions in very speed networks, 10 seconds should be more than enough in order to understand that the reply timed out, and to ask the server an acknowledge about a given request.<br/><br/>Note: Acknowledges work even if multiple clients with different IP addresses or ports are using the same set of Request IDs, as every request is internally remembered associated with the originating client IP address and port.<br/><br/>For this reason it is absolutely mandatory that an Ack request packet is sent using the same IP address and port as the original request packet.<h2><a name="Fast parsing of multi bulk replies">Fast parsing of multi bulk replies</a></h2>Using the UDP protocol, complete replies are received with a single system call.
+There is also information about the length of the reply in the reply packet header. Also the first byte of a Redis reply is enough to understand the type of the reply (see the <a href="ProtocolSpecification.html">Protocol Specification</a> for more information). Thanks to this facts it is possible for clients to process common replies delivered via the UDP protocol in a very fast way.<br/><br/>For instance a bulk reply will be received in one time as a binary string similar to the following:
+<pre class="codeblock python python python python python python" name="code">
+&quot;$5\r\nHello\r\n&quot;
+</pre>
+To obtain the bulk reply payload the client should just seek the first &quot;\n&quot; character in the string, and extracting the string starting from the next character up to two character less than the end of the string.<br/><br/>This is the above concept translated into Ruby code:
+<pre class="codeblock python python python python python python python" name="code">
+?&gt; reply = &quot;$5\r\nHello\r\n&quot;
+=&gt; &quot;$5\r\nHello\r\n&quot;
+?&gt; reply[(reply.index(&quot;\n&quot;)+1)..-3]
+=&gt; &quot;Hello&quot;
+</pre>The same technique can be used in order to parse integer replies:
+<pre class="codeblock python python python python python python python python" name="code">
+&gt;&gt; reply = &quot;:1000\r\n&quot;
+=&gt; &quot;:1000\r\n&quot;
+&gt;&gt; reply[1..-3]
+=&gt; &quot;1000&quot;
+&gt;&gt; reply[1..-3].to_i
+=&gt; 1000
+</pre>The only reply type that needs proper parsing is the multi bulk reply. All the other replies can be processed just looking at the first byte and calling a straightforward function.<h2><a name="Congestion Control">Congestion Control</a></h2>UDP lacks built-in support for congestion control. In this first stage the
+Redis UDP protocol will not implement congestion control: since the Redis UDP
+protocol is primarly designed to be used in reliable networks, the client will
+be able to understand if the Redis server is suffering congestion by the
+amount of timed out replies.<br/><br/>There are two reasosn for a reply to be dropped due to congestion:<br/><br/>1) Redis is not able to transfer a reply because the socket output buffer is full, so the reply is discarded.<br/><br/>2) The input buffer of the UDP socket is full. When this happens the kernel will reply to the client with a &quot;port unreachable&quot; ICMP packet. This happens every time the server is not able to process the requests at the rate they arrive.<br/><br/>Clients may handle the second condition directly checking for ICMP errors reported in the socket, or simply checking the side effect that congestion causes, that is, an increment in the number of timed out replies.<h2><a name="Unreliable operations">Unreliable operations</a></h2>ACK request and ACK packets provide support to check if a given operation was processed or not. Still there are operations that are unreliable over UDP. In general all the &quot;remove and transfer&quot; operations like GETSET or RPOP are unreliable.<br/><br/>For instance RPOP will remove an element form a list, and will reply with this element. If the reply packet is lost, even if we can use ACK packets in order to discover if the operation was completed server side, there is no way to obtain the original list element transfered in the reply that got lost.<br/><br/>This operations should be used over UDP only when losing data is non critical for the application.<h2><a name="Example Packets">Example Packets</a></h2>An example request packet. The encoded command is <code name="code" class="python">GET mykey</code>.
+The total packet length is 24 bytes. 12 bytes header, 12 bytes payload.
+<pre class="codeblock python python python python python python python python python" name="code">
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                   Request ID = 00 00 00 01                    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Opcode = 01  |  Flags = 00   |     Payload length = 00 0C    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Number of arguments = 00 02  |     Database ID = 00 00       |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   | Request Data = 00 03 G E T 00 05 m y k e y                    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</pre>
+
+                </div>
+        
+            </div>
+        </div>
+    </body>
+</html>
+

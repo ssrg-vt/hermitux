@@ -1,0 +1,11 @@
+Hermitux run:
+export HERMIT_MEM=1G; time ~/Desktop/hermitux/tools/hermitux-run ~/Desktop/micropython/ports/unix/micropython -X heapsize=2097152000 /home/pierre/Desktop/micropython/ports/unix/bm_float.py
+
+Linux run:
+~/Desktop/micropython/ports/unix/micropython -X heapsize=2097152000 $PWD/bm_float.py
+
+Hermitux run:
+export HERMIT_MEM=4G; time ~/Desktop/hermitux/tools/hermitux-run ~/Desktop/micropython/ports/unix/micropython -X heapsize=3097152000 $PWD/bm_nbody.py
+
+Linux run:
+~/Desktop/micropython/ports/unix/micropython -X heapsize=3097152000 $PWD/bm_nbody.py

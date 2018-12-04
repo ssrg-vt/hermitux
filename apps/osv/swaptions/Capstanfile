@@ -1,0 +1,31 @@
+# Copyright (C) 2014 Cloudius Systems, Ltd.
+#
+# This work is open source software, licensed under the terms of the
+# BSD license as described in the LICENSE file in the top-level directory.
+
+#
+# Name of the base image.  Capstan will download this automatically from
+# Capstan repository. 
+#
+base: cloudius/osv-base
+
+#
+# The command line passed to OSv to start up the application.
+#
+cmdline: /tools/hello.so -ns 32 -sm 20000 -nt 1
+
+#
+# The command to use to build the application.  In this example, we just use
+# make.
+#
+build: make
+
+#
+# List of files that are included in the generated image.
+#
+files:
+  /tools/hello.so: hello.so
+
+#native: -ns 128 -sm 1000000 -nt 1
+#simlarge: -ns 64 -sm 40000 -nt 1
+#simmedium: -ns 32 -sm 20000 -nt 1

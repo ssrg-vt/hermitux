@@ -11,7 +11,7 @@
 #include <arpa/inet.h> 
 #include "measure_time.h"
 
-int client_main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   uint64_t cpu_id = 2;
 
@@ -21,7 +21,8 @@ int client_main(int argc, char *argv[])
     int port_number;
     if(argc != 4)
     {
-        printf("\n Usage: %s <ip of server> <buffer length> <port number>\n",argv[0]);
+        printf("\n %d Usage: %s <ip of server> <buffer length> <port number>\n",argc, argv[0]);
+		printf("0: %s\n2: %s\n", argv[0], argv[1]);
         return 1;
     } 
     buff_length = atoi(argv[2]);

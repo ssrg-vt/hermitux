@@ -1,0 +1,11 @@
+set number 2000
+set subdirectories 50
+set size 512 328072
+set transactions 5000
+set buffering true
+set read 4096
+set write 4096
+set bias read 5
+set bias create 5
+run
+quit

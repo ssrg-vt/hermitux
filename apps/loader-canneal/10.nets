@@ -1,0 +1,11 @@
+10	5	5
+a	2	g	a	h	d	h	END
+b	2	c	j	g	j	a	END
+c	2	h	e	c	a	f	END
+d	1	j	g	b	f	j	END
+e	1	i	g	c	d	c	END
+f	1	a	c	j	a	g	END
+g	2	d	e	b	h	j	END
+h	1	f	c	e	b	c	END
+i	1	e	c	i	c	h	END
+j	2	i	f	h	a	d	END

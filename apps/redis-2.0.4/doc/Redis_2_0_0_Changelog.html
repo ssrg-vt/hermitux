@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="page">
+        
+            <div id='header'>
+            <a href="index.html">
+            <img style="border:none" alt="Redis Documentation" src="redis.png">
+            </a>
+            </div>
+        
+            <div id="pagecontent">
+                <div class="index">
+<!-- This is a (PRE) block.  Make sure it's left aligned or your toc title will be off. -->
+<b>Redis_2_0_0_Changelog: Contents</b><br>&nbsp;&nbsp;<a href="#What's new in Redis 2.0.0">What's new in Redis 2.0.0</a>
+                </div>
+                
+                <h1 class="wikiname">Redis_2_0_0_Changelog</h1>
+
+                <div class="summary">
+                    
+                </div>
+
+                <div class="narrow">
+                    <h1><a name="What's new in Redis 2.0.0">What's new in Redis 2.0.0</a></h1><ul><li> Redis transactions: MULTI/EXEC (antirez)</li><li> Blocking POP: BLPOP and BRPOP (antirez)</li><li> Virtual Memory (antirez with contributions from Pieter Noordhuis)</li><li> APPEND command (antirez)</li><li> WITHSCORES in ZRANGEBYSCORE thanks to Sam Hendley (antirez)</li><li> Much faster .rdb loading/saving times (antirez)</li><li> Add DISCARD command to discard queued MULTI commands. (djanowski, antirez)</li><li> Interactive mode to redis-cli. (Michel Martens &amp; Damian Janowski)</li><li> Countless improvements to skip list implementation (Pieter Noordhuis)</li><li> ZINTERSTORE, ZUNIONSTORE commands (Pieter Noordhuis)</li><li> ZRANK command (Pieter Noordhuis)</li><li> SUBSTR command (antirez)</li><li> Now list push commands return the length of the new list (Gustavo Picon, antirez)</li><li> ZREMBYRANK command (Pieter Noordhuis)</li><li> Hash data type with all the associated commands (antirez &amp; Pieter Noordhuis)</li><li> Added ZREVRANK (Pieter Noordhuis)</li><li> Fixed hard to track replication bug (Jeremy Zawodny)</li><li> Tool to check rdb files for unprocessable opcodes (Pieter Noordhuis)</li><li> Random internals refactoring / cleanups (antirez &amp; Pieter Noordhuis)</li><li> Fixed issues 193, 194, 191 (Antonio Ognio)</li><li> Support for include directive in config parser (Jeremy Zawodny)</li><li> Fix authentication for redis-cli on non-interactive mode. (Michel Martens)</li><li> Added linenoise.c for zero deps line editing support. (antirez)</li><li> Use linenoise for line editing on redis-cli. (Michel Martens)</li><li> More incremental expiration of keys. (antirez)</li><li> CONFIG command (antirez)</li><li> Publis/Subscribe and associated commands (antirez)</li><li> New form of shared object, sharing all the small integers (antirez)</li><li> Validate numeric inputs. (Alex McHale)</li><li> Non blocking hash table resize, thanks to Derek Collison and Pieter Noordhuis for design ideas and help. (antirez)</li><li> Enable hash dereference in SORT on BY and GET (Pieter Noordhuis)</li><li> Now all commands support binary safe keys (antirez)</li><li> SETEX (Set + EXPIRE) implemented (antirez &amp; Pieter Noordhuis)</li><li> redis-cli now accepts and outputs quoted strings in interactive mode (antirez)</li><li> New MONITOR output format with timestamp, 1 command per line. (antirez)</li><li> Tool to check if AOF is valid, and fix it if needed (Pieter Noordhuis)</li><li> Major speedup to AOF with fsync always, thanks to Derek Collison for the algorithm (antirez)</li><li> Append only filename configurable (Pieter Noordhuis)</li><li> Add SIGTERM shutdown handling. (Ashley Martens)</li><li> Many improvements in Redis test suite (Pieter Noordhuis)</li><li> Add git commit information to INFO listing (Pieter Noordhuis &amp; antirez)</li><li> Many more minor things mainly from me and Pieter Noordhuis, but this changelog is already too big ;)</li></ul>
+                </div>
+        
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,2 @@
+Native: ./swaptions -ns 128 -sm 1000000 -nt 1
+SimLarge: -ns 64 -sm 40000 -nt 1 

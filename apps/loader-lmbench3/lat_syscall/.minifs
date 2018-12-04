@@ -1,0 +1,4 @@
+#Format: <path on the host>;<destination path on the guest>
+prog;prog
+prog-dyn;prog-dyn
+ls;/bin/ls

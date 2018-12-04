@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Use this script to debug an HermiTux application: first launch the binary
+# with HERMIT_DEBUG=1. The hypervisor will hang on the first guest instruction,
+# waiting for a gdb connection. Then, use this script as you would invoke gdb:
+# ./hermit-gdb path/to/binary/to/debug. Don't forget to compile the application
+# with debug symbols, deactivate optimizations (-O0 is recommended), and also
+# set HERMITUX_BASE below.
+
+# Set this variable to hermitux install path
+HERMITUX_BASE=$HOME/Desktop/hermitux
+
+# These should not need to be modified
+HERMIT_INSTALL=$HERMITUX_BASE/hermitux-kernel/prefix
+HERMITUX_KERNEL=$HERMIT_INSTALL/x86_64-hermit/extra/tests/hermitux
+
+if [ "$#" == "0" ]; then
+	echo "Error: no binary specified"
+	echo "Usage $0 <binary to debug>"
+	exit
+fi
+
+text_start=`readelf -SW $1 2>/dev/null | sed -rn "s/^\s*\[\s*[0-9]+\]\s+\.text\s+PROGBITS\s+([0-9]+).*$/\1/p"`
+
+gdb -ex "set confirm off" -ex "add-symbol-file $1 0x$text_start" -ex "set confirm on" -ex "target remote :1234"  -ex "br hermit_main" $HERMITUX_KERNEL

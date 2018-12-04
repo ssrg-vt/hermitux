@@ -19,7 +19,6 @@ $(TARGET).compiled: $(SRC)
 
 run: $(TARGET)
 	$(RUN) kvm -M $(MEM) -g "-nographic -m $(MEM) -vga none -enable-kvm" -i $(TARGET)
-	
 
 clean:
 	rm -rf *.o $(TARGET) $(TARGET).compiled
