@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.5)
 
 project(ioctl_tests C)
 
-set(MUSL_PREFIX /home/danchiba/Documents/HermiTux/hermitux/musl/prefix)
-
+set(MUSL_PREFIX_RELATIVE ../../musl/prefix)
+get_filename_component(MUSL_PREFIX
+	"${CMAKE_CURRENT_LIST_DIR}/${MUSL_PREFIX_RELATIVE}"
+						                          ABSOLUTE)
 SET(CMAKE_C_COMPILER ${MUSL_PREFIX}/bin/musl-gcc)
 
 add_executable(ioctl_unopt ioctl.c)

@@ -12,3 +12,5 @@ obfuscator-build
 prog
 prog_fast
 libiomp
+boost_1_61_0
+dyninst-9.2.0
