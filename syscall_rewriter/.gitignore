@@ -1,0 +1,11 @@
+*~
+
+.vscode/
+
+*.o
+
+# Random test code
+example.cpp
+
+# Executables
+rewrite_syscalls
