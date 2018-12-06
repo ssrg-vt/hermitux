@@ -82,3 +82,7 @@ HERMIT_NETIF=tap100 HERMIT_IP=192.168.1.4 HERMIT_GATEWAY=192.168.1.1
 - Checkpoint/restart: TODO describe here
 - ASLR: see apps/loader-pie
 
+## Syscall binary rewriting
+You need to switch the hermitux branch to `dc-syscalls-pierre` and the
+hermitux-kernel branch to `dc-syscalls-pierre` too. Then look at the file
+`hermitux/syscall_rewriter/readme`
