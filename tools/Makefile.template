@@ -76,13 +76,12 @@ test_fast: $(PROG)
 				HERMIT_KVM=$(KVM) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
 				$(PROG_FAST) $(ARGS)
 
-gdb:
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_DEBUG=1 \
-				HERMIT_ISLE=qemu HERMIT_KVM=0 \
-				$(HERMIT_LOCAL_INSTALL)/bin/proxy $(PROG)
-
-clean:
-	rm -rf *.o $(PROG) $(PROG_FAST)
+test-dyn: $(PROG)-dyn
+	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
+	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) \
+	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
+	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
 
 test-dyn: $(PROG)-dyn
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
@@ -92,5 +91,5 @@ test-dyn: $(PROG)-dyn
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG) $(PROG)-dyn hermitux-prof.txt checkpoint/
+	rm -rf *.o $(PROG) $(PROG_FAST) $(PROG)-dyn hermitux-prof.txt checkpoint/
 
