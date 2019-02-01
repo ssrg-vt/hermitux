@@ -1,0 +1,7 @@
+- Write doc for
+  - how to compile the hypervisor and the kernel and musl
+  - how to run simple examples (static)
+  - how to run shared library programs
+  - how to unikernelize musl and run fast syscalls for shared programs
+  - how to do syscall rewriting
+  - how to do syscall identification stuff
