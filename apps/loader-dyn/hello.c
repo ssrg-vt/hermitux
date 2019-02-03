@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 int main(int argc, char **argv) {
 	double a;

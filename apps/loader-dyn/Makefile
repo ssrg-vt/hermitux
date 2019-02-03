@@ -41,6 +41,9 @@ endif
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
+objdump-kernel:
+	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
+
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 				HERMIT_KVM=$(KVM) HERMIT_PROFILE=0 \
