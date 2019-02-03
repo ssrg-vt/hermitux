@@ -2,6 +2,7 @@
 
 extern const unsigned long long tux_entry;
 extern const unsigned long long tux_size;
+int libc_sd;
 
 extern void __attribute__ ((noreturn)) sys_exit(int status);
 
