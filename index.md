@@ -14,6 +14,8 @@ dynamically linked programs, different compilers and optimzation levels.
 HermiTux also provides basic support for multithreading, debugging and
 profiling.
 
+![](https://i.ibb.co/GtMRTDy/graph-unikernel-metrics.png)
+
 HermiTux is based on the [HermitCore](https://hermitcore.org/) operating
 system.
 
