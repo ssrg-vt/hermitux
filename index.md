@@ -21,11 +21,12 @@ system.
 
 ### Trying it out
 HermiTux is open source and all the code and instructions are on GitHub:
-- [https://github.com/ssrg-vt/hermitux](https://github.com/ssrg-vt/hermitux)
+- (link to be provided soon)
 
 ### Design Principles
 
-For a detailed description please read HermiTux' [paper]().
+For a detailed description please read HermiTux' [paper]() and Daniel Chiba's
+[MS Thesis]() (Links to be provided soon).
 
 HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
 alongside a minimal OS layer within a single address space virtual machine. At
@@ -43,7 +44,9 @@ these particular system calls.
 
 ### Contact
 
-[Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech
+[Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech: polivier <at> vt <dot> edu
+
+---
 
 HermiTux is an open-source project of the [Systems Software Research Group](https://www.ssrg.ece.vt.edu/) at [Virginia Tech](https://vt.edu/). 
 
