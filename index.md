@@ -29,7 +29,7 @@ HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
 alongside a minimal OS layer within a single address space virtual machine. At
 runtime, system calls made by the application are caught by HermiTux's kernel.
 
-(picture here)
+![](https://i.ibb.co/19cLCyw/pic-overview.png)
 
 Optionally, HermiTux provides a mechanism to rewrite system call invocation
 into common function calls to the kernel, significantly reducing the system
