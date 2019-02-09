@@ -1,1 +1,1 @@
-../../loader-blackscholes/in_4.txt
+../../blackscholes/in_4.txt

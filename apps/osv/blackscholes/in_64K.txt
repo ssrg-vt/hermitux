@@ -1,1 +1,1 @@
-../../loader-blackscholes/in_64K.txt
+../../blackscholes/in_64K.txt
