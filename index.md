@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+## Welcome to the HermiTux website
 
-You can use the [editor on GitHub](https://github.com/olivierpierre/site/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+HermiTux is a [unikernel](http://unikernel.org/): a minimal operating system
+with low memory/disk footprint and sub-second boot time, executing an
+application within a single address space on top of an hypervisor. Moreover,
+HermiTux is **binary-compatible** with Linux: it can run native Linux
+executables.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+While being a proof-of-concept, HermiTux supports multiple compiled (C, C++,
+Fortran) and interpreted (Python, LUA) languages. It provides binary analysis
+and rewriting techniques to optimize system call latency and modularize a
+kernel in the presence of unmodified binaries. It supports statically and
+dynamically linked programs, different compilers and optimzation levels.
+HermiTux also provides basic support for multithreading, debugging and
+profiling.
 
-### Markdown
+HermiTux is based on the [HermitCore](https://hermitcore.org/) operating
+system.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Trying it out
+HermiTux is open source and all the code and instructions are on GitHub:
+- https://github.com/ssrg-vt/hermitux
 
-```markdown
-Syntax highlighted code block
+### Design Principles
 
-# Header 1
-## Header 2
-### Header 3
+HermiTux makes use of a lightweight KVM-based hypervisor 
 
-- Bulleted
-- List
+### People
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/olivierpierre/site/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- [Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech
+- Daniel Chiba, Qualcomm New England
+- [Stefan lankes](http://www.acs.eonerc.rwth-aachen.de/cms/E-ON-ERC-ACS/Das-Institut/Mitarbeiter/Lehrstuhl-Leitung/~fqxm/Lankes-Stefan/?lidx=1&allou=1), RWTH Aachen University
+- [Changwoo Min](https://sites.google.com/site/multics69/), Virginia Tech
+- [Binoy Ravindran](https://ece.vt.edu/people/profile/ravindran), Virginia Tech
