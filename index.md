@@ -41,10 +41,6 @@ HermiTux can also analyze a Linux binary to determine which system calls it
 invokes, and compile a custom kernel containing only the implementations of
 these particular system calls.
 
-### People
+### Contact
 
-- [Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech
-- Daniel Chiba, Qualcomm New England
-- [Stefan lankes](http://www.acs.eonerc.rwth-aachen.de/cms/E-ON-ERC-ACS/Das-Institut/Mitarbeiter/Lehrstuhl-Leitung/~fqxm/Lankes-Stefan/?lidx=1&allou=1), RWTH Aachen University
-- [Changwoo Min](https://sites.google.com/site/multics69/), Virginia Tech
-- [Binoy Ravindran](https://ece.vt.edu/people/profile/ravindran), Virginia Tech
+[Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech
