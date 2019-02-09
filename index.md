@@ -19,11 +19,25 @@ system.
 
 ### Trying it out
 HermiTux is open source and all the code and instructions are on GitHub:
-- https://github.com/ssrg-vt/hermitux
+- [https://github.com/ssrg-vt/hermitux](https://github.com/ssrg-vt/hermitux)
 
 ### Design Principles
 
-HermiTux makes use of a lightweight KVM-based hypervisor 
+For a detailed description please read HermiTux' [paper]().
+
+HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
+alongside a minimal OS layer within a single address space virtual machine. At
+runtime, system calls made by the application are caught by HermiTux's kernel.
+
+(picture here)
+
+Optionally, HermiTux provides a mechanism to rewrite system call invocation
+into common function calls to the kernel, significantly reducing the system
+call latency.
+
+HermiTux can also analyze a Linux binary to determine which system calls it
+invokes, and compile a custom kernel containing only the implementations of
+these particular system calls.
 
 ### People
 
