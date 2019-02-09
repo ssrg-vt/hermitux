@@ -44,3 +44,7 @@ these particular system calls.
 ### Contact
 
 [Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech
+
+HermiTux is an open-source project of the [Systems Software Research Group](https://www.ssrg.ece.vt.edu/) at [Virginia Tech](https://vt.edu/). 
+
+HermiTux is supported in part by ONR under grants N00014-16-1-2104, N00014-16-1-2711, N00014-16-1-2818. Any opinions, findings, and conclusions or recommendations expressed in this site are those of the author(s) and do not necessarily reflect the views of ONR.
