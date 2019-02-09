@@ -1,0 +1,8 @@
+set number 3000
+set transactions 20000
+set buffering true
+set size 131072 131072
+set read 4096
+set write 4096
+run
+quit

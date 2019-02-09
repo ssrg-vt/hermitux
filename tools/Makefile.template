@@ -37,6 +37,7 @@ HOSTLOAD?=.minifs
 DEBUG?=0
 
 #CC=gcc
+#CC=clang
 CC=$(MUSL_GCC)
 
 all: $(PROG)
