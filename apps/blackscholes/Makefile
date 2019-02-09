@@ -6,7 +6,7 @@ MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
 MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 DLSO=$(MUSL_PREFIX)/lib/libc.so
 
-CFLAGS=-g -O1
+CFLAGS=-g -O3 -DENABLE_PARSEC_HOOKS -I. -Wno-format
 CFLAGS_DYN=$(CFLAGS) -fPIC
 LDFLAGS=-static -lm
 LDFLAGS_DYN=-pie -lm
@@ -23,7 +23,7 @@ STRIP?=0
 # second. Remeber to add -g and remove -O3 for compile flags
 PROF?=0
 # Command line arguments
-ARGS?=
+ARGS?=1 in_64K.txt /dev/null
 # Memory to give to the VM
 MEM?=2G
 
@@ -37,6 +37,7 @@ HOSTLOAD?=.minifs
 DEBUG?=0
 
 #CC=gcc
+#CC=clang
 CC=$(MUSL_GCC)
 
 all: $(PROG)
