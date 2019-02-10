@@ -6,11 +6,11 @@ application within a single address space on top of an hypervisor. Moreover,
 HermiTux is **binary-compatible** with Linux: it can run native Linux
 executables.
 
-While being a proof-of-concept, HermiTux supports multiple compiled (C, C++,
+Although being a proof-of-concept, HermiTux supports multiple compiled (C, C++,
 Fortran) and interpreted (Python, LUA) languages. It provides binary analysis
 and rewriting techniques to optimize system call latency and modularize a
 kernel in the presence of unmodified binaries. It supports statically and
-dynamically linked programs, different compilers and optimzation levels.
+dynamically linked programs, different compilers and optimization levels.
 HermiTux also provides basic support for multithreading, debugging and
 profiling.
 
