@@ -44,7 +44,7 @@ these particular system calls.
 
 ### Contact
 
-[Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech: polivier <at> vt <dot> edu
+[Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech: polivier *at* vt *dot* edu
 
 * * *
 
