@@ -46,7 +46,7 @@ these particular system calls.
 
 [Pierre Olivier](https://sites.google.com/view/pierreolivier), Virginia Tech: polivier <at> vt <dot> edu
 
----
+* * *
 
 HermiTux is an open-source project of the [Systems Software Research Group](https://www.ssrg.ece.vt.edu/) at [Virginia Tech](https://vt.edu/). 
 
