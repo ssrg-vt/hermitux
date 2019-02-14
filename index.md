@@ -29,7 +29,9 @@ HermiTux is open source and all the code and instructions are on GitHub:
 ### Design Principles
 
 For a detailed description please read Hermitux’s VEE 2019 [paper]() and
-[Daniel Chiba’s MS Thesis]() at Virginia Tech (links to be available soon).
+[Daniel Chiba’s MS
+Thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf)
+at Virginia Tech (links to be available soon).
 
 HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
 alongside a minimal OS layer within a single address space virtual machine. At
