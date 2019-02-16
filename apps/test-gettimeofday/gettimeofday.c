@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 	gettimeofday(&res, NULL);
 	printf("res.tv_sec = %ld\nres.tv_usec = %ld\n", res.tv_sec, res.tv_usec);
 
-	sleep(5);
+	sleep(1);
 
 	gettimeofday(&res, NULL);
 	printf("res.tv_sec = %ld\nres.tv_usec = %ld\n", res.tv_sec, res.tv_usec);

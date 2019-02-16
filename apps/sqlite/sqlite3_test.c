@@ -6,7 +6,7 @@
 
 #include "sqlite3.h"
 
-#define RECORD_NUM		200000
+#define RECORD_NUM		20000
 #define TABLE_NAME		"test_table"
 #define STR_FIELD_SIZE	128
 
