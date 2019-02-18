@@ -1,23 +1,26 @@
 # Hermitux test environment
 
 ## Prerequisites
-  - Recommended system: Debian 9 (GlibC support is not assured on newer 
-    distributions)
-  - `build-essential` debian package, plus [HermitCore prerequisites](https://github.com/RWTH-OS/HermitCore#requirements):
-
+  - Recommended system: Debian 9 (GlibC support is not assured on newer
+	distributions)
+  - Debian packages:
 ```
 sudo apt update
-sudo apt install build-essential cmake nasm apt-transport-https wget libgmp-dev
+sudo apt install git build-essential cmake nasm apt-transport-https wget \
+	libgmp-dev bsdmainutils libseccomp-dev
 ```
+  - [HermitCore	toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain)
+	installed in /opt/hermit:
 
-  - [HermitCore toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain) installed in /opt/hermit (the one coming from the
-  debian repositories mentionned in HermitCore GitHub repositories works fine, you might need to install the `apt-transport-https` debian package before downloading the toolchain packages):
 ```
-echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
+echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" \
+	| sudo tee -a /etc/apt/sources.list
 sudo apt update
-sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit libomp-hermit libhermit
+sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit \
+	libomp-hermit libhermit
 ```
-    - You may also need to install a recent version of libmpfr to use the hermit toolchain on debian 9:https://www.mpfr.org/mpfr-current/:
+  - You may also need to install a recent version of libmpfr to use the hermit
+	toolchain on debian 9:
 
 ```
 wget https://www.mpfr.org/mpfr-current/mpfr-4.0.2.tar.bz2
@@ -26,24 +29,30 @@ cd mpfr-4.0.2
 ./configure
 make -j`nproc`
 sudo make install
+ldconfig
 ```
-
-  - For fortran test application, you will need the `gfortran` debian package
 
 TODO here: put prerequisites for syscall rewriting and identification (cmake
 with curl support)
 
-## Steps
+## Build
 
-1. Install everything with the bootstrap script:
+1. Clone the repo
+```bash
+git clone https://github.com/ssrg-vt/hermitux
+```
+
+2. Install everything with the bootstrap script:
 
 ```bash
+cd hermitux
 ./bootstrap.sh
 ```
 
-2. Test an example application, for example NPB IS:
+3. Test an example application, for example NPB IS:
 ```bash
 cd apps/loader-npb/loader-npb-is
+# Edit the first variable of the Makefile to point to your hermitux install path
 make test
 ```
 
