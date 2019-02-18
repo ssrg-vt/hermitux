@@ -7,7 +7,7 @@
 
 ```
 sudo apt update
-sudo apt install build-essential cmake nasm apt-transport-https wget
+sudo apt install build-essential cmake nasm apt-transport-https wget libgmp-dev
 ```
 
   - [HermitCore toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain) installed in /opt/hermit (the one coming from the
@@ -17,7 +17,17 @@ echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" | 
 sudo apt update
 sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit libomp-hermit libhermit
 ```
-    - You may also need to install a recent version of libmpfr to use the hermit toolchain on debian 9:https://www.mpfr.org/mpfr-current/
+    - You may also need to install a recent version of libmpfr to use the hermit toolchain on debian 9:https://www.mpfr.org/mpfr-current/:
+
+```
+wget https://www.mpfr.org/mpfr-current/mpfr-4.0.2.tar.bz2
+tar xf mpfr-4.0.2.tar.bz2
+cd mpfr-4.0.2
+./configure
+make -j`nproc`
+sudo make install
+```
+
   - For fortran test application, you will need the `gfortran` debian package
 
 TODO here: put prerequisites for syscall rewriting and identification (cmake
