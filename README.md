@@ -19,7 +19,6 @@ sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit libomp-herm
 ```
     - You may also need to install a recent version of libmpfr to use the hermit toolchain on debian 9:https://www.mpfr.org/mpfr-current/
   - For fortran test application, you will need the `gfortran` debian package
-  - Clang/LLVM to test this compiler, we recommend the following version to also test the obfuscation options: https://github.com/obfuscator-llvm/obfuscator
 
 TODO here: put prerequisites for syscall rewriting and identification (cmake
 with curl support)
