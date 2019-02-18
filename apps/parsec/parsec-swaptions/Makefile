@@ -7,11 +7,9 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 DLSO=$(MUSL_PREFIX)/lib/libc.so
 
 CFLAGS=-g -O1
-CFLAGS_DYN=$(CFLAGS) -fPIC
 LDFLAGS=-static -lm
-LDFLAGS_DYN=-pie -lm
 
-SRC := $(shell ls *.c)
+SRC := $(shell ls *.cpp) $(shell ls *.c)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
@@ -22,7 +20,7 @@ STRIP?=0
 # second. Remeber to add -g and remove -O3 for compile flags
 PROF?=0
 # Command line arguments
-ARGS?=
+ARGS?=-ns 1 -sm 5 -nt 1
 # Memory to give to the VM
 MEM?=2G
 
@@ -40,9 +38,7 @@ NETIF=
 IP=
 GATEWAY=
 
-#CC=gcc
-#CC=clang
-CC=$(MUSL_GCC)
+CC=g++
 
 all: $(PROG)
 
@@ -52,14 +48,11 @@ ifeq ($(STRIP),1)
 	strip $(PROG)
 endif
 
-$(PROG)-dyn: $(SRC)
-	$(CC) $(CFLAGS_DYN) $(SRC) -o $(PROG)-dyn $(LDFLAGS_DYN)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
 objdump: $(PROG)
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
-
-objdump-dyn: $(PROG)-dyn
-	objdump --source $(PROG)-dyn > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 objdump-kernel:
 	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
@@ -72,14 +65,6 @@ test: $(PROG)
 	HERMIT_NETIF=$(NETIF) HERMIT_IP=$(IP) HERMIT_GATEWAY=$(GATEWAY) \
 	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
 
-test-dyn: $(PROG)-dyn
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=uhyve HERMIT_TUX=1 \
-	HERMIT_DEBUG=$(DEBUG) \
-	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
-	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
-	HERMIT_NETIF=$(NETIF) HERMIT_IP=$(IP) HERMIT_GATEWAY=$(GATEWAY) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
-
 clean:
-	rm -rf *.o $(PROG) $(PROG)-dyn hermitux-prof.txt checkpoint/
+	rm -rf *.o $(PROG) hermitux-prof.txt checkpoint/
 

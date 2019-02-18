@@ -11,8 +11,12 @@ CFLAGS_DYN=$(CFLAGS) -fPIC
 LDFLAGS=-static -lm
 LDFLAGS_DYN=-pie -lm
 
-SRC := $(shell ls *.c)
-PROG?=prog
+SRC_SRV := server.c
+OBJ_SRV=$(SRC_SRV:.c=.o)
+PROG_SRV?=server
+SRC_CLI := client.c
+OBJ_CLI=$(SRC_CLI:.c=.o)
+PROG_CLI?=client
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
 VERBOSE?=0
@@ -22,7 +26,7 @@ STRIP?=0
 # second. Remeber to add -g and remove -O3 for compile flags
 PROF?=0
 # Command line arguments
-ARGS?=
+ARGS?=-s 40960 0 8000
 # Memory to give to the VM
 MEM?=2G
 
@@ -36,50 +40,30 @@ HOSTLOAD?=.minifs
 DEBUG?=0
 
 # Network parameters
-NETIF=
-IP=
-GATEWAY=
+NETIF=tap100
+IP=10.0.5.2
+GATEWAY=10.0.5.1
 
 #CC=gcc
 #CC=clang
 CC=$(MUSL_GCC)
 
-all: $(PROG)
+all: $(PROG_SRV) $(PROG_CLI)
 
-$(PROG): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(PROG) $(LDFLAGS)
-ifeq ($(STRIP),1)
-	strip $(PROG)
-endif
+$(PROG_SRV): $(SRC_SRV)
+	$(CC) $(CFLAGS) $(SRC_SRV) -o $(PROG_SRV) $(LDFLAGS)
 
-$(PROG)-dyn: $(SRC)
-	$(CC) $(CFLAGS_DYN) $(SRC) -o $(PROG)-dyn $(LDFLAGS_DYN)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
-objdump: $(PROG)
-	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
-
-objdump-dyn: $(PROG)-dyn
-	objdump --source $(PROG)-dyn > /tmp/objdump.txt && vim /tmp/objdump.txt
-
-objdump-kernel:
-	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
-
-test: $(PROG)
+test: $(PROG_SRV)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=uhyve HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) \
 	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
 	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
 	HERMIT_NETIF=$(NETIF) HERMIT_IP=$(IP) HERMIT_GATEWAY=$(GATEWAY) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG) $(ARGS)
-
-test-dyn: $(PROG)-dyn
-	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=uhyve HERMIT_TUX=1 \
-	HERMIT_DEBUG=$(DEBUG) \
-	HERMIT_PROFILE=$(PROF) HERMIT_MINIFS=$(MINIFS) \
-	HERMIT_MEM=$(MEM) HERMIT_MINIFS_HOSTLOAD=$(HOSTLOAD) \
-	HERMIT_NETIF=$(NETIF) HERMIT_IP=$(IP) HERMIT_GATEWAY=$(GATEWAY) \
-	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(DLSO) $(PROG)-dyn $(ARGS)
+	$(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) $(PROG_SRV) $(ARGS)
 
 clean:
-	rm -rf *.o $(PROG) $(PROG)-dyn hermitux-prof.txt checkpoint/
+	rm -rf *.o $(PROG_SRV) $(PROG_CLI) hermitux-prof.txt checkpoint/
 
