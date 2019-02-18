@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-HERMIT_REPO=git@github.com:ssrg-vt/hermitux-kernel.git
-MUSL_REPO=git@github.com:ssrg-vt/hermitux-musl.git
+HERMIT_REPO=https://github.com/ssrg-vt/hermitux-kernel.git
+MUSL_REPO=https://github.com/ssrg-vt/hermitux-musl.git
 LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
 LIBIOMP_BRANCH=release_40
 
@@ -47,15 +47,7 @@ mkdir -p prefix
 make -j`nproc` install
 cd -
 
-# 3. LLVM with obfuscation plugin (disabled by default as it takes a lot of time)
-# git clone -b llvm-4.0 https://github.com/obfuscator-llvm/obfuscator.git
-# mkdir obfuscator-build
-# cd obfuscation-build
-# cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_INCLUDE_TESTS=OFF ../obfuscator
-# make -j`nproc`
-# cd -
-
-# 4. Libiomp
+# 3. Libiomp
 git clone $LIBIOMP_REPO libiomp
 cd libiomp
 git checkout $LIBIOMP_BRANCH
