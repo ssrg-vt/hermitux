@@ -1,1 +1,1 @@
-../../blackscholes/in_64K.txt
+../../parsec/parsec-blackscholes/in_64K.txt

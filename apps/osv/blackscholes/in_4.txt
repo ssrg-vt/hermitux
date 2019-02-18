@@ -1,1 +1,1 @@
-../../blackscholes/in_4.txt
+../../parsec/parsec-blackscholes/in_4.txt
