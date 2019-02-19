@@ -51,9 +51,20 @@ cd hermitux
 
 3. Test an example application, for example NPB IS:
 ```bash
-cd apps/loader-npb/loader-npb-is
-# Edit the first variable of the Makefile to point to your hermitux install path
-make test
+cd apps/npb/is
+# let's compile it as a static binary:
+gcc *.c -o is -static
+# let's launch it with HermiTux:
+HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
+	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux is
+
+# Now let's try with a dynamically linked program:
+gcc *.c -o is-dyn
+# We can launch it like that:
+HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
+	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux \
+	../../../musl/prefix/lib/libc.so is-dyn
+
 ```
 
 ## Template Makefile
