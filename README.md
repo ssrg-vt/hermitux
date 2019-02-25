@@ -32,9 +32,6 @@ sudo make install
 ldconfig
 ```
 
-TODO here: put prerequisites for syscall rewriting and identification (cmake
-with curl support)
-
 ## Build
 
 1. Clone the repo
