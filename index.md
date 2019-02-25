@@ -17,7 +17,7 @@ profiling.
 ![](https://i.ibb.co/GtMRTDy/graph-unikernel-metrics.png)
 *Comparison of disk footprint, boot time, and memory usage for a Linux
 VM, a HermiTux/OSv/Rumprun unikernel, and a Docker container. For more
-details see our VEE'19 paper.*
+details see our [VEE'19 paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf).*
 
 HermiTux is based on the [HermitCore](https://hermitcore.org/) operating
 system.
@@ -28,8 +28,8 @@ HermiTux is open source and all the code and instructions are on GitHub:
 
 ### Design Principles
 
-For a detailed description please read Hermitux’s VEE 2019 [paper]() (link TBA)
-and [Daniel Chiba’s MS
+For a detailed description please read Hermitux’s VEE 2019
+[paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba’s MS
 Thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf)
 at Virginia Tech.
 
