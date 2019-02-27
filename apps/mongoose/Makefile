@@ -41,9 +41,9 @@ NETIF=tap100
 IP=10.0.5.2
 GATEWAY=10.0.5.1
 
-#CC=gcc
+CC=gcc
 #CC=clang
-CC=$(MUSL_GCC)
+#CC=$(MUSL_GCC)
 
 all: $(PROG)
 
