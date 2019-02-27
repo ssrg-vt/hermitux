@@ -44,7 +44,6 @@ GATEWAY=10.0.5.1
 #CC=gcc
 #CC=clang
 CC=$(MUSL_GCC)
-CC=gcc
 all: $(PROG)
 
 $(PROG): $(SRC)
