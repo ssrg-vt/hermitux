@@ -1,5 +1,3 @@
-## Welcome to the HermiTux website
-
 <p align="center">
   <img width="150" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
 </p>
