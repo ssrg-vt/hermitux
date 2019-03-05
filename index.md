@@ -1,5 +1,9 @@
 ## Welcome to the HermiTux website
 
+<p align="center">
+  <img width="150" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
+</p>
+
 HermiTux is a [unikernel](http://unikernel.org/): a minimal operating system
 with low memory/disk footprint and sub-second boot time, executing an
 application within a single address space on top of an hypervisor. Moreover,
