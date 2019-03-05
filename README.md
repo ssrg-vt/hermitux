@@ -66,3 +66,5 @@ HERMIT_ISLE=uhyve HERMIT_TUX=1 HERMIT_MEM=1G \
 
 For more documentation about multiple topics, please see the wiki:
 [https://github.com/ssrg-vt/hermitux/wiki](https://github.com/ssrg-vt/hermitux/wiki)
+
+HermitCore's Emoji is provided free by [EmojiOne](https://www.emojione.com/).
