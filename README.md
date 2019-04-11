@@ -1,5 +1,7 @@
 # Hermitux test environment
 
+For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba's MS thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf).
+
 ## Prerequisites
   - Recommended system: Debian 9 (GlibC support is not assured on newer
 	distributions)
@@ -29,7 +31,7 @@ cd mpfr-4.0.2
 ./configure
 make -j`nproc`
 sudo make install
-ldconfig
+sudo ldconfig
 ```
 
 ## Build
