@@ -31,7 +31,7 @@ cd mpfr-4.0.2
 ./configure
 make -j`nproc`
 sudo make install
-ldconfig
+sudo ldconfig
 ```
 
 ## Build
