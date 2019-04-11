@@ -32,7 +32,7 @@ HermiTux is open source and all the code and instructions are on GitHub:
 
 For a detailed description please read Hermitux’s VEE 2019
 [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba’s MS
-Thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf)
+Thesis](https://vtechworks.lib.vt.edu/handle/10919/88865)
 at Virginia Tech.
 
 HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
