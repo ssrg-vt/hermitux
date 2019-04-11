@@ -2,6 +2,13 @@
 
 For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba's MS thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf).
 
+## Quick start
+The easiest way to try HermiTux is with Docker:
+```
+docker pull olivierpierre/hermitux
+docker run --privileged -it olivierpierre/hermitux
+```
+
 ## Prerequisites
   - Recommended system: Debian 9 (GlibC support is not assured on newer
 	distributions)
