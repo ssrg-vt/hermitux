@@ -6,6 +6,7 @@
 **News**
 - Our HermiTux [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) won the best
 paper award at [VEE 2019](https://conf.researchr.org/home/vee-2019).
+
 * * *
 
 HermiTux is a [unikernel](http://unikernel.org/): a minimal operating system
