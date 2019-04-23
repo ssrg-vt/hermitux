@@ -19,7 +19,7 @@ sudo apt install git build-essential cmake nasm apt-transport-https wget \
 	libgmp-dev bsdmainutils libseccomp-dev python
 ```
   - [HermitCore	toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain)
-	installed in /opt/hermit:
+	installed in `/opt/hermit`:
 
 ```
 echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" \
