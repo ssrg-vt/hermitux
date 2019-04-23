@@ -10,7 +10,7 @@ docker run --privileged -it olivierpierre/hermitux
 ```
 
 ## Prerequisites
-  - Recommended system: Ubuntu 18.04, Ubuntu 16.04 or Debian 9 (GlibC support is not assured
+  - Recommended system: Ubuntu 18.04/16.04 or Debian 10/9 (GlibC support is not assured
   on other distributions)
   - Debian/Ubuntu packages:
 ```
