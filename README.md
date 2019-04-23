@@ -3,9 +3,9 @@
 For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba's MS thesis](https://github.com/ssrg-vt/hermitux/raw/master/doc/daniel-chiba-ms-thesis.pdf).
 
 ## Prerequisites
-  - Recommended system: Debian 9 (GlibC support is not assured on newer
-	distributions)
-  - Debian packages:
+  - Recommended system: Ubuntu 16.04 or Debian 9 (GlibC support is not assured
+  on newer distributions)
+  - Debian/Ubuntu packages:
 ```
 sudo apt update
 sudo apt install git build-essential cmake nasm apt-transport-https wget \
@@ -21,8 +21,8 @@ sudo apt update
 sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit \
 	libomp-hermit libhermit
 ```
-  - You may also need to install a recent version of libmpfr to use the hermit
-	toolchain on debian 9:
+  - For Debian 9 abd Ubuntu 16.04, you may also need to install a recent
+  version of libmpfr to use the hermit toolchain:
 
 ```
 wget https://www.mpfr.org/mpfr-current/mpfr-4.0.2.tar.bz2
@@ -32,6 +32,19 @@ cd mpfr-4.0.2
 make -j`nproc`
 sudo make install
 sudo ldconfig
+```
+
+ - Finally for Ubuntu 16.04 you need a recent version of cmake:
+
+```
+# It is probably better to uninstall any existing installation:
+sudo apt remove cmake
+wget https://github.com/Kitware/CMake/releases/download/v3.14.3/cmake-3.14.3.tar.gz
+tar xf cmake-3.14.3.tar.gz
+cd cmake-3.14.3
+./configure
+make -j`nproc`
+make install
 ```
 
 ## Build
