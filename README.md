@@ -28,7 +28,7 @@ sudo apt update
 sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit \
 	libomp-hermit libhermit
 ```
-  - For Debian 9 abd Ubuntu 16.04, you may also need to install a recent
+  - For Debian 9 and Ubuntu 16.04, you may also need to install a recent
   version of libmpfr to use the hermit toolchain:
 
 ```
@@ -74,13 +74,13 @@ cd apps/npb/is
 # let's compile it as a static binary:
 gcc *.c -o is -static
 # let's launch it with HermiTux:
-HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
+sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
 	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux is
 
 # Now let's try with a dynamically linked program:
 gcc *.c -o is-dyn
 # We can launch it like that (for now it needs a bit more RAM):
-HERMIT_ISLE=uhyve HERMIT_TUX=1 HERMIT_MEM=1G \
+sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 HERMIT_MEM=1G \
 	../../../hermitux-kernel/prefix/bin/proxy \
 	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux \
 	../../../musl/prefix/lib/libc.so is-dyn
