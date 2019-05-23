@@ -2,6 +2,13 @@
   <img width="150" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
 </p>
 
+* * *
+**News**
+- Our HermiTux [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) won the best
+paper award at [VEE 2019](https://dl.acm.org/citation.cfm?id=3313817).
+
+* * *
+
 HermiTux is a [unikernel](http://unikernel.org/): a minimal operating system
 with low memory/disk footprint and sub-second boot time, executing an
 application within a single address space on top of an hypervisor. Moreover,
