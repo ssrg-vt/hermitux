@@ -21,7 +21,7 @@ STRIP?=1
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
 ARGS?=
-CPUS?=4
+CPUS?=1
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.

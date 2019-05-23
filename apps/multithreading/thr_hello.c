@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdint.h>
 
-#define MAX_THREADS 4
+#define MAX_THREADS 6
 
 __thread int thr_data = 4;
 __thread int thr_bss;
