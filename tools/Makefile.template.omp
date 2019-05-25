@@ -21,7 +21,8 @@ ISLE=uhyve
 STRIP?=1
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
-ARGS?="-i100"
+#ARGS?="-i100"
+ARGS?=
 CPUS?=4
 MEM?=4G
 

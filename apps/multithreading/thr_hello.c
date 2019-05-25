@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdint.h>
 
-#define MAX_THREADS 6
+#define MAX_THREADS 5
 
 __thread int thr_data = 4;
 __thread int thr_bss;
@@ -28,10 +28,12 @@ int main(int argc, char** argv)
 	pthread_t threads[MAX_THREADS];
 	int i, ret, param[MAX_THREADS];
 
-	printf("[%d] Main thread starts ...\n", getpid());
+	printf("[%d] Main thread starts, will created %d children ...\n", getpid(),
+			MAX_THREADS);
 
 	for(i=0; i<MAX_THREADS; i++) {
 		param[i] = i;
+		printf("[%d] attempting to create thread %d...\n", getpid(), i);
 		ret = pthread_create(threads+i, NULL, thread_func, param+i);
 		if (ret) {
 			printf("[%d] Thread creation failed! error =  %d\n", getpid(), ret);
@@ -40,7 +42,7 @@ int main(int argc, char** argv)
 	}
 
 
-	printf("[%d] Going to sleep\n", getpid());
+	printf("[%d] Children created, going to sleep\n", getpid());
 	sleep(2);
 
 	printf("[%d] Sleep done, trying to join\n", getpid());

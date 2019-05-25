@@ -21,7 +21,7 @@ STRIP?=1
 # Enable the fine-grained seccomp filter:
 SECCOMP?=0
 ARGS?=
-CPUS?=1
+CPUS?=4
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
@@ -47,6 +47,9 @@ $(PROG): $(SRC)
 
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
+
+objdump-kernel:
+	objdump --source $(KERNEL) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
 test: $(PROG)
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
