@@ -1,10 +1,12 @@
 #!/bin/bash
 
+TAG_TO_CHECKOUT=v1.10
+
 echo "Installing pkg-config and libffi if needed ..."
 sudo apt install libffi-dev pkg-config
 
 echo "Installing micropython"
-git clone --depth=1 https://github.com/micropython/micropython.git
+git clone --depth=1 --branch $TAG_TO_CHECKOUT https://github.com/micropython/micropython.git
 cd micropython
 
 git submodule update --init
