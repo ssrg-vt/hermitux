@@ -3,6 +3,7 @@ set -euo pipefail
 
 HERMIT_REPO=https://github.com/ssrg-vt/hermitux-kernel.git
 MUSL_REPO=https://github.com/ssrg-vt/hermitux-musl.git
+MUSL_BRANCH=hermitux-v1.1.18
 LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
 LIBIOMP_BRANCH=release_40
 
@@ -42,6 +43,7 @@ cd ..
 # 2. MUSL
 git clone $MUSL_REPO musl
 cd musl
+git checkout $MUSL_BRANCH
 mkdir -p prefix
 ./configure --prefix=$PWD/prefix
 make -j`nproc` install
