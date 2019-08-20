@@ -2,6 +2,9 @@
 
 For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba's MS thesis](https://vtechworks.lib.vt.edu/handle/10919/88865).
 
+The instruction that follows are for x86-64. We have basic support for an ARM64 embedded
+board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support).
+
 ## Quick start
 The easiest way to try HermiTux is with Docker:
 ```
