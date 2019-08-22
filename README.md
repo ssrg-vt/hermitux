@@ -71,7 +71,9 @@ cd hermitux
 ./bootstrap.sh
 ```
 
-3. Test an example application, for example NPB IS:
+## Run an application
+
+Test an example application, for example NPB IS:
 ```bash
 cd apps/npb/is
 # let's compile it as a static binary:
