@@ -19,7 +19,7 @@ docker run --privileged -it olivierpierre/hermitux
 ```
 sudo apt update
 sudo apt install git build-essential cmake nasm apt-transport-https wget \
-	libgmp-dev bsdmainutils libseccomp-dev python
+	libgmp-dev bsdmainutils libseccomp-dev python libelf-dev
 ```
   - [HermitCore	toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain)
 	installed in `/opt/hermit`:
