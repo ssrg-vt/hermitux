@@ -2,15 +2,15 @@
 HERMITUX_BASE=$(HOME)/Desktop/hermitux
 
 PROG=arm-binary-rewriter
-SRC=main.c
-LDFALGS=-lelf
+SRC=main.c br-elf.c
+LDFLAGS=-lelf
 TARGET=prog
 HANDLER_ADDR := $(shell nm $(HERMITUX_BASE)/hermitux-kernel/prefix//aarch64-hermit/extra/tests/hermitux | grep br_syscall_handler | cut -f 1 -d " ")
 
 all: $(PROG)
 
 $(PROG): $(SRC)
-	gcc $^ -o $@ $(LDFALGS)
+	gcc $^ -o $@ $(LDFLAGS)
 
 test: $(PROG)
 	./$(PROG) $(TARGET) 0x$(HANDLER_ADDR)

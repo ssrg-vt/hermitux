@@ -6,9 +6,10 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <sys/mman.h>
-#include <gelf.h>
-#include <err.h>
 #include <string.h>
+#include <err.h>
+
+#include "br-elf.h"
 
 /* Info about aarch64 instructions encoding:
  * https://static.docs.arm.com/ddi0596/a/DDI_0596_ARM_a64_instruction_set_architecture.pdf
@@ -27,12 +28,11 @@ typedef struct {
     uint64_t file_offset; /* start offset in file */
 } config;
 
-int parse_elf(char *f, config *cfg);
 void print_cfg(const config *cfg);
 
 int main(int argc, char *argv[])
 {
-    uint64_t HANDLER_ADDR;
+    uint64_t HANDLER_ADDR, vaddr, code_size, offset;
     config cfg;
 
     if(argc != 3) {
@@ -43,8 +43,11 @@ int main(int argc, char *argv[])
     HANDLER_ADDR = (int)strtol(argv[2], NULL, 16);
 
     /* elf stuff */
-    parse_elf(argv[1], &cfg);
-    print_cfg(&cfg);
+    parse_elf(argv[1], &vaddr, &code_size, &offset);
+    strcpy(cfg.binary_name, argv[1]);
+    cfg.code_vaddr = vaddr;
+    cfg.code_size = code_size;
+    cfg.file_offset = offset;
 
     int fd = open(cfg.binary_name, O_RDWR);
     if(fd == -1)
@@ -70,6 +73,7 @@ int main(int argc, char *argv[])
         /* Is it a SVC (syscall instruction)? */
         if(instr == SYSCALL_INSTR) {
             syscall_num++;
+
             if(*(ptr+1) == RET_CODE) {
                 /* There is a ret right after the syscall instruction, we can
                  * add a simple branch without overwriting the return address
@@ -91,13 +95,36 @@ int main(int argc, char *argv[])
                 instr_offset += 1;
                 instr_offset &= 0x3FFFFFF;
 
-
                 /* Add the opcode */
                 uint32_t new_instr = REWRITE_MASK_B | instr_offset;
 
                 *ptr = new_instr;
                 syscall_rewritten++;
+            } else if((*(ptr+1) >> 26 == REWRITE_MASK_BL >> 26) ||
+                    (*(ptr+2) >> 26 == REWRITE_MASK_BL >> 26) ||
+                    (*(ptr+3) >> 26 == REWRITE_MASK_BL >> 26) ||
+                    (*(ptr-1) >> 26 == REWRITE_MASK_BL >> 26) ||
+                    (*(ptr-2) >> 26 == REWRITE_MASK_BL >> 26) ||
+                    (*(ptr-3) >> 26 == REWRITE_MASK_BL >> 26)
+                    ) {
+                /* There is a function call closeby, we can safely assure that
+                 * the compiler has alreayd taken care of saving the return
+                 * address in x30 so let's go a rewrite with a branch and link
+                 * */
+
+                printf("wooo 0x%llx\n", addr);
+
+                uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
+                instr_offset = instr_offset/4;
+                instr_offset = ~instr_offset;
+                instr_offset += 1;
+                instr_offset &= 0x3FFFFFF;
+                uint32_t new_instr = REWRITE_MASK_BL | instr_offset;
+
+                *ptr = new_instr;
+                syscall_rewritten++;
             }
+
         }
         ptr += 1;
     }
@@ -108,60 +135,4 @@ int main(int argc, char *argv[])
         syscall_rewritten, syscall_num, ((syscall_rewritten*100)/syscall_num));
 
     return 0;
-}
-
-int parse_elf(char *f, config *cfg) {
-    int i, fd, exec_segments;
-    Elf *e;
-    char *id, bytes[5];
-    size_t n;
-    GElf_Phdr phdr;
-
-    memset(cfg, 0x0, sizeof(config));
-    strcpy(cfg->binary_name, f);
-
-    if (elf_version(EV_CURRENT) == EV_NONE)
-        errx(EXIT_FAILURE, "ELF library initialization "
-            "failed: %s", elf_errmsg(-1));
-
-    if ((fd = open(f, O_RDONLY, 0)) < 0)
-        err(EXIT_FAILURE, "open \"%s\" failed", f);
-
-    if ((e = elf_begin(fd, ELF_C_READ, NULL)) == NULL)
-        errx(EXIT_FAILURE, "elf_begin() failed: %s.", elf_errmsg(-1));
-
-    if (elf_kind(e) != ELF_K_ELF)
-        errx(EXIT_FAILURE, "\"%s\" is not an ELF object.", f);
-
-    if (elf_getphdrnum(e, &n) != 0)
-        errx(EXIT_FAILURE, "elf_getphdrnum() failed: %s.", elf_errmsg(-1));
-
-    exec_segments = 0;
-    for (i = 0; i < n; i++) {
-        if (gelf_getphdr(e, i, &phdr) != &phdr)
-            errx(EXIT_FAILURE, "getphdr() failed: %s.", elf_errmsg(-1));
-
-        /* Look for executable segments */
-        if (phdr.p_flags & PF_X) {
-            exec_segments++;
-            cfg->code_vaddr = phdr.p_vaddr;
-            cfg->code_size = phdr.p_filesz;
-            cfg->file_offset = phdr.p_offset;
-        }
-    }
-
-    if(exec_segments != 1)
-        errx(EXIT_FAILURE, "More than 1 or no executable segments in %s\n", f);
-
-    (void) elf_end(e);
-    (void) close(fd);
-
-    return 0;
-}
-
-void print_cfg(const config *cfg) {
-    printf("Parsing results for binary %s\n", cfg->binary_name);
-    printf("- code_vaddr: 0x%llx\n", cfg->code_vaddr);
-    printf("- code_size: 0x%llx\n", cfg->code_size);
-    printf("- file_offset: 0x%llx\n", cfg->file_offset);
 }
