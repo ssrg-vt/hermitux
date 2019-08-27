@@ -107,12 +107,10 @@ int main(int argc, char *argv[])
                     (*(ptr-2) >> 26 == REWRITE_MASK_BL >> 26) ||
                     (*(ptr-3) >> 26 == REWRITE_MASK_BL >> 26)
                     ) {
-                /* There is a function call closeby, we can safely assure that
-                 * the compiler has alreayd taken care of saving the return
-                 * address in x30 so let's go a rewrite with a branch and link
-                 * */
-
-                printf("wooo 0x%llx\n", addr);
+                /* There is a branch and link closeby, we can safely assure
+                 * that the compiler has alreayd taken care of saving the
+                 * return address in x30 so let's go a rewrite with a branch
+                 * and link */
 
                 uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
                 instr_offset = instr_offset/4;
