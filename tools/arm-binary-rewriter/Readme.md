@@ -29,7 +29,10 @@ which we can replace SVC with B or BL:
    end of the syscall handler will then return to the function that originally
    called the function calling SVC, which is the expected behavior.
 
-2) In most situations, x30 will actually be saved on the stack within the
+2) If the syscall in question is `exit` or `exit_group`: we can safely rewrite
+   with a B.
+
+3) In most situations, x30 will actually be saved on the stack within the
    function calling SVC, and restored before that functions return. The main
    reasons for this is that the function is calling BL so it needs to save x30.
    In these cases, it is safe for us to replace the SVC with a BL given that
