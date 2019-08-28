@@ -14,7 +14,6 @@ $(PROG): $(SRC)
 	gcc $^ -o $@ $(LDFLAGS)
 
 test: $(PROG)
-	echo $(WRAPPER_ADDR)
 	./$(PROG) $(TARGET) $(WRAPPER_ADDR)
 
 clean:

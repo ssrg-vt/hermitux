@@ -80,7 +80,8 @@ int main(int argc, char *argv[])
                 if((bt_instr >> 20 == 0xd28) && (bt_instr & 0x1F) == 8) {
                     /* extract the syscall identifier which is the immediate */
                     uint16_t id = (bt_instr >> 5) & 0xFFFF;
-                    printf("SVC @0x%llx is %u\n", addr, id);
+                    printf("SVC @0x%llx is %u%s\n", addr, id,
+                                (id == 93 || id == 94) ? " <- whitelist" : "");
                     syscall_identified++;
                     break;
                 }
@@ -113,7 +114,11 @@ int main(int argc, char *argv[])
                     if((bt_instr >> 20 == 0xd28) && (bt_instr & 0x1F) == 0) {
                         /* extract the syscall identifier which is the immediate */
                         uint16_t id = (bt_instr >> 5) & 0xFFFF;
-                        printf("WRAPPER @0x%llx is %u\n", addr, id);
+                        /* Print the syscall id, and notify if it's
+                         * exit/exit_group as these can be safely overwritten
+                         * with B or BL */
+                        printf("WRAPPER @0x%llx is %u%s\n", addr, id,
+                                (id == 93 || id == 94) ? " <- whitelist" : "");
                         syscall_identified++;
                         break;
                     }
