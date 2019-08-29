@@ -1,4 +1,64 @@
-# Method
+# Arm 
+
+## Build
+
+We need the angr binary analysis tool, install it with pip:
+```
+pip3 install angr
+```
+
+Then compile the binary rewriter, in that folder:
+```
+make
+```
+
+## Usage
+
+Let's assume we have an aarch64 static binary `prog` for which we want to
+rewrite system calls into function calls for execution within HermiTux.
+This is a two step process.
+First we need to identify all syscalls and perform binary analysis on each to
+check if it can be safely binary-rewritten:
+```
+./whitelister > syscall-list.txt
+```
+
+There will be a few warning on the error output, this is normal. After that
+command executes, we get the list of system calls and for each one an
+indication if it can be safely rewritten (see the theory in "method" below):
+```
+cat syscall-list.txt
+0x404584: True
+0x408904: True
+0x40b68c: False
+...
+```
+
+The next step is to actually perform the rewriting. First we need to obtain the
+address of a handler within the kernel:
+
+```
+nm /path/to/hermitux/hermitux-kernel/prefix//aarch64-hermit/extra/tests/hermitux | grep br_syscall_handler
+000000000024d040 T br_syscall_handler
+```
+
+Replace with the path of your installation. Note that this operation needs to
+be repeated each time the kernel is recompiled as the address is likely to
+change.
+
+Finally perform the rewriting by using `arm-binary-rewriter` and passing as
+parameters (1) the binary, (2) the handler address and (3) the syscall-list
+obtained from the analyzer:
+
+```
+./arm-binary-rewriter prog 0x24d040 syscall-list.txt
+```
+
+Even for syscalls for which the analyzer assessed it was unsafe to rewrite, the
+rewriter will try a few tricks (see "Method" below). As a result, you should
+have a pretty good coverage.
+
+## Method
 
 Intuitively, one may think that because aarch64 is a fixed-size instruction
 set, replacing any system call with a function call would be as easy as
@@ -45,4 +105,4 @@ We need to do the following: get the CFG and explore all ret instruction that
 we can reach from the function we are in, starting from the SVC. For all these
 function exit points, we check if x30 is loaded from memory: this would mean
 that x30 is restored and it was saved before. We can then replace SVC with BL.
-If we find a path with no x30 restoration, we cannot rewrite.
+If we find at least a path with no x30 restoration, we cannot rewrite.

@@ -84,7 +84,8 @@ def find_syscalls(node, addrs_done):
 
     if(node.is_syscall):
         for s in node.predecessors:
-            res.append(s.instruction_addrs[len(s.instruction_addrs)-1])
+            syscall_addr = s.instruction_addrs[len(s.instruction_addrs)-1]
+            res.append(syscall_addr)
 
     for s in node.successors:
         res += find_syscalls(s, addrs_done)
@@ -105,6 +106,7 @@ if __name__ == "__main__":
 
     addrs_done = []
     syscall_list = find_syscalls(cfg.model.get_node(p.entry), addrs_done)
+    syscall_list = list(set(syscall_list))
 
     num_whitelisted = 0
     for s in syscall_list:

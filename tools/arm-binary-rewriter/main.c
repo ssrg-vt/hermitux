@@ -81,8 +81,6 @@ int main(int argc, char *argv[])
     }
 
     create_syscall_list(argv[3], &syscall_list, &syscall_list_size);
-    for(int i=0; i<syscall_list_size; i++)
-        printf("0x%llx: %d\n", syscall_list[i].addr, syscall_list[i].whitelisted);
 
     HANDLER_ADDR = (int)strtol(argv[2], NULL, 16);
 
@@ -109,74 +107,91 @@ int main(int argc, char *argv[])
     }
 
     uint32_t *ptr = map;
-    int syscall_num = 0, syscall_rewritten = 0;
-    while(ptr != (map + cfg.code_size)) {
+    int syscall_rewritten = 0;
+    //while(ptr != (map + cfg.code_size)) {
+    for(int i=0; i<syscall_list_size; i++) {
+        ptr = map + syscall_list[i].addr - cfg.code_vaddr;
         uint64_t addr = ((void *)ptr-map)+cfg.code_vaddr;
         uint32_t instr = *ptr;
 
         /* Is it a SVC (syscall instruction)? */
-        if(instr == SYSCALL_INSTR) {
-            syscall_num++;
-
-            if(*(ptr+1) == RET_CODE) {
-                /* There is a ret right after the syscall instruction, we can
-                 * add a simple branch without overwriting the return address
-                 * in x30, we'll return from the syscall handler directly where
-                 * the function calling the syscall was supposed to return */
-
-                /* We are doing a pc-relative jump to the handler. The handler
-                 * is in the kernel and will always be inferior to the
-                 * application pc */
-                uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
-
-                /* B/BL instructions takes an immediate offset on 26 bits,
-                 * multiplied by 4 to find the actual address */
-                instr_offset = instr_offset/4;
-
-                /* We are doing a backward jump so negate the computed offset,
-                 * 2's complement and sign extension on the 26 lowest bits */
-                instr_offset = ~instr_offset;
-                instr_offset += 1;
-                instr_offset &= 0x3FFFFFF;
-
-                /* Add the opcode */
-                uint32_t new_instr = REWRITE_MASK_B | instr_offset;
-
-                *ptr = new_instr;
-                syscall_rewritten++;
-            } else if((*(ptr+1) >> 26 == REWRITE_MASK_BL >> 26) ||
-                    (*(ptr+2) >> 26 == REWRITE_MASK_BL >> 26) ||
-                    (*(ptr+3) >> 26 == REWRITE_MASK_BL >> 26) ||
-                    (*(ptr-1) >> 26 == REWRITE_MASK_BL >> 26) ||
-                    (*(ptr-2) >> 26 == REWRITE_MASK_BL >> 26) ||
-                    (*(ptr-3) >> 26 == REWRITE_MASK_BL >> 26)
-                    ) {
-
-                /* There is a branch and link closeby, we can safely assure
-                 * that the compiler has alreayd taken care of saving the
-                 * return address in x30 so let's go a rewrite with a branch
-                 * and link */
-
-                uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
-                instr_offset = instr_offset/4;
-                instr_offset = ~instr_offset;
-                instr_offset += 1;
-                instr_offset &= 0x3FFFFFF;
-                uint32_t new_instr = REWRITE_MASK_BL | instr_offset;
-
-                *ptr = new_instr;
-                syscall_rewritten++;
-            }
-
+        if(instr != SYSCALL_INSTR) {
+            printf("Detected addr @%p is not a syscall! Probably the syscall "
+                    "list does not corresponds to the binary. exiting\n", addr);
+            exit(-1);
         }
-        ptr += 1;
+
+        /* Can we safely rewrite the syscall? */
+        if(syscall_list[i].whitelisted) {
+            
+            uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
+            instr_offset = instr_offset/4;
+            instr_offset = ~instr_offset;
+            instr_offset += 1;
+            instr_offset &= 0x3FFFFFF;
+            uint32_t new_instr = REWRITE_MASK_BL | instr_offset;
+
+            *ptr = new_instr;
+            syscall_rewritten++;
+
+
+        } else if(*(ptr+1) == RET_CODE) {
+            /* There is a ret right after the syscall instruction, we can
+             * add a simple branch without overwriting the return address
+             * in x30, we'll return from the syscall handler directly where
+             * the function calling the syscall was supposed to return */
+
+            /* We are doing a pc-relative jump to the handler. The handler
+             * is in the kernel and will always be inferior to the
+             * application pc */
+            uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
+
+            /* B/BL instructions takes an immediate offset on 26 bits,
+             * multiplied by 4 to find the actual address */
+            instr_offset = instr_offset/4;
+
+            /* We are doing a backward jump so negate the computed offset,
+             * 2's complement and sign extension on the 26 lowest bits */
+            instr_offset = ~instr_offset;
+            instr_offset += 1;
+            instr_offset &= 0x3FFFFFF;
+
+            /* Add the opcode */
+            uint32_t new_instr = REWRITE_MASK_B | instr_offset;
+
+            *ptr = new_instr;
+            syscall_rewritten++;
+        } else if((*(ptr+1) >> 26 == REWRITE_MASK_BL >> 26) ||
+                (*(ptr+2) >> 26 == REWRITE_MASK_BL >> 26) ||
+                (*(ptr+3) >> 26 == REWRITE_MASK_BL >> 26) ||
+                (*(ptr-1) >> 26 == REWRITE_MASK_BL >> 26) ||
+                (*(ptr-2) >> 26 == REWRITE_MASK_BL >> 26) ||
+                (*(ptr-3) >> 26 == REWRITE_MASK_BL >> 26)
+                ) {
+
+            /* There is a branch and link closeby, we can safely assure
+             * that the compiler has alreayd taken care of saving the
+             * return address in x30 so let's go a rewrite with a branch
+             * and link */
+
+            uint32_t instr_offset = (int32_t)addr - (int32_t)HANDLER_ADDR;
+            instr_offset = instr_offset/4;
+            instr_offset = ~instr_offset;
+            instr_offset += 1;
+            instr_offset &= 0x3FFFFFF;
+            uint32_t new_instr = REWRITE_MASK_BL | instr_offset;
+
+            *ptr = new_instr;
+            syscall_rewritten++;
+        }
     }
 
     close(fd);
     free(syscall_list);
 
     printf("Rewriting done, got %d/%d syscall invocations (%d\%)\n",
-        syscall_rewritten, syscall_num, ((syscall_rewritten*100)/syscall_num));
+        syscall_rewritten, syscall_list_size,
+        ((syscall_rewritten*100)/syscall_list_size));
 
     return 0;
 }
