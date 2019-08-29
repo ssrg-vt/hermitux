@@ -30,15 +30,59 @@ typedef struct {
 
 void print_cfg(const config *cfg);
 
+typedef struct {
+    uint64_t addr;
+    int whitelisted;
+} scall;
+
+int create_syscall_list(char *f, scall **list, int *len) {
+    FILE* stream = fopen(f, "r");
+    char line[64];
+    scall *res = NULL;
+    int elements = 0;
+
+    while (fgets(line, 64, stream)) {
+        uint64_t addr;
+        char white[12];
+
+        elements++;
+        res = realloc(res, (elements) * sizeof(scall));
+        if(!res) {
+            fprintf(stderr, "cannot allocated memory\n");
+            exit(-1);
+        }
+
+        char* tmp = strdup(line);
+        sscanf(tmp, "0x%llx: %s\n", &addr, white);
+
+        res[elements-1].addr = addr;
+        res[elements-1].whitelisted = 0;
+        if(!strcmp(white, "True"))
+            res[elements-1].whitelisted = 1;
+
+        free(tmp);
+    }
+
+    *list = res;
+    *len = elements;
+}
+
 int main(int argc, char *argv[])
 {
     uint64_t HANDLER_ADDR, vaddr, code_size, offset;
     config cfg;
+    scall *syscall_list;
+    int syscall_list_size;
 
-    if(argc != 3) {
-        fprintf(stderr, "Usage: %s <binary> <handler_addr>\n", argv[0]);
+    if(argc != 4) {
+        fprintf(stderr, "Usage: %s <binary> <handler_addr> <syscall_list>\n",
+                argv[0]);
         exit(-1);
     }
+
+    create_syscall_list(argv[3], &syscall_list, &syscall_list_size);
+    for(int i=0; i<syscall_list_size; i++)
+        printf("0x%llx: %d\n", syscall_list[i].addr, syscall_list[i].whitelisted);
 
     HANDLER_ADDR = (int)strtol(argv[2], NULL, 16);
 
@@ -107,6 +151,7 @@ int main(int argc, char *argv[])
                     (*(ptr-2) >> 26 == REWRITE_MASK_BL >> 26) ||
                     (*(ptr-3) >> 26 == REWRITE_MASK_BL >> 26)
                     ) {
+
                 /* There is a branch and link closeby, we can safely assure
                  * that the compiler has alreayd taken care of saving the
                  * return address in x30 so let's go a rewrite with a branch
@@ -128,6 +173,7 @@ int main(int argc, char *argv[])
     }
 
     close(fd);
+    free(syscall_list);
 
     printf("Rewriting done, got %d/%d syscall invocations (%d\%)\n",
         syscall_rewritten, syscall_num, ((syscall_rewritten*100)/syscall_num));

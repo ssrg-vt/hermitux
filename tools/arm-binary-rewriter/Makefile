@@ -13,7 +13,7 @@ $(PROG): $(SRC)
 	gcc $^ -o $@ $(LDFLAGS)
 
 test: $(PROG)
-	./$(PROG) $(TARGET) 0x$(HANDLER_ADDR)
+	./$(PROG) $(TARGET) 0x$(HANDLER_ADDR) syscall-list.txt
 
 clean:
 	rm -rf *.o $(PROG)
