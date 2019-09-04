@@ -16,7 +16,7 @@
  */
 
 #define SYSCALL_INSTR       0xd4000001
-#define MAX_BACKTRACK_LEVEL 10
+#define MAX_BACKTRACK_LEVEL 16
 #define PAGE_SIZE           4096
 
 typedef struct {
@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
     uint64_t HANDLER_ADDR, vaddr, code_size, offset;
     config cfg;
 
-    if(argc != 3)
-        errx(-1, "Usage: %s <binary> <wrapper_addr>\n", argv[0]);
+    if(argc != 3 && argc != 2)
+        errx(-1, "Usage: %s <binary> [wrapper_addr]\n", argv[0]);
 
-    uint64_t wrapper_addr = strtoul(argv[2], NULL, 16);
+    uint64_t wrapper_addr = (argc == 3) ? strtoul(argv[2], NULL, 16) : 0;
 
     /* elf stuff */
     parse_elf(argv[1], &vaddr, &code_size, &offset);
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
             int32_t signed_offset = (int32_t)(offset*4);
             uint64_t target_addr = addr + signed_offset;
 
-            if(target_addr == wrapper_addr) {
+            if(wrapper_addr && target_addr == wrapper_addr) {
                 syscall_num++;
 
                 int backtrack_level = 1;
