@@ -1754,7 +1754,7 @@ void localSearch( Points* points, long kmin, long kmax, long* kfinal ) {
 
 class PStream {
 public:
-  virtual size_t read( float* dest, int dim, int num ) = 0;
+  virtual size_t read_input( float* dest, int dim, int num ) = 0;
   virtual int ferror() = 0;
   virtual int feof() = 0;
   virtual ~PStream() {
@@ -1767,7 +1767,7 @@ public:
   SimStream(long n_ ) {
     n = n_;
   }
-  size_t read( float* dest, int dim, int num ) {
+  size_t read_input( float* dest, int dim, int num ) {
     size_t count = 0;
     for( int i = 0; i < num && n > 0; i++ ) {
       for( int k = 0; k < dim; k++ ) {
@@ -1797,7 +1797,7 @@ public:
       _iterations = 10;
   }
 
-  size_t read( float* dest, int dim, int num ) {
+  size_t read_input( float* dest, int dim, int num ) {
     _iterations--;
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd == -1) {
@@ -1831,15 +1831,16 @@ public:
     close(sockfd);
 
     char filename[BUFFSIZE] = {0};
+#if 0
+    char filename[BUFFSIZE] = {0};
     if (recv(connfd, filename, BUFFSIZE, 0) == -1) {
         perror("Can't receive filename");
         exit(1);
     }
+#endif
 
     char addr[INET_ADDRSTRLEN];
-    //printf("Start receive file: %s from %s\n", filename, inet_ntop(AF_INET, &clientaddr.sin_addr, addr, INET_ADDRSTRLEN));
-    printf("Start receive file: %s\n", filename);
-    ssize_t total = writefile(connfd, dest);
+    ssize_t total = writefile(connfd, dest, dim);
     printf("Receive Success, NumBytes = %ld\n", total);
 
     close(connfd);
@@ -1849,22 +1850,22 @@ public:
 
 #define MAX_LINE 4096
 
-  ssize_t writefile(int sockfd, void *ptr)
+  ssize_t writefile(int sockfd, void *ptr, int dim)
   {
     ssize_t n;
     ssize_t total = 0;
 
-    while ((n = recv(sockfd, ptr + total, MAX_LINE, 0)) > 0) {
+    while ((n = recv(sockfd, (char *)ptr + total, MAX_LINE, 0)) != 0) {
 	    total+=n;
-        printf("+%d (total: %d)\n", n, total);
         if (n == -1) {
             perror("Receive File Error");
             exit(1);
         }
     }
 
-    printf("done\n");
-    return total/sizeof(float);
+    printf("done, received %d bytes (%d floats)\n", total, total / sizeof(float));
+    return ((total/sizeof(float))/dim);
+    //return (16384);
   }
 
 
@@ -1957,8 +1958,23 @@ void streamCluster( PStream* stream,
   long kfinal;
   while(1) {
 
-    size_t numRead  = stream->read(block, dim, chunksize ); 
-    fprintf(stderr,"read %d points\n",numRead);
+    size_t numRead  = stream->read_input(block, dim, chunksize ); 
+    fprintf(stderr,"read %d points, dim=%d, chunkdise=%d\n",numRead, dim, chunksize);
+
+#if 0
+    FILE *f = fopen("input.16384.128", "w+");
+    if(!f) {
+        perror("fopen");
+        exit(-1);
+    }
+
+    if(fwrite(block, sizeof(float), dim*chunksize, f) != dim*chunksize) {
+        perror("fwrite");
+        exit(-1);
+    }
+    fclose(f);
+#endif
+
 
     if( stream->ferror() || numRead < (unsigned int)chunksize && !stream->feof() ) {
       fprintf(stderr, "error reading data!\n");
@@ -1966,6 +1982,7 @@ void streamCluster( PStream* stream,
     }
 
     points.num = numRead;
+    printf("points num: %d\n", points.num);
     for( int i = 0; i < points.num; i++ ) {
       points.p[i].weight = 1.0;
     }

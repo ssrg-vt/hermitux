@@ -1,5 +1,5 @@
 # Edit this with the path to HermiTux base install folder:
-HERMITUX_BASE=$(HOME)/Desktop/hermitux
+HERMITUX_BASE=/tmp/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix

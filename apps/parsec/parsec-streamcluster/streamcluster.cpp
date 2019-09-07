@@ -1769,6 +1769,10 @@ public:
       n--;
       count++;
     }
+    printf("done %d vectors of %d elems\n", count, dim);
+    FILE *f = fopen("output", "w+");
+    fwrite(dest, sizeof(float), dim*num, f);
+    fclose(f);
     return count;
   }
   int ferror() {
