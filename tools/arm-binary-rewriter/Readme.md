@@ -60,15 +60,16 @@ have a pretty good coverage.
 
 ## Method
 
-Intuitively, one may think that because aarch64 is a fixed-size instruction
-set, replacing any system call with a function call would be as easy as
-rewriting an instruction. However, a particularity of that architecture makes
-it more complicated. A fundamental difference with x86-64 is that with aarch64,
-when a function is called (BL -- Branch and Link), the return address is not
-pushed on the stack but is rather put in a register, x30. This is done
-automatically by the BL instruction. This may be changed (setting in to another
-register or even on the stack) but by default any standard compiler will use
-x30.
+Intuitively, one may think that because (1) aarch64 is a fixed-size instruction
+set and (2) the ABI register placement convention for parameters is the same
+for system and function calls, replacing any system call with a function call
+would be as easy as rewriting an instruction. However, a particularity of that
+architecture makes it more complicated. A fundamental difference with x86-64 is
+that with aarch64, when a function is called (BL -- Branch and Link), the
+return address is not pushed on the stack but is rather put in a register, x30.
+This is done automatically by the BL instruction. This may be changed (setting
+in to another register or even on the stack) but by default any standard
+compiler will use x30.
 
 If we replace a system call instruction, SVC 0, with a function call to the
 corresponding system call, BL, the issue is that this BL will overwrite
