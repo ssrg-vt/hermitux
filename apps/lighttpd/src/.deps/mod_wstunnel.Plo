@@ -1,0 +1,127 @@
+mod_wstunnel.lo: mod_wstunnel.c first.h ../config.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/types.h \
+ /home/tom/git/hermitux/musl/prefix/include/features.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h \
+ /home/tom/git/hermitux/musl/prefix/include/endian.h \
+ /home/tom/git/hermitux/musl/prefix/include/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/select.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h \
+ /home/tom/git/hermitux/musl/prefix/include/stddef.h \
+ /home/tom/git/hermitux/musl/prefix/include/limits.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/limits.h \
+ /home/tom/git/hermitux/musl/prefix/include/stdlib.h \
+ /home/tom/git/hermitux/musl/prefix/include/alloca.h \
+ /home/tom/git/hermitux/musl/prefix/include/string.h \
+ /home/tom/git/hermitux/musl/prefix/include/strings.h gw_backend.h \
+ sys-socket.h /home/tom/git/hermitux/musl/prefix/include/sys/socket.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/socket.h \
+ /home/tom/git/hermitux/musl/prefix/include/netinet/in.h \
+ /home/tom/git/hermitux/musl/prefix/include/inttypes.h \
+ /home/tom/git/hermitux/musl/prefix/include/netinet/tcp.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/un.h array.h buffer.h \
+ base_decls.h chunk.h plugin.h configfile.h vector.h response.h \
+ /home/tom/git/hermitux/musl/prefix/include/time.h base.h settings.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/time.h http_kv.h \
+ sock_addr.h etag.h fdevent.h http_header.h joblist.h log.h sys-endian.h \
+ md5.h algo_sha1.h sys-crypto.h base64.h http_chunk.h
+
+first.h:
+
+../config.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/types.h:
+
+/home/tom/git/hermitux/musl/prefix/include/features.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h:
+
+/home/tom/git/hermitux/musl/prefix/include/endian.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/select.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stddef.h:
+
+/home/tom/git/hermitux/musl/prefix/include/limits.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/limits.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stdlib.h:
+
+/home/tom/git/hermitux/musl/prefix/include/alloca.h:
+
+/home/tom/git/hermitux/musl/prefix/include/string.h:
+
+/home/tom/git/hermitux/musl/prefix/include/strings.h:
+
+gw_backend.h:
+
+sys-socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/netinet/in.h:
+
+/home/tom/git/hermitux/musl/prefix/include/inttypes.h:
+
+/home/tom/git/hermitux/musl/prefix/include/netinet/tcp.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/un.h:
+
+array.h:
+
+buffer.h:
+
+base_decls.h:
+
+chunk.h:
+
+plugin.h:
+
+configfile.h:
+
+vector.h:
+
+response.h:
+
+/home/tom/git/hermitux/musl/prefix/include/time.h:
+
+base.h:
+
+settings.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/time.h:
+
+http_kv.h:
+
+sock_addr.h:
+
+etag.h:
+
+fdevent.h:
+
+http_header.h:
+
+joblist.h:
+
+log.h:
+
+sys-endian.h:
+
+md5.h:
+
+algo_sha1.h:
+
+sys-crypto.h:
+
+base64.h:
+
+http_chunk.h:
