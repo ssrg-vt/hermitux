@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-HERMIT_REPO=https://github.com/ssrg-vt/hermitux-kernel.git
+HERMIT_REPO=https://github.com/tv-deusen/hermitux-kernel.git
 MUSL_REPO=https://github.com/ssrg-vt/hermitux-musl.git
 MUSL_BRANCH=hermitux-v1.1.18
 LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
