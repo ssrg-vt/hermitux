@@ -54,7 +54,7 @@ tar xf cmake-3.14.3.tar.gz
 cd cmake-3.14.3
 ./configure
 make -j`nproc`
-make install
+sudo make install
 ```
 
 ## Build
