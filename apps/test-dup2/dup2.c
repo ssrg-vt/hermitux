@@ -16,9 +16,9 @@ static int test_newfd(void)
 {
 
     fprintf(stderr, "----- test_newfd -----\n");
-    int oldfd = open("test.dat", O_RDONLY | O_CREAT);
+    int oldfd = open("file1.txt", O_RDONLY | O_CREAT);
     if (oldfd == -1) {
-        fprintf(stderr, "cannot open test.dat\n");
+        fprintf(stderr, "cannot open file1.txt\n");
         return -1;
     }
     fprintf(stdout, "oldfd: %d\n", oldfd);
@@ -51,16 +51,16 @@ static int test_usedfd()
     char buf_used[BUF_SIZE * sizeof(char)];
     char buf_new[BUF_SIZE * sizeof(char)];
 
-    int oldfd = open("test.dat", O_RDONLY | O_CREAT);
+    int oldfd = open("file1.txt", O_RDONLY | O_CREAT);
     if (oldfd == -1) {
-        fprintf(stderr, "cannot open test.dat\n");
+        fprintf(stderr, "cannot open file1.txt\n");
         return oldfd;
     }
     fprintf(stdout, "oldfd: %d\n", oldfd);
 
-    int usedfd = open("usedfd.dat", O_RDONLY | O_CREAT);
+    int usedfd = open("file2.txt", O_RDONLY | O_CREAT);
     if (usedfd == -1) {
-        fprintf(stderr, "cannot open usedfd.dat\n");
+        fprintf(stderr, "cannot open file2.txt\n");
         return usedfd;
     }
 
