@@ -18,3 +18,7 @@ boost_1_61_0
 dyninst-9.2.0
 
 hermitux-toolchain/
+apps/lighttpd/sconsbuild/**
+apps/lighttpd/.sconf_temp
+apps/lighttpd/**/*.a
+apps/lighttpd/**/*.Plo

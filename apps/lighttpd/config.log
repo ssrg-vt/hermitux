@@ -1,0 +1,1889 @@
+file /home/tom/git/hermitux/apps/lighthttpd/SConstruct,line 59:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for C header file arpa/inet.h... 
+.sconf_temp/conftest_0.c <-
+  |
+  |#include "arpa/inet.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_0.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -Isconsbuild/build -Isrc .sconf_temp/conftest_0.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file crypt.h... 
+.sconf_temp/conftest_1.c <-
+  |
+  |#include "crypt.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_1.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -Isconsbuild/build -Isrc .sconf_temp/conftest_1.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file fcntl.h... 
+.sconf_temp/conftest_2.c <-
+  |
+  |#include "fcntl.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_2.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -Isconsbuild/build -Isrc .sconf_temp/conftest_2.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file getopt.h... 
+.sconf_temp/conftest_3.c <-
+  |
+  |#include "getopt.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_3.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_3.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file inttypes.h... 
+.sconf_temp/conftest_4.c <-
+  |
+  |#include "inttypes.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_4.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -Isconsbuild/build -Isrc .sconf_temp/conftest_4.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file linux/random.h... 
+.sconf_temp/conftest_5.c <-
+  |
+  |#include "linux/random.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_5.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -Isconsbuild/build -Isrc .sconf_temp/conftest_5.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file poll.h... 
+.sconf_temp/conftest_6.c <-
+  |
+  |#include "poll.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_6.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -Isconsbuild/build -Isrc .sconf_temp/conftest_6.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file pwd.h... 
+.sconf_temp/conftest_7.c <-
+  |
+  |#include "pwd.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_7.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_7.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file stdint.h... 
+.sconf_temp/conftest_8.c <-
+  |
+  |#include "stdint.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_8.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -Isconsbuild/build -Isrc .sconf_temp/conftest_8.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file stdlib.h... 
+.sconf_temp/conftest_9.c <-
+  |
+  |#include "stdlib.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_9.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -Isconsbuild/build -Isrc .sconf_temp/conftest_9.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file string.h... 
+.sconf_temp/conftest_10.c <-
+  |
+  |#include "string.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_10.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -Isconsbuild/build -Isrc .sconf_temp/conftest_10.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file strings.h... 
+.sconf_temp/conftest_11.c <-
+  |
+  |#include "strings.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_11.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -Isconsbuild/build -Isrc .sconf_temp/conftest_11.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/devpoll.h... 
+.sconf_temp/conftest_12.c <-
+  |
+  |#include "sys/devpoll.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_12.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -Isconsbuild/build -Isrc .sconf_temp/conftest_12.c
+.sconf_temp/conftest_12.c:2:10: fatal error: sys/devpoll.h: No such file or directory
+ #include "sys/devpoll.h"
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C header file sys/epoll.h... 
+.sconf_temp/conftest_13.c <-
+  |
+  |#include "sys/epoll.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_13.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -Isconsbuild/build -Isrc .sconf_temp/conftest_13.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/filio.h... 
+.sconf_temp/conftest_14.c <-
+  |
+  |#include "sys/filio.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_14.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_14.c
+.sconf_temp/conftest_14.c:2:10: fatal error: sys/filio.h: No such file or directory
+ #include "sys/filio.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C header file sys/poll.h... 
+.sconf_temp/conftest_15.c <-
+  |
+  |#include "sys/poll.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_15.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_15.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/port.h... 
+.sconf_temp/conftest_16.c <-
+  |
+  |#include "sys/port.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_16.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_16.c
+.sconf_temp/conftest_16.c:2:10: fatal error: sys/port.h: No such file or directory
+ #include "sys/port.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C header file sys/prctl.h... 
+.sconf_temp/conftest_17.c <-
+  |
+  |#include "sys/prctl.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_17.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_17.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/sendfile.h... 
+.sconf_temp/conftest_18.c <-
+  |
+  |#include "sys/sendfile.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_18.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -Isconsbuild/build -Isrc .sconf_temp/conftest_18.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/time.h... 
+.sconf_temp/conftest_19.c <-
+  |
+  |#include "sys/time.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_19.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -Isconsbuild/build -Isrc .sconf_temp/conftest_19.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/wait.h... 
+.sconf_temp/conftest_20.c <-
+  |
+  |#include "sys/wait.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_20.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -Isconsbuild/build -Isrc .sconf_temp/conftest_20.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file syslog.h... 
+.sconf_temp/conftest_21.c <-
+  |
+  |#include "syslog.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_21.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -Isconsbuild/build -Isrc .sconf_temp/conftest_21.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file unistd.h... 
+.sconf_temp/conftest_22.c <-
+  |
+  |#include "unistd.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_22.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -Isconsbuild/build -Isrc .sconf_temp/conftest_22.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file winsock2.h... 
+.sconf_temp/conftest_23.c <-
+  |
+  |#include "winsock2.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_23.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -Isconsbuild/build -Isrc .sconf_temp/conftest_23.c
+.sconf_temp/conftest_23.c:2:10: fatal error: winsock2.h: No such file or directory
+ #include "winsock2.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C header file sys/resource.h... 
+.sconf_temp/conftest_24.c <-
+  |#include "sys/types.h"
+  |#include "sys/time.h"
+  |
+  |#include "sys/resource.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_24.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -Isconsbuild/build -Isrc .sconf_temp/conftest_24.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file netinet/in.h... 
+.sconf_temp/conftest_25.c <-
+  |#include "sys/types.h"
+  |
+  |#include "netinet/in.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_25.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -Isconsbuild/build -Isrc .sconf_temp/conftest_25.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/event.h... 
+.sconf_temp/conftest_26.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/event.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_26.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -Isconsbuild/build -Isrc .sconf_temp/conftest_26.c
+.sconf_temp/conftest_26.c:3:10: fatal error: sys/event.h: No such file or directory
+ #include "sys/event.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for C header file sys/mman.h... 
+.sconf_temp/conftest_27.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/mman.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_27.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -Isconsbuild/build -Isrc .sconf_temp/conftest_27.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/select.h... 
+.sconf_temp/conftest_28.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/select.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_28.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -Isconsbuild/build -Isrc .sconf_temp/conftest_28.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/socket.h... 
+.sconf_temp/conftest_29.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/socket.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_29.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -Isconsbuild/build -Isrc .sconf_temp/conftest_29.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/uio.h... 
+.sconf_temp/conftest_30.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/uio.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_30.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -Isconsbuild/build -Isrc .sconf_temp/conftest_30.c
+scons: Configure: yes
+
+scons: Configure: Checking for C header file sys/un.h... 
+.sconf_temp/conftest_31.c <-
+  |#include "sys/types.h"
+  |
+  |#include "sys/un.h"
+  |
+  |
+gcc -o .sconf_temp/conftest_31.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -Isconsbuild/build -Isrc .sconf_temp/conftest_31.c
+scons: Configure: yes
+
+scons: Configure: Checking for C function arc4random_buf()... 
+.sconf_temp/conftest_32.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char arc4random_buf();
+  |
+  |int main() {
+  |#if defined (__stub_arc4random_buf) || defined (__stub___arc4random_buf)
+  |  fail fail fail
+  |#else
+  |  arc4random_buf();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_32.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -Isconsbuild/build -Isrc .sconf_temp/conftest_32.c
+gcc -o .sconf_temp/conftest_32 .sconf_temp/conftest_32.o
+.sconf_temp/conftest_32.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_32.c:14: undefined reference to `arc4random_buf'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function chroot()... 
+.sconf_temp/conftest_33.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char chroot();
+  |
+  |int main() {
+  |#if defined (__stub_chroot) || defined (__stub___chroot)
+  |  fail fail fail
+  |#else
+  |  chroot();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_33.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -Isconsbuild/build -Isrc .sconf_temp/conftest_33.c
+gcc -o .sconf_temp/conftest_33 .sconf_temp/conftest_33.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function clock_gettime()... 
+.sconf_temp/conftest_34.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char clock_gettime();
+  |
+  |int main() {
+  |#if defined (__stub_clock_gettime) || defined (__stub___clock_gettime)
+  |  fail fail fail
+  |#else
+  |  clock_gettime();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_34.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -Isconsbuild/build -Isrc .sconf_temp/conftest_34.c
+gcc -o .sconf_temp/conftest_34 .sconf_temp/conftest_34.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function dup2()... 
+.sconf_temp/conftest_35.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char dup2();
+  |
+  |int main() {
+  |#if defined (__stub_dup2) || defined (__stub___dup2)
+  |  fail fail fail
+  |#else
+  |  dup2();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_35.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -Isconsbuild/build -Isrc .sconf_temp/conftest_35.c
+gcc -o .sconf_temp/conftest_35 .sconf_temp/conftest_35.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function epoll_ctl()... 
+.sconf_temp/conftest_36.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char epoll_ctl();
+  |
+  |int main() {
+  |#if defined (__stub_epoll_ctl) || defined (__stub___epoll_ctl)
+  |  fail fail fail
+  |#else
+  |  epoll_ctl();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_36.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -Isconsbuild/build -Isrc .sconf_temp/conftest_36.c
+gcc -o .sconf_temp/conftest_36 .sconf_temp/conftest_36.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function explicit_bzero()... 
+.sconf_temp/conftest_37.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char explicit_bzero();
+  |
+  |int main() {
+  |#if defined (__stub_explicit_bzero) || defined (__stub___explicit_bzero)
+  |  fail fail fail
+  |#else
+  |  explicit_bzero();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_37.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -Isconsbuild/build -Isrc .sconf_temp/conftest_37.c
+gcc -o .sconf_temp/conftest_37 .sconf_temp/conftest_37.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function fork()... 
+.sconf_temp/conftest_38.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char fork();
+  |
+  |int main() {
+  |#if defined (__stub_fork) || defined (__stub___fork)
+  |  fail fail fail
+  |#else
+  |  fork();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_38.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -Isconsbuild/build -Isrc .sconf_temp/conftest_38.c
+.sconf_temp/conftest_38.c:8:6: warning: conflicting types for built-in function ‘fork’ [-Wbuiltin-declaration-mismatch]
+ char fork();
+      ^~~~
+gcc -o .sconf_temp/conftest_38 .sconf_temp/conftest_38.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getcwd()... 
+.sconf_temp/conftest_39.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char getcwd();
+  |
+  |int main() {
+  |#if defined (__stub_getcwd) || defined (__stub___getcwd)
+  |  fail fail fail
+  |#else
+  |  getcwd();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_39.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -Isconsbuild/build -Isrc .sconf_temp/conftest_39.c
+gcc -o .sconf_temp/conftest_39 .sconf_temp/conftest_39.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function gethostbyname()... 
+.sconf_temp/conftest_40.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char gethostbyname();
+  |
+  |int main() {
+  |#if defined (__stub_gethostbyname) || defined (__stub___gethostbyname)
+  |  fail fail fail
+  |#else
+  |  gethostbyname();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_40.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -Isconsbuild/build -Isrc .sconf_temp/conftest_40.c
+gcc -o .sconf_temp/conftest_40 .sconf_temp/conftest_40.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getloadavg()... 
+.sconf_temp/conftest_41.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char getloadavg();
+  |
+  |int main() {
+  |#if defined (__stub_getloadavg) || defined (__stub___getloadavg)
+  |  fail fail fail
+  |#else
+  |  getloadavg();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_41.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -Isconsbuild/build -Isrc .sconf_temp/conftest_41.c
+gcc -o .sconf_temp/conftest_41 .sconf_temp/conftest_41.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getopt()... 
+.sconf_temp/conftest_42.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char getopt();
+  |
+  |int main() {
+  |#if defined (__stub_getopt) || defined (__stub___getopt)
+  |  fail fail fail
+  |#else
+  |  getopt();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_42.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -Isconsbuild/build -Isrc .sconf_temp/conftest_42.c
+gcc -o .sconf_temp/conftest_42 .sconf_temp/conftest_42.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getrlimit()... 
+.sconf_temp/conftest_43.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char getrlimit();
+  |
+  |int main() {
+  |#if defined (__stub_getrlimit) || defined (__stub___getrlimit)
+  |  fail fail fail
+  |#else
+  |  getrlimit();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_43.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -Isconsbuild/build -Isrc .sconf_temp/conftest_43.c
+gcc -o .sconf_temp/conftest_43 .sconf_temp/conftest_43.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getuid()... 
+.sconf_temp/conftest_44.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char getuid();
+  |
+  |int main() {
+  |#if defined (__stub_getuid) || defined (__stub___getuid)
+  |  fail fail fail
+  |#else
+  |  getuid();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_44.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -Isconsbuild/build -Isrc .sconf_temp/conftest_44.c
+gcc -o .sconf_temp/conftest_44 .sconf_temp/conftest_44.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function inet_ntoa()... 
+.sconf_temp/conftest_45.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char inet_ntoa();
+  |
+  |int main() {
+  |#if defined (__stub_inet_ntoa) || defined (__stub___inet_ntoa)
+  |  fail fail fail
+  |#else
+  |  inet_ntoa();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_45.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -Isconsbuild/build -Isrc .sconf_temp/conftest_45.c
+gcc -o .sconf_temp/conftest_45 .sconf_temp/conftest_45.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function inet_ntop()... 
+.sconf_temp/conftest_46.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char inet_ntop();
+  |
+  |int main() {
+  |#if defined (__stub_inet_ntop) || defined (__stub___inet_ntop)
+  |  fail fail fail
+  |#else
+  |  inet_ntop();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_46.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -Isconsbuild/build -Isrc .sconf_temp/conftest_46.c
+gcc -o .sconf_temp/conftest_46 .sconf_temp/conftest_46.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function inet_pton()... 
+.sconf_temp/conftest_47.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char inet_pton();
+  |
+  |int main() {
+  |#if defined (__stub_inet_pton) || defined (__stub___inet_pton)
+  |  fail fail fail
+  |#else
+  |  inet_pton();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_47.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -Isconsbuild/build -Isrc .sconf_temp/conftest_47.c
+gcc -o .sconf_temp/conftest_47 .sconf_temp/conftest_47.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function issetugid()... 
+.sconf_temp/conftest_48.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char issetugid();
+  |
+  |int main() {
+  |#if defined (__stub_issetugid) || defined (__stub___issetugid)
+  |  fail fail fail
+  |#else
+  |  issetugid();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_48.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -Isconsbuild/build -Isrc .sconf_temp/conftest_48.c
+gcc -o .sconf_temp/conftest_48 .sconf_temp/conftest_48.o
+.sconf_temp/conftest_48.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_48.c:14: undefined reference to `issetugid'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function jrand48()... 
+.sconf_temp/conftest_49.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char jrand48();
+  |
+  |int main() {
+  |#if defined (__stub_jrand48) || defined (__stub___jrand48)
+  |  fail fail fail
+  |#else
+  |  jrand48();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_49.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -Isconsbuild/build -Isrc .sconf_temp/conftest_49.c
+gcc -o .sconf_temp/conftest_49 .sconf_temp/conftest_49.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function kqueue()... 
+.sconf_temp/conftest_50.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char kqueue();
+  |
+  |int main() {
+  |#if defined (__stub_kqueue) || defined (__stub___kqueue)
+  |  fail fail fail
+  |#else
+  |  kqueue();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_50.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -Isconsbuild/build -Isrc .sconf_temp/conftest_50.c
+gcc -o .sconf_temp/conftest_50 .sconf_temp/conftest_50.o
+.sconf_temp/conftest_50.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_50.c:14: undefined reference to `kqueue'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function localtime_r()... 
+.sconf_temp/conftest_51.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char localtime_r();
+  |
+  |int main() {
+  |#if defined (__stub_localtime_r) || defined (__stub___localtime_r)
+  |  fail fail fail
+  |#else
+  |  localtime_r();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_51.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -Isconsbuild/build -Isrc .sconf_temp/conftest_51.c
+gcc -o .sconf_temp/conftest_51 .sconf_temp/conftest_51.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function lstat()... 
+.sconf_temp/conftest_52.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char lstat();
+  |
+  |int main() {
+  |#if defined (__stub_lstat) || defined (__stub___lstat)
+  |  fail fail fail
+  |#else
+  |  lstat();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_52.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -Isconsbuild/build -Isrc .sconf_temp/conftest_52.c
+gcc -o .sconf_temp/conftest_52 .sconf_temp/conftest_52.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function madvise()... 
+.sconf_temp/conftest_53.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char madvise();
+  |
+  |int main() {
+  |#if defined (__stub_madvise) || defined (__stub___madvise)
+  |  fail fail fail
+  |#else
+  |  madvise();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_53.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -Isconsbuild/build -Isrc .sconf_temp/conftest_53.c
+gcc -o .sconf_temp/conftest_53 .sconf_temp/conftest_53.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function memset_s()... 
+.sconf_temp/conftest_54.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char memset_s();
+  |
+  |int main() {
+  |#if defined (__stub_memset_s) || defined (__stub___memset_s)
+  |  fail fail fail
+  |#else
+  |  memset_s();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_54.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -Isconsbuild/build -Isrc .sconf_temp/conftest_54.c
+gcc -o .sconf_temp/conftest_54 .sconf_temp/conftest_54.o
+.sconf_temp/conftest_54.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_54.c:14: undefined reference to `memset_s'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function memset()... 
+.sconf_temp/conftest_55.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char memset();
+  |
+  |int main() {
+  |#if defined (__stub_memset) || defined (__stub___memset)
+  |  fail fail fail
+  |#else
+  |  memset();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_55.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -Isconsbuild/build -Isrc .sconf_temp/conftest_55.c
+.sconf_temp/conftest_55.c:8:6: warning: conflicting types for built-in function ‘memset’ [-Wbuiltin-declaration-mismatch]
+ char memset();
+      ^~~~~~
+gcc -o .sconf_temp/conftest_55 .sconf_temp/conftest_55.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function mmap()... 
+.sconf_temp/conftest_56.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char mmap();
+  |
+  |int main() {
+  |#if defined (__stub_mmap) || defined (__stub___mmap)
+  |  fail fail fail
+  |#else
+  |  mmap();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_56.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -Isconsbuild/build -Isrc .sconf_temp/conftest_56.c
+gcc -o .sconf_temp/conftest_56 .sconf_temp/conftest_56.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function munmap()... 
+.sconf_temp/conftest_57.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char munmap();
+  |
+  |int main() {
+  |#if defined (__stub_munmap) || defined (__stub___munmap)
+  |  fail fail fail
+  |#else
+  |  munmap();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_57.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -Isconsbuild/build -Isrc .sconf_temp/conftest_57.c
+gcc -o .sconf_temp/conftest_57 .sconf_temp/conftest_57.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function pathconf()... 
+.sconf_temp/conftest_58.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char pathconf();
+  |
+  |int main() {
+  |#if defined (__stub_pathconf) || defined (__stub___pathconf)
+  |  fail fail fail
+  |#else
+  |  pathconf();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_58.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -Isconsbuild/build -Isrc .sconf_temp/conftest_58.c
+gcc -o .sconf_temp/conftest_58 .sconf_temp/conftest_58.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function pipe2()... 
+.sconf_temp/conftest_59.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char pipe2();
+  |
+  |int main() {
+  |#if defined (__stub_pipe2) || defined (__stub___pipe2)
+  |  fail fail fail
+  |#else
+  |  pipe2();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_59.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -Isconsbuild/build -Isrc .sconf_temp/conftest_59.c
+gcc -o .sconf_temp/conftest_59 .sconf_temp/conftest_59.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function poll()... 
+.sconf_temp/conftest_60.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char poll();
+  |
+  |int main() {
+  |#if defined (__stub_poll) || defined (__stub___poll)
+  |  fail fail fail
+  |#else
+  |  poll();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_60.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -Isconsbuild/build -Isrc .sconf_temp/conftest_60.c
+gcc -o .sconf_temp/conftest_60 .sconf_temp/conftest_60.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function port_create()... 
+.sconf_temp/conftest_61.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char port_create();
+  |
+  |int main() {
+  |#if defined (__stub_port_create) || defined (__stub___port_create)
+  |  fail fail fail
+  |#else
+  |  port_create();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_61.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -Isconsbuild/build -Isrc .sconf_temp/conftest_61.c
+gcc -o .sconf_temp/conftest_61 .sconf_temp/conftest_61.o
+.sconf_temp/conftest_61.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_61.c:14: undefined reference to `port_create'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function posix_fadvise()... 
+.sconf_temp/conftest_62.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char posix_fadvise();
+  |
+  |int main() {
+  |#if defined (__stub_posix_fadvise) || defined (__stub___posix_fadvise)
+  |  fail fail fail
+  |#else
+  |  posix_fadvise();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_62.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -Isconsbuild/build -Isrc .sconf_temp/conftest_62.c
+gcc -o .sconf_temp/conftest_62 .sconf_temp/conftest_62.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function prctl()... 
+.sconf_temp/conftest_63.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char prctl();
+  |
+  |int main() {
+  |#if defined (__stub_prctl) || defined (__stub___prctl)
+  |  fail fail fail
+  |#else
+  |  prctl();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_63.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -Isconsbuild/build -Isrc .sconf_temp/conftest_63.c
+gcc -o .sconf_temp/conftest_63 .sconf_temp/conftest_63.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function select()... 
+.sconf_temp/conftest_64.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char select();
+  |
+  |int main() {
+  |#if defined (__stub_select) || defined (__stub___select)
+  |  fail fail fail
+  |#else
+  |  select();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_64.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -Isconsbuild/build -Isrc .sconf_temp/conftest_64.c
+gcc -o .sconf_temp/conftest_64 .sconf_temp/conftest_64.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function send_file()... 
+.sconf_temp/conftest_65.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char send_file();
+  |
+  |int main() {
+  |#if defined (__stub_send_file) || defined (__stub___send_file)
+  |  fail fail fail
+  |#else
+  |  send_file();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_65.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -Isconsbuild/build -Isrc .sconf_temp/conftest_65.c
+gcc -o .sconf_temp/conftest_65 .sconf_temp/conftest_65.o
+.sconf_temp/conftest_65.o: In function `main':
+/home/tom/git/hermitux/apps/lighthttpd/.sconf_temp/conftest_65.c:14: undefined reference to `send_file'
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+scons: Configure: Checking for C function sendfile()... 
+.sconf_temp/conftest_66.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char sendfile();
+  |
+  |int main() {
+  |#if defined (__stub_sendfile) || defined (__stub___sendfile)
+  |  fail fail fail
+  |#else
+  |  sendfile();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_66.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -Isconsbuild/build -Isrc .sconf_temp/conftest_66.c
+gcc -o .sconf_temp/conftest_66 .sconf_temp/conftest_66.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function sendfile64()... 
+.sconf_temp/conftest_67.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char sendfile64();
+  |
+  |int main() {
+  |#if defined (__stub_sendfile64) || defined (__stub___sendfile64)
+  |  fail fail fail
+  |#else
+  |  sendfile64();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_67.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -Isconsbuild/build -Isrc .sconf_temp/conftest_67.c
+gcc -o .sconf_temp/conftest_67 .sconf_temp/conftest_67.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function sigaction()... 
+.sconf_temp/conftest_68.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char sigaction();
+  |
+  |int main() {
+  |#if defined (__stub_sigaction) || defined (__stub___sigaction)
+  |  fail fail fail
+  |#else
+  |  sigaction();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_68.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -Isconsbuild/build -Isrc .sconf_temp/conftest_68.c
+gcc -o .sconf_temp/conftest_68 .sconf_temp/conftest_68.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function signal()... 
+.sconf_temp/conftest_69.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char signal();
+  |
+  |int main() {
+  |#if defined (__stub_signal) || defined (__stub___signal)
+  |  fail fail fail
+  |#else
+  |  signal();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_69.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -Isconsbuild/build -Isrc .sconf_temp/conftest_69.c
+gcc -o .sconf_temp/conftest_69 .sconf_temp/conftest_69.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function socket()... 
+.sconf_temp/conftest_70.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char socket();
+  |
+  |int main() {
+  |#if defined (__stub_socket) || defined (__stub___socket)
+  |  fail fail fail
+  |#else
+  |  socket();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_70.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -Isconsbuild/build -Isrc .sconf_temp/conftest_70.c
+gcc -o .sconf_temp/conftest_70 .sconf_temp/conftest_70.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function srandom()... 
+.sconf_temp/conftest_71.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char srandom();
+  |
+  |int main() {
+  |#if defined (__stub_srandom) || defined (__stub___srandom)
+  |  fail fail fail
+  |#else
+  |  srandom();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_71.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -Isconsbuild/build -Isrc .sconf_temp/conftest_71.c
+gcc -o .sconf_temp/conftest_71 .sconf_temp/conftest_71.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function stat()... 
+.sconf_temp/conftest_72.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char stat();
+  |
+  |int main() {
+  |#if defined (__stub_stat) || defined (__stub___stat)
+  |  fail fail fail
+  |#else
+  |  stat();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_72.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -Isconsbuild/build -Isrc .sconf_temp/conftest_72.c
+gcc -o .sconf_temp/conftest_72 .sconf_temp/conftest_72.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strchr()... 
+.sconf_temp/conftest_73.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strchr();
+  |
+  |int main() {
+  |#if defined (__stub_strchr) || defined (__stub___strchr)
+  |  fail fail fail
+  |#else
+  |  strchr();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_73.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -Isconsbuild/build -Isrc .sconf_temp/conftest_73.c
+.sconf_temp/conftest_73.c:8:6: warning: conflicting types for built-in function ‘strchr’ [-Wbuiltin-declaration-mismatch]
+ char strchr();
+      ^~~~~~
+gcc -o .sconf_temp/conftest_73 .sconf_temp/conftest_73.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strdup()... 
+.sconf_temp/conftest_74.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strdup();
+  |
+  |int main() {
+  |#if defined (__stub_strdup) || defined (__stub___strdup)
+  |  fail fail fail
+  |#else
+  |  strdup();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_74.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -Isconsbuild/build -Isrc .sconf_temp/conftest_74.c
+.sconf_temp/conftest_74.c:8:6: warning: conflicting types for built-in function ‘strdup’ [-Wbuiltin-declaration-mismatch]
+ char strdup();
+      ^~~~~~
+gcc -o .sconf_temp/conftest_74 .sconf_temp/conftest_74.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strerror()... 
+.sconf_temp/conftest_75.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strerror();
+  |
+  |int main() {
+  |#if defined (__stub_strerror) || defined (__stub___strerror)
+  |  fail fail fail
+  |#else
+  |  strerror();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_75.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -Isconsbuild/build -Isrc .sconf_temp/conftest_75.c
+gcc -o .sconf_temp/conftest_75 .sconf_temp/conftest_75.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strftime()... 
+.sconf_temp/conftest_76.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strftime();
+  |
+  |int main() {
+  |#if defined (__stub_strftime) || defined (__stub___strftime)
+  |  fail fail fail
+  |#else
+  |  strftime();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_76.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -Isconsbuild/build -Isrc .sconf_temp/conftest_76.c
+.sconf_temp/conftest_76.c:8:6: warning: conflicting types for built-in function ‘strftime’ [-Wbuiltin-declaration-mismatch]
+ char strftime();
+      ^~~~~~~~
+gcc -o .sconf_temp/conftest_76 .sconf_temp/conftest_76.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strstr()... 
+.sconf_temp/conftest_77.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strstr();
+  |
+  |int main() {
+  |#if defined (__stub_strstr) || defined (__stub___strstr)
+  |  fail fail fail
+  |#else
+  |  strstr();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_77.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -Isconsbuild/build -Isrc .sconf_temp/conftest_77.c
+.sconf_temp/conftest_77.c:8:6: warning: conflicting types for built-in function ‘strstr’ [-Wbuiltin-declaration-mismatch]
+ char strstr();
+      ^~~~~~
+gcc -o .sconf_temp/conftest_77 .sconf_temp/conftest_77.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function strtol()... 
+.sconf_temp/conftest_78.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char strtol();
+  |
+  |int main() {
+  |#if defined (__stub_strtol) || defined (__stub___strtol)
+  |  fail fail fail
+  |#else
+  |  strtol();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_78.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -Isconsbuild/build -Isrc .sconf_temp/conftest_78.c
+gcc -o .sconf_temp/conftest_78 .sconf_temp/conftest_78.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function writev()... 
+.sconf_temp/conftest_79.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char writev();
+  |
+  |int main() {
+  |#if defined (__stub_writev) || defined (__stub___writev)
+  |  fail fail fail
+  |#else
+  |  writev();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_79.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -Isconsbuild/build -Isrc .sconf_temp/conftest_79.c
+gcc -o .sconf_temp/conftest_79 .sconf_temp/conftest_79.o
+scons: Configure: yes
+
+scons: Configure: Checking for C function getentropy()... 
+.sconf_temp/conftest_80.c <-
+  |
+  |
+  |#include <assert.h>
+  |sys/random.h
+  |
+  |int main() {
+  |#if defined (__stub_getentropy) || defined (__stub___getentropy)
+  |  fail fail fail
+  |#else
+  |  getentropy();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_80.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -Isconsbuild/build -Isrc .sconf_temp/conftest_80.c
+.sconf_temp/conftest_80.c:4:4: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘/’ token
+ sys/random.h
+    ^
+scons: Configure: no
+
+scons: Configure: Checking for C function getrandom()... 
+.sconf_temp/conftest_81.c <-
+  |
+  |
+  |#include <assert.h>
+  |linux/random.h
+  |
+  |int main() {
+  |#if defined (__stub_getrandom) || defined (__stub___getrandom)
+  |  fail fail fail
+  |#else
+  |  getrandom();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_81.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -Isconsbuild/build -Isrc .sconf_temp/conftest_81.c
+.sconf_temp/conftest_81.c:4:1: error: expected identifier or ‘(’ before numeric constant
+ linux/random.h
+ ^
+scons: Configure: no
+
+scons: Configure: Checking for C type pid_t... 
+.sconf_temp/conftest_82.c <-
+  |
+  |
+  |#include <sys/types.h>
+  |
+  |int main() {
+  |  if ((pid_t *) 0)
+  |    return 0;
+  |  if (sizeof (pid_t))
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_82.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -Isconsbuild/build -Isrc .sconf_temp/conftest_82.c
+gcc -o .sconf_temp/conftest_82 .sconf_temp/conftest_82.o
+scons: Configure: yes
+
+scons: Configure: Checking for C type size_t... 
+.sconf_temp/conftest_83.c <-
+  |
+  |
+  |#include <sys/types.h>
+  |
+  |int main() {
+  |  if ((size_t *) 0)
+  |    return 0;
+  |  if (sizeof (size_t))
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_83.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -Isconsbuild/build -Isrc .sconf_temp/conftest_83.c
+gcc -o .sconf_temp/conftest_83 .sconf_temp/conftest_83.o
+scons: Configure: yes
+
+scons: Configure: Checking for C type off_t... 
+.sconf_temp/conftest_84.c <-
+  |
+  |
+  |#include <sys/types.h>
+  |
+  |int main() {
+  |  if ((off_t *) 0)
+  |    return 0;
+  |  if (sizeof (off_t))
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_84.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -Isconsbuild/build -Isrc .sconf_temp/conftest_84.c
+gcc -o .sconf_temp/conftest_84 .sconf_temp/conftest_84.o
+scons: Configure: yes
+
+scons: Configure: Checking for C library crypt... 
+.sconf_temp/conftest_85.c <-
+  |
+  |
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_85.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -Isconsbuild/build -Isrc .sconf_temp/conftest_85.c
+gcc -o .sconf_temp/conftest_85 .sconf_temp/conftest_85.o -lcrypt
+scons: Configure: yes
+
+scons: Configure: Checking for C function crypt()... 
+.sconf_temp/conftest_86.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char crypt();
+  |
+  |int main() {
+  |#if defined (__stub_crypt) || defined (__stub___crypt)
+  |  fail fail fail
+  |#else
+  |  crypt();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_86.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -Isconsbuild/build -Isrc .sconf_temp/conftest_86.c
+gcc -o .sconf_temp/conftest_86 .sconf_temp/conftest_86.o -lcrypt
+scons: Configure: yes
+
+scons: Configure: Checking for C function crypt_r()... 
+.sconf_temp/conftest_87.c <-
+  |
+  |
+  |#include <assert.h>
+  |
+  |#ifdef __cplusplus
+  |extern "C"
+  |#endif
+  |char crypt_r();
+  |
+  |int main() {
+  |#if defined (__stub_crypt_r) || defined (__stub___crypt_r)
+  |  fail fail fail
+  |#else
+  |  crypt_r();
+  |#endif
+  |
+  |  return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_87.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -Isconsbuild/build -Isrc .sconf_temp/conftest_87.c
+gcc -o .sconf_temp/conftest_87 .sconf_temp/conftest_87.o -lcrypt
+scons: Configure: yes
+
+scons: Configure: Checking for C type socklen_t... 
+.sconf_temp/conftest_88.c <-
+  |
+  |
+  |#include <unistd.h>
+  |#include <sys/socket.h>
+  |#include <sys/types.h>
+  |
+  |int main() {
+  |  if ((socklen_t *) 0)
+  |    return 0;
+  |  if (sizeof (socklen_t))
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_88.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -Isconsbuild/build -Isrc .sconf_temp/conftest_88.c
+gcc -o .sconf_temp/conftest_88 .sconf_temp/conftest_88.o
+scons: Configure: yes
+
+scons: Configure: Checking for C type struct sockaddr_storage... 
+.sconf_temp/conftest_89.c <-
+  |
+  |
+  |#include <sys/socket.h>
+  |
+  |
+  |int main() {
+  |  if ((struct sockaddr_storage *) 0)
+  |    return 0;
+  |  if (sizeof (struct sockaddr_storage))
+  |    return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_89.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -Isconsbuild/build -Isrc .sconf_temp/conftest_89.c
+gcc -o .sconf_temp/conftest_89 .sconf_temp/conftest_89.o
+scons: Configure: yes
+
+scons: Configure: Checking for elftc_copyfile(0, 1) in C library elftc... 
+.sconf_temp/conftest_90.c <-
+  |
+  |
+  |#include "libelftc.h"
+  |
+  |int
+  |main() {
+  |  elftc_copyfile(0, 1);
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_90.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -Isconsbuild/build -Isrc .sconf_temp/conftest_90.c
+.sconf_temp/conftest_90.c:3:10: fatal error: libelftc.h: No such file or directory
+ #include "libelftc.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+scons: Configure: no
+
+scons: Configure: Checking for clock_gettime(CLOCK_MONOTONIC, (struct timespec*)0) in C library rt... 
+.sconf_temp/conftest_91.c <-
+  |
+  |
+  |#include "time.h"
+  |
+  |int
+  |main() {
+  |  clock_gettime(CLOCK_MONOTONIC, (struct timespec*)0);
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_91.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -Isconsbuild/build -Isrc .sconf_temp/conftest_91.c
+gcc -o .sconf_temp/conftest_91 .sconf_temp/conftest_91.o -lrt
+scons: Configure: yes
+
+scons: Configure: Checking for IPv6 support...
+.sconf_temp/conftest_92.c <-
+  |
+  |#include <sys/types.h>
+  |#include <sys/socket.h>
+  |#include <netinet/in.h>
+  |
+  |int main() {
+  |	struct sockaddr_in6 s; struct in6_addr t=in6addr_any; int i=AF_INET6; s; t.s6_addr[0] = 0;
+  |	return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_92.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -DHAVE_CLOCK_GETTIME -Isconsbuild/build -Isrc .sconf_temp/conftest_92.c
+.sconf_temp/conftest_92.c: In function ‘main’:
+.sconf_temp/conftest_92.c:7:72: warning: statement with no effect [-Wunused-value]
+  struct sockaddr_in6 s; struct in6_addr t=in6addr_any; int i=AF_INET6; s; t.s6_addr[0] = 0;
+                                                                        ^
+.sconf_temp/conftest_92.c:7:60: warning: unused variable ‘i’ [-Wunused-variable]
+  struct sockaddr_in6 s; struct in6_addr t=in6addr_any; int i=AF_INET6; s; t.s6_addr[0] = 0;
+                                                            ^
+.sconf_temp/conftest_92.c:7:41: warning: variable ‘t’ set but not used [-Wunused-but-set-variable]
+  struct sockaddr_in6 s; struct in6_addr t=in6addr_any; int i=AF_INET6; s; t.s6_addr[0] = 0;
+                                         ^
+gcc -o .sconf_temp/conftest_92 .sconf_temp/conftest_92.o -lrt
+scons: Configure: yes
+
+scons: Configure: Checking for weak symbol support...
+.sconf_temp/conftest_93.c <-
+  |
+  |__attribute__((weak)) void __dummy(void *x) { }
+  |int main() {
+  |	void *x;
+  |	__dummy(x);
+  |}
+  |
+gcc -o .sconf_temp/conftest_93.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -DHAVE_CLOCK_GETTIME -DHAVE_IPV6 -Isconsbuild/build -Isrc .sconf_temp/conftest_93.c
+.sconf_temp/conftest_93.c: In function ‘__dummy’:
+.sconf_temp/conftest_93.c:2:42: warning: unused parameter ‘x’ [-Wunused-parameter]
+ __attribute__((weak)) void __dummy(void *x) { }
+                                          ^
+.sconf_temp/conftest_93.c: In function ‘main’:
+.sconf_temp/conftest_93.c:5:2: warning: ‘x’ is used uninitialized in this function [-Wuninitialized]
+  __dummy(x);
+  ^~~~~~~~~~
+gcc -o .sconf_temp/conftest_93 .sconf_temp/conftest_93.o -lrt
+scons: Configure: yes
+
+scons: Configure: Checking for tm_gmtoff in struct tm...
+.sconf_temp/conftest_94.c <-
+  |
+  |#include <time.h>
+  |int main() {
+  |	struct tm a;
+  |	a.tm_gmtoff = 0;
+  |	return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_94.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -DHAVE_CLOCK_GETTIME -DHAVE_IPV6 -DHAVE_WEAK_SYMBOLS -Isconsbuild/build -Isrc .sconf_temp/conftest_94.c
+.sconf_temp/conftest_94.c: In function ‘main’:
+.sconf_temp/conftest_94.c:4:12: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+  struct tm a;
+            ^
+gcc -o .sconf_temp/conftest_94 .sconf_temp/conftest_94.o -lrt
+scons: Configure: yes
+
+scons: Configure: Checking for C library dl... 
+.sconf_temp/conftest_95.c <-
+  |
+  |
+  |#include "dlfcn.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_95.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -DHAVE_CLOCK_GETTIME -DHAVE_IPV6 -DHAVE_WEAK_SYMBOLS -DHAVE_STRUCT_TM_GMTOFF -Isconsbuild/build -Isrc .sconf_temp/conftest_95.c
+gcc -o .sconf_temp/conftest_95 .sconf_temp/conftest_95.o -lrt -ldl
+scons: Configure: yes
+
+scons: Configure: Checking for C library fcgi... 
+.sconf_temp/conftest_96.c <-
+  |
+  |
+  |#include "fastcgi.h"
+  |
+  |int
+  |main() {
+  |  
+  |return 0;
+  |}
+  |
+gcc -o .sconf_temp/conftest_96.o -c -Wall -O2 -g -W -pedantic -Wunused -Wshadow -std=gnu99 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_GNU_SOURCE -DHAVE_ARPA_INET_H -DHAVE_CRYPT_H -DHAVE_FCNTL_H -DHAVE_GETOPT_H -DHAVE_INTTYPES_H -DHAVE_LINUX_RANDOM_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_SYS_EPOLL_H -DHAVE_SYS_POLL_H -DHAVE_SYS_PRCTL_H -DHAVE_SYS_SENDFILE_H -DHAVE_SYS_TIME_H -DHAVE_SYS_WAIT_H -DHAVE_SYSLOG_H -DHAVE_UNISTD_H -DHAVE_SYS_RESOURCE_H -DHAVE_NETINET_IN_H -DHAVE_SYS_MMAN_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_CHROOT -DHAVE_CLOCK_GETTIME -DHAVE_DUP2 -DHAVE_EPOLL_CTL -DHAVE_EXPLICIT_BZERO -DHAVE_FORK -DHAVE_GETCWD -DHAVE_GETHOSTBYNAME -DHAVE_GETLOADAVG -DHAVE_GETOPT -DHAVE_GETRLIMIT -DHAVE_GETUID -DHAVE_INET_NTOA -DHAVE_INET_NTOP -DHAVE_INET_PTON -DHAVE_JRAND48 -DHAVE_LOCALTIME_R -DHAVE_LSTAT -DHAVE_MADVISE -DHAVE_MEMSET -DHAVE_MMAP -DHAVE_MUNMAP -DHAVE_PATHCONF -DHAVE_PIPE2 -DHAVE_POLL -DHAVE_POSIX_FADVISE -DHAVE_PRCTL -DHAVE_SELECT -DHAVE_SENDFILE -DHAVE_SENDFILE64 -DHAVE_SIGACTION -DHAVE_SIGNAL -DHAVE_SOCKET -DHAVE_SRANDOM -DHAVE_STAT -DHAVE_STRCHR -DHAVE_STRDUP -DHAVE_STRERROR -DHAVE_STRFTIME -DHAVE_STRSTR -DHAVE_STRTOL -DHAVE_WRITEV -DHAVE_PID_T -DHAVE_SIZE_T -DHAVE_OFF_T -DHAVE_LIBCRYPT -DHAVE_CRYPT -DHAVE_CRYPT_R -DHAVE_SOCKLEN_T -DHAVE_STRUCT_SOCKADDR_STORAGE -DHAVE_CLOCK_GETTIME -DHAVE_IPV6 -DHAVE_WEAK_SYMBOLS -DHAVE_STRUCT_TM_GMTOFF -Isconsbuild/build -Isrc .sconf_temp/conftest_96.c
+gcc -o .sconf_temp/conftest_96 .sconf_temp/conftest_96.o -lrt -lfcgi
+/usr/bin/ld: cannot find -lfcgi
+collect2: error: ld returned 1 exit status
+scons: Configure: no
+
+

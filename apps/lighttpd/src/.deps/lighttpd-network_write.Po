@@ -1,0 +1,109 @@
+lighttpd-network_write.o: network_write.c first.h ../config.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/types.h \
+ /home/tom/git/hermitux/musl/prefix/include/features.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h \
+ /home/tom/git/hermitux/musl/prefix/include/endian.h \
+ /home/tom/git/hermitux/musl/prefix/include/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/select.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h \
+ /home/tom/git/hermitux/musl/prefix/include/stddef.h \
+ /home/tom/git/hermitux/musl/prefix/include/limits.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/limits.h network_write.h \
+ base_decls.h base.h settings.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/time.h buffer.h array.h \
+ chunk.h http_kv.h sock_addr.h sys-socket.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/socket.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/socket.h \
+ /home/tom/git/hermitux/musl/prefix/include/netinet/in.h \
+ /home/tom/git/hermitux/musl/prefix/include/inttypes.h \
+ /home/tom/git/hermitux/musl/prefix/include/netinet/tcp.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/un.h etag.h log.h \
+ /home/tom/git/hermitux/musl/prefix/include/errno.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/errno.h \
+ /home/tom/git/hermitux/musl/prefix/include/string.h \
+ /home/tom/git/hermitux/musl/prefix/include/strings.h \
+ /home/tom/git/hermitux/musl/prefix/include/unistd.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/posix.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/uio.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/sendfile.h
+
+first.h:
+
+../config.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/types.h:
+
+/home/tom/git/hermitux/musl/prefix/include/features.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h:
+
+/home/tom/git/hermitux/musl/prefix/include/endian.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/select.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stddef.h:
+
+/home/tom/git/hermitux/musl/prefix/include/limits.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/limits.h:
+
+network_write.h:
+
+base_decls.h:
+
+base.h:
+
+settings.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/time.h:
+
+buffer.h:
+
+array.h:
+
+chunk.h:
+
+http_kv.h:
+
+sock_addr.h:
+
+sys-socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/socket.h:
+
+/home/tom/git/hermitux/musl/prefix/include/netinet/in.h:
+
+/home/tom/git/hermitux/musl/prefix/include/inttypes.h:
+
+/home/tom/git/hermitux/musl/prefix/include/netinet/tcp.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/un.h:
+
+etag.h:
+
+log.h:
+
+/home/tom/git/hermitux/musl/prefix/include/errno.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/errno.h:
+
+/home/tom/git/hermitux/musl/prefix/include/string.h:
+
+/home/tom/git/hermitux/musl/prefix/include/strings.h:
+
+/home/tom/git/hermitux/musl/prefix/include/unistd.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/posix.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/uio.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/sendfile.h:

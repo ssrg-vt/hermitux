@@ -1,0 +1,54 @@
+vector.o: vector.c first.h ../config.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/types.h \
+ /home/tom/git/hermitux/musl/prefix/include/features.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h \
+ /home/tom/git/hermitux/musl/prefix/include/endian.h \
+ /home/tom/git/hermitux/musl/prefix/include/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/stdint.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/select.h \
+ /home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h \
+ /home/tom/git/hermitux/musl/prefix/include/stddef.h \
+ /home/tom/git/hermitux/musl/prefix/include/limits.h \
+ /home/tom/git/hermitux/musl/prefix/include/bits/limits.h vector.h \
+ buffer.h /home/tom/git/hermitux/musl/prefix/include/stdlib.h \
+ /home/tom/git/hermitux/musl/prefix/include/alloca.h \
+ /home/tom/git/hermitux/musl/prefix/include/string.h \
+ /home/tom/git/hermitux/musl/prefix/include/strings.h
+
+first.h:
+
+../config.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/types.h:
+
+/home/tom/git/hermitux/musl/prefix/include/features.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/alltypes.h:
+
+/home/tom/git/hermitux/musl/prefix/include/endian.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/stdint.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/select.h:
+
+/home/tom/git/hermitux/musl/prefix/include/sys/sysmacros.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stddef.h:
+
+/home/tom/git/hermitux/musl/prefix/include/limits.h:
+
+/home/tom/git/hermitux/musl/prefix/include/bits/limits.h:
+
+vector.h:
+
+buffer.h:
+
+/home/tom/git/hermitux/musl/prefix/include/stdlib.h:
+
+/home/tom/git/hermitux/musl/prefix/include/alloca.h:
+
+/home/tom/git/hermitux/musl/prefix/include/string.h:
+
+/home/tom/git/hermitux/musl/prefix/include/strings.h:
