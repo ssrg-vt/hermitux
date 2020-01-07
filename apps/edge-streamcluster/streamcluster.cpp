@@ -1857,6 +1857,11 @@ public:
 
     while ((n = recv(sockfd, (char *)ptr + total, MAX_LINE, 0)) != 0) {
 	    total+=n;
+        printf("received %d bytes\n", total);
+
+        if(total == 8388608)
+            break;
+
         if (n == -1) {
             perror("Receive File Error");
             exit(1);

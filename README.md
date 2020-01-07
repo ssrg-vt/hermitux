@@ -5,6 +5,8 @@ For general information about HermiTux's design principles and implementation, p
 The instruction that follows are for x86-64. We have basic support for an ARM64 embedded
 board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support).
 
+We also have a [Slack channel](https://hermitux.slack.com) for HermiTux.
+
 ## Quick start
 The easiest way to try HermiTux is with Docker:
 ```
@@ -54,7 +56,7 @@ tar xf cmake-3.14.3.tar.gz
 cd cmake-3.14.3
 ./configure
 make -j`nproc`
-make install
+sudo make install
 ```
 
 ## Build
