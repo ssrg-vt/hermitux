@@ -6,18 +6,21 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include "transfer.h"
 
 int sendfile(FILE *fp, int sockfd);
 ssize_t total=0;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
+	struct timeval start, stop, res;
+
     if (argc != 3) {
         perror("usage:send_file filepath <IPaddress>");
         exit(1);
     }
 
+	int iteration = 0;
     while(1) {
         int sockfd = socket(AF_INET, SOCK_STREAM, 0);
         if (sockfd < 0) {
@@ -43,6 +46,16 @@ int main(int argc, char* argv[])
                 break;
         }
 
+		if(iteration > 0) {
+			gettimeofday(&stop, NULL);
+			timersub(&stop, &start, &res);
+			printf("%ld.%06ld\n", res.tv_sec, res.tv_usec);
+
+		}
+
+		iteration++;
+		gettimeofday(&start, NULL);
+
         char *filename = basename(argv[1]);
         if (filename == NULL) {
             perror("Can't get filename");
@@ -57,7 +70,7 @@ int main(int argc, char* argv[])
         }
 
         int bytes_sent = sendfile(fp, sockfd);
-        printf("Send Success, NumBytes = %ld\n", bytes_sent);
+        //printf("Send Success, NumBytes = %ld\n", bytes_sent);
         fclose(fp);
         close(sockfd);
 

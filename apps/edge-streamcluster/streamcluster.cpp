@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <math.h>
 #include <sys/resource.h>
+#include <sys/time.h>
 #include <limits.h>
 
 #include <arpa/inet.h>
@@ -1840,7 +1841,7 @@ public:
 #endif
 
     char addr[INET_ADDRSTRLEN];
-    ssize_t total = writefile(connfd, dest, dim);
+    ssize_t total = writefile(connfd, dest, dim, num);
     printf("Receive Success, NumBytes = %ld\n", total);
 
     close(connfd);
@@ -1850,12 +1851,28 @@ public:
 
 #define MAX_LINE 4096
 
-  ssize_t writefile(int sockfd, void *ptr, int dim)
+  ssize_t writefile(int sockfd, void *ptr, int dim, long num)
   {
     ssize_t n;
     ssize_t total = 0;
 
-    while ((n = recv(sockfd, (char *)ptr + total, MAX_LINE, 0)) != 0) {
+	printf("ready to receive num: %ld", num);
+	fflush(stdout);
+//	while(total != 8388608) {
+	while(total != (num * 1024)/2) {
+		 int bytes = recv(sockfd, (char *)ptr + total, 4096, 0);
+		 if(bytes == -1) {
+			 perror("recv");
+			 exit(-1);
+		 }
+
+		 //printf("total: 0x%x\n", total);
+		 fflush(stdout);
+		 total += bytes;
+	}
+
+#if 0
+    while ((n = recv(sockfd, (char *)ptr + total, MAX_LINE, MSG_WAITALL)) != 0) {
 	    total+=n;
         printf("received %d bytes\n", total);
 
@@ -1867,6 +1884,7 @@ public:
             exit(1);
         }
     }
+#endif
 
     printf("done, received %d bytes (%d floats)\n", total, total / sizeof(float));
     return ((total/sizeof(float))/dim);
@@ -1962,8 +1980,14 @@ void streamCluster( PStream* stream,
   long IDoffset = 0;
   long kfinal;
   while(1) {
+	  struct timeval start, stop, res;
 
+	  gettimeofday(&start, NULL);
     size_t numRead  = stream->read_input(block, dim, chunksize ); 
+	gettimeofday(&stop, NULL);
+	timersub(&stop, &start, &res);
+    fprintf(stderr,"net: %ld.%06ld\n", res.tv_sec, res.tv_usec);
+
     fprintf(stderr,"read %d points, dim=%d, chunkdise=%d\n",numRead, dim, chunksize);
 
 #if 0
@@ -1987,6 +2011,9 @@ void streamCluster( PStream* stream,
     }
 
     points.num = numRead;
+
+	gettimeofday(&start, NULL);
+
     printf("points num: %d\n", points.num);
     for( int i = 0; i < points.num; i++ ) {
       points.p[i].weight = 1.0;
@@ -2028,6 +2055,10 @@ void streamCluster( PStream* stream,
     free(switch_membership);
     free(center_table);
 #endif
+
+	gettimeofday(&stop, NULL);
+	timersub(&stop, &start, &res);
+    fprintf(stderr,"compute: %ld.%06ld\n", res.tv_sec, res.tv_usec);
 
     if( stream->feof() ) {
         printf("EOF\n");

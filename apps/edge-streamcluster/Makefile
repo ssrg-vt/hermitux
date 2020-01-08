@@ -39,7 +39,7 @@ NETIF=tap100
 IP=10.0.5.2
 GATEWAY=10.0.5.1
 
-CC=g++
+CC=aarch64-linux-gnu-g++
 
 all: $(PROG) send_file
 

@@ -1,4 +1,4 @@
-HERMITUX_BASE=/home/pierre/Desktop/hermitux
+HERMITUX_BASE=$(HOME)/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
