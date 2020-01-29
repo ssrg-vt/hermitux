@@ -4,6 +4,7 @@
 
 * * *
 **News**
+- We have ported HermiTux to the ARM aarch64 architecture, more info on the [wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support)
 - Our HermiTux [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) won the best
 paper award at [VEE 2019](https://dl.acm.org/citation.cfm?id=3313817).
 
