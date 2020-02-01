@@ -71,4 +71,4 @@ HermiTux is supported in part by ONR under grants N00014-16-1-2104, N00014-16-1-
 
 This research and development is also supported by the German Federal Ministry of Education and Research under Grant 01IH16010C (Project ENVELOPE).
 
-HermitCore's Emoji is provided free by [EmojiOne](https://www.emojione.com/).
+HermiTux logo made by [Mr Zozu](https://mrzozu.fr/).
