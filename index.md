@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
+  <img width="200" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
 </p>
 
 * * *

@@ -2,4 +2,4 @@ theme: jekyll-theme-cayman
 title: HermiTux
 description: A binary-compatible unikernel
 google_analytics: UA-134723916-1
-favicon: doc/favicon.png
+favicon: https://github.com/ssrg-vt/hermitux/raw/master/doc/favicon.png
