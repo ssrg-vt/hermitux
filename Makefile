@@ -18,12 +18,10 @@ submodules: hermitux-kernel/ musl/ libiomp/
 $(KERNEL): hermitux-kernel/build/
 	make -C hermitux-kernel/build install
 
-hermitux-kernel/build/: hermitux-kernel/
+hermitux-kernel/build/: submodules
 	cd hermitux-kernel && git submodule init && git submodule update && \
 		mkdir -p build/ && mkdir -p prefix && cd build && \
 		cmake -DCMAKE_INSTALL_PREFIX=../prefix ..
-
-hermitux-kernel/: submodules
 
 .PHONY: $(MUSL)
 $(MUSL): musl/prefix/
