@@ -20,7 +20,8 @@ $(KERNEL): hermitux-kernel/build/
 
 hermitux-kernel/build/: hermitux-kernel/
 	cd hermitux-kernel && git submodule init && git submodule update && \
-		mkdir -p build/ && mkdir -p prefix
+		mkdir -p build/ && mkdir -p prefix && cd build && \
+		cmake -DCMAKE_INSTALL_PREFIX=../prefix ..
 
 hermitux-kernel/: submodules
 
