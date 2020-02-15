@@ -27,14 +27,14 @@ hermitux-kernel/build/: submodules
 $(MUSL): musl/prefix/
 	make -C musl install
 
-musl/prefix: submodules
+musl/prefix/: submodules
 	cd musl && mkdir -p prefix && ./configure --prefix=$(PWD)/musl/prefix
 
 .PHONY: $(LOMP)
 $(LOMP): libiomp/build/
-	make -C libiomp/build 
+	make -C libiomp/build
 
-libiomp/build: submodules
+libiomp/build/: submodules
 	cd libiomp && mkdir -p build && cd build && \
 		cmake -DLIBOMP_ENABLE_SHARED=OFF ..
 
