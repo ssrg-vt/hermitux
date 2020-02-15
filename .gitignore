@@ -1,19 +1,16 @@
 *~
 #*
 
-hermitux-kernel
 syscall-rewriter
 syscall-identification
 hermit-compiler
 musl-hermitux
-musl
 obfuscator
 obfuscator-build
 
 prog
 prog_fast
 
-libiomp
 boost_1_61_0
 dyninst-9.2.0
 

@@ -1,11 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-HERMIT_REPO=https://github.com/ssrg-vt/hermitux-kernel.git
-MUSL_REPO=https://github.com/ssrg-vt/hermitux-musl.git
-MUSL_BRANCH=hermitux-v1.1.18
-LIBIOMP_REPO=https://github.com/llvm-mirror/openmp.git
-LIBIOMP_BRANCH=release_40
+git submodule init
+git submodule update
 
 if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 	echo "Hermit toolchain not found, please follow these instructions:"
@@ -13,19 +10,7 @@ if [ ! -e /opt/hermit/bin/x86_64-hermit-gcc ]; then
 	exit 1
 fi
 
-if [ -e hermitux-kernel ] || [ -e libiomp ] || [ -e musl ]; then
-	read -p "Delete hermitux-kernel/ libiomp/ musl/ ? " -n 1 -r
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		    rm -rf hermitux-kernel/ libiomp/ musl/
-	else
-		echo "Exiting."
-		exit
-	fi
-fi
-
 # 1. HERMITCORE
-git clone $HERMIT_REPO
 cd hermitux-kernel
 git submodule init
 git submodule update
@@ -41,21 +26,20 @@ cd ..
 cd ..
 
 # 2. MUSL
-git clone $MUSL_REPO musl
 cd musl
-git checkout $MUSL_BRANCH
 mkdir -p prefix
 ./configure --prefix=$PWD/prefix
 make -j`nproc` install
 cd -
 
 # 3. Libiomp
-git clone $LIBIOMP_REPO libiomp
 cd libiomp
-git checkout $LIBIOMP_BRANCH
 mkdir -p build
 cd build
 cmake -DLIBOMP_ENABLE_SHARED=OFF ..
 make -j`nproc`
 cd ..
 cd ..
+
+# Fixup template Makefile
+sed -i "s@HERMITUX_BASE=.*@HERMITUX_BASE=$PWD@" tools/Makefile.template
