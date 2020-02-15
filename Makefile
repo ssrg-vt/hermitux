@@ -1,5 +1,6 @@
 KERNEL=hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux
 MUSL=musl/prefix/lib/libc.a
+LOMP=libiomp/build/runtime/src/libomp.a
 
 ifeq (, $(shell which /opt/hermit/bin/x86_64-hermit-gcc))
 $(error "Hermit toolchain not found, please follow these instructions: \
