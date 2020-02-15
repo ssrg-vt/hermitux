@@ -9,6 +9,13 @@ endif
 
 
 all: $(KERNEL) $(MUSL) $(LOMP)
+	@echo ""
+	@echo "--------------------------------------------------------"
+	@echo "HermiTux was successfully compiled, don't forget to edit"
+	@echo "tools/Makefile.template by editing the HERMITUX_BASE "
+	@echo "variable as follows:"
+	@echo "HERMITUX_BASE=$(PWD)"
+	@echo "--------------------------------------------------------"
 
 submodules: hermitux-kernel/ musl/ libiomp/
 	git submodule init
