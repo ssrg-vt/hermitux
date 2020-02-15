@@ -66,11 +66,11 @@ sudo make install
 git clone https://github.com/ssrg-vt/hermitux
 ```
 
-2. Install everything with the bootstrap script:
+2. Compile everything as follows:
 
 ```bash
 cd hermitux
-./bootstrap.sh
+make
 ```
 
 ## Run an application
