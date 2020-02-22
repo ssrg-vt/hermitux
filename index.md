@@ -1,5 +1,6 @@
 <p align="center">
   <img width="200" src="https://github.com/ssrg-vt/hermitux/raw/master/doc/logo.png">
+<link rel="shortcut icon" type="image/png" href="/doc/favicon.png">
 </p>
 
 * * *
