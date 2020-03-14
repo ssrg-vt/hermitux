@@ -8,14 +8,14 @@ MUSL_GCC=$(MUSL_PREFIX)/bin/musl-gcc
 # -mllvm -fla -mllvm -sub -mllvm -bcf
 #  https://github.com/obfuscator-llvm/obfuscator
 CFLAGS=-g -O3
-LDFLAGS=-static -lm
+LDFLAGS=-static -lm -lpthread
 
 SRC := $(shell ls *.c)
 OBJ=$(SRC:.c=.o)
 PROG?=prog
 
 KERNEL=$(HERMIT_LOCAL_INSTALL)/x86_64-hermit/extra/tests/hermitux
-VERBOSE?=1
+VERBOSE?=0
 ISLE=uhyve
 STRIP?=1
 # Enable the fine-grained seccomp filter:

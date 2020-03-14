@@ -2,8 +2,9 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <stdlib.h>
 
-#define MAX_THREADS 5
+#define MAX_THREADS 4
 
 __thread int thr_data = 4;
 __thread int thr_bss;
@@ -16,7 +17,8 @@ void* thread_func(void* arg)
 	thr_bss = id;
 
 	printf("[%d] Hello Thread!!! arg = %d\n", getpid(), id);
-	printf("[%d] tdata = %d, tbss = %d\n", getpid(), thr_data, thr_bss);
+	printf("[%d] tdata = %d, tbss = %d (TLS around %p)\n", getpid(), thr_data,
+            thr_bss, &thr_data);
 	printf("[%d] Going to sleep\n", getpid());
 	sleep(1);
 	printf("[%d] Sleep done, exiting\n", getpid());
@@ -33,7 +35,8 @@ int main(int argc, char** argv)
 
 	for(i=0; i<MAX_THREADS; i++) {
 		param[i] = i;
-		printf("[%d] attempting to create thread %d...\n", getpid(), i);
+		printf("[%d] attempting to create thread %d, arg %d...\n", getpid(), i,
+                param[i]);
 		ret = pthread_create(threads+i, NULL, thread_func, param+i);
 		if (ret) {
 			printf("[%d] Thread creation failed! error =  %d\n", getpid(), ret);
