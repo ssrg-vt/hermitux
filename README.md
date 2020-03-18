@@ -1,4 +1,4 @@
-# Hermitux: a unikernel binary-compatible with Linux applications
+# HermiTux: a unikernel binary-compatible with Linux applications
 
 For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba's MS thesis](https://vtechworks.lib.vt.edu/handle/10919/88865).
 
