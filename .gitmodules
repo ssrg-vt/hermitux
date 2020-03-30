@@ -3,7 +3,8 @@
 	url = https://github.com/ssrg-vt/hermitux-kernel.git
 [submodule "musl"]
 	path = musl
-	url = https://github.com/ssrg-vt/hermitux-musl.git
+    url = https://github.com/ssrg-vt/hermitux-musl.git
+    branch = hermitux
 [submodule "libiomp"]
 	path = libiomp
 	url = https://github.com/llvm-mirror/openmp.git
