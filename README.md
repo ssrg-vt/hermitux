@@ -86,8 +86,8 @@ sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
 
 # Now let's try with a dynamically linked program:
 gcc *.c -o is-dyn
-# We can launch it like that (for now it needs a bit more RAM):
-sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 HERMIT_MEM=1G \
+# We can launch it like that:
+sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 \
 	../../../hermitux-kernel/prefix/bin/proxy \
 	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux \
 	../../../musl/prefix/lib/libc.so is-dyn
