@@ -61,15 +61,16 @@ sudo make install
 
 ## Build
 
-1. Clone the repository
+1. Clone the repository and retrieve the submodules
 ```bash
 git clone https://github.com/ssrg-vt/hermitux
+cd hermitux
+git submodule init && git submodule update
 ```
 
 2. Compile everything as follows:
 
 ```bash
-cd hermitux
 make
 ```
 
