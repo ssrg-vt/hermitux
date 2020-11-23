@@ -15,8 +15,10 @@ docker run --privileged -it olivierpierre/hermitux
 ```
 
 ## Prerequisites
-  - Recommended system: Ubuntu 18.04/16.04 or Debian 10/9 (GlibC support is not assured
+  - Recommended system: Ubuntu 20.04/Debian 10 (GlibC support is not assured
   on other distributions)
+    - See [here](https://github.com/ssrg-vt/hermitux/wiki/Old-Linux-distributions-requirements)
+    for additional instructions regarding older distributions Ubuntu 18.04/16.04 or Debian 10/9 
   - Debian/Ubuntu packages:
 ```
 sudo apt update
@@ -32,31 +34,6 @@ echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" \
 sudo apt update
 sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit \
 	libomp-hermit libhermit
-```
-  - For Debian 9 and Ubuntu 16.04, you may also need to install a recent
-  version of libmpfr to use the hermit toolchain:
-
-```
-wget https://www.mpfr.org/mpfr-current/mpfr-4.0.2.tar.bz2
-tar xf mpfr-4.0.2.tar.bz2
-cd mpfr-4.0.2
-./configure
-make -j`nproc`
-sudo make install
-sudo ldconfig
-```
-
- - Finally for Ubuntu 16.04 you need a recent version of cmake:
-
-```
-# It is probably better to uninstall any existing installation:
-sudo apt remove cmake
-wget https://github.com/Kitware/CMake/releases/download/v3.14.3/cmake-3.14.3.tar.gz
-tar xf cmake-3.14.3.tar.gz
-cd cmake-3.14.3
-./configure
-make -j`nproc`
-sudo make install
 ```
 
 ## Build
