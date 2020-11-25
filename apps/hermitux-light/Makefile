@@ -9,7 +9,7 @@ LD=$(HERMIT_TOOLCAHIN_INSTALL)/bin/x86_64-hermit-ld
 LIBS=$(HERMITUX_BASE)/hermitux-kernel/prefix/x86_64-hermit/lib/libhermit.a
 
 CFLAGS= -Os
-LDFLAGS=-static
+LDFLAGS=-static -T linker.ld
 
 all:
 	$(CC) $(CFLAGS) -c hermitux-light.c -o hermitux-light.o
