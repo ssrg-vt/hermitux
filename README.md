@@ -64,11 +64,11 @@ sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 ../../../hermitux-kernel/prefix/bin/proxy \
 
 # Now let's try with a dynamically linked program:
 gcc *.c -o is-dyn
-# We can launch it like that:
+# We can run it by having hermitux execute the dynamic linux loader:
 sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 \
 	../../../hermitux-kernel/prefix/bin/proxy \
 	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux \
-	../../../musl/prefix/lib/libc.so is-dyn
+	/lib64/ld-linux-x86-64.so.2 is-dyn
 ```
 
 For more documentation about multiple topics, please see the wiki:
