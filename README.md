@@ -68,7 +68,7 @@ gcc *.c -o is-dyn
 sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 \
 	../../../hermitux-kernel/prefix/bin/proxy \
 	../../../hermitux-kernel/prefix/x86_64-hermit/extra/tests/hermitux \
-	/lib64/ld-linux-x86-64.so.2 is-dyn
+	/lib64/ld-linux-x86-64.so.2 ./is-dyn
 ```
 
 For more documentation about multiple topics, please see the wiki:
