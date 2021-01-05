@@ -1,4 +1,4 @@
-#Hermitux light
+# Hermitux light
 
 To compile, edit the Makefile and fill in the following variables:
   - `HERMITUX_BASE`: the hermitux install folder
