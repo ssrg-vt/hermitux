@@ -25,11 +25,6 @@ dynamically linked programs, different compilers and optimization levels.
 HermiTux also provides basic support for multithreading, debugging and
 profiling.
 
-![](https://i.ibb.co/GtMRTDy/graph-unikernel-metrics.png)
-*Comparison of disk footprint, boot time, and memory usage for a Linux
-VM, a HermiTux/OSv/Rumprun unikernel, and a Docker container. For more
-details see our [VEE'19 paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf).*
-
 HermiTux is based on the [HermitCore](https://hermitcore.org/) operating
 system.
 
