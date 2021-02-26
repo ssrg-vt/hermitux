@@ -13,6 +13,7 @@ The easiest way to try HermiTux is with Docker:
 docker pull olivierpierre/hermitux
 docker run --privileged -it olivierpierre/hermitux
 ```
+Then you can directly try to [run an application](https://github.com/ssrg-vt/hermitux#run-an-application).
 
 ## Prerequisites
   - Recommended system: Ubuntu 20.04/Debian 10 (GlibC support is not assured
