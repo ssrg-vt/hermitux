@@ -16,5 +16,6 @@ int main(int argc, char **argv) {
 			printf("ERROR: mmap returned error\n");
 			exit(-1);
 		}
+        printf("iteration %d/%d done\n", i, ITERATIONS);
 	}
 }
