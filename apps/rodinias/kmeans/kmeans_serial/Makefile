@@ -51,12 +51,15 @@ $(PROG): $(SRC)
 objdump:
 	objdump --source $(PROG) > /tmp/objdump.txt && vim /tmp/objdump.txt
 
-test: $(PROG)
+../1000_34.txt:
+	cd .. && ./create_inputs.sh
+
+test: $(PROG) ../1000_34.txt
 	OMP_NUM_THREADS=$(CPUS) \
 	HERMIT_VERBOSE=$(VERBOSE) HERMIT_ISLE=$(ISLE) HERMIT_TUX=1 \
 	HERMIT_DEBUG=$(DEBUG) HERMIT_SECCOMP=$(SECCOMP) HERMIT_MEM=$(MEM) \
 	HERMIT_CPUS=$(CPUS) $(HERMIT_LOCAL_INSTALL)/bin/proxy $(KERNEL) \
-	$(PROG) $(ARGS) -i ../kdd_cup.txt 
+	$(PROG) $(ARGS) -i ../1000_34.txt 
 
 clean:
 	rm -rf *.o $(PROG)
