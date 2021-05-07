@@ -1,0 +1,2 @@
+./kmeans_serial/kmeans -i ../../data/kmeans/kdd_cup 
+./kmeans_openmp/kmeans -n 4 -i ../../data/kmeans/kdd_cup 

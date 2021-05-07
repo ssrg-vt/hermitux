@@ -1,0 +1,17 @@
+-base
+  Non-optimized, non-paralleled implementation. It is considered as a baseline implementation to be compared with OpenMP and CUDA implementations. 
+
+-common
+  Common functions used in all implementations.
+
+-cuda
+  An blocked implementation optimized for CUDA
+
+-data
+  Some sample input matrices. 
+  
+-omp
+  An paralleled implementation with OpenMP.
+
+-tools
+  Tools to generate input matrix with random number.
