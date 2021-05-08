@@ -1,0 +1,21 @@
+2000 0.200014 5 7 1 111345631 17844 89076904
+#-----------------------------------------------------------------------------#
+# Sample UTS Workloads:
+#
+#  This file contains sample workloads for UTS, along with the tree statistics
+#  for verifying correct output from the benchmark.
+#
+#-----------------------------------------------------------------------------#
+# Small Workload (~100 million nodes):
+#-----------------------------------------------------------------------------#
+#----------------------------------- inputs ----------------------------------#
+# root branching factor: 2000
+# probability of non-leaf node: 0.200014
+# number of children for non-leaf node: 5
+# root seed 0 <= r < 2^31: 7
+# compute granularity: 1
+#---------------------------------- outputs ----------------------------------#
+# (T3S) Binomial Tree size = 111345631, tree depth = 17844, num leaves = 89076904 (80.00%)
+#-----------------------------------------------------------------------------#
+
+
