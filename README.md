@@ -30,7 +30,7 @@ sudo apt install git build-essential cmake nasm apt-transport-https wget \
   - HermitCore	toolchain installed in `/opt/hermit`:
 ```
 wget https://github.com/ssrg-vt/hermitux/releases/download/v1.0/binutils-hermit_2.30.51-1_amd64.deb \
-    && dpkg -i binutils-hermit_2.30.51-1_amd64.deb \
+    && sudo dpkg -i binutils-hermit_2.30.51-1_amd64.deb \
     && rm binutils-hermit_2.30.51-1_amd64.deb
 
 for dep in binutils-hermit_2.30.51-1_amd64.deb gcc-hermit_6.3.0-1_amd64.deb \
