@@ -26,15 +26,19 @@ sudo apt update
 sudo apt install git build-essential cmake nasm apt-transport-https wget \
 	libgmp-dev bsdmainutils libseccomp-dev python libelf-dev
 ```
-  - [HermitCore	toolchain](https://github.com/RWTH-OS/HermitCore#hermitcore-cross-toolchain)
-	installed in `/opt/hermit`:
 
+  - HermitCore	toolchain installed in `/opt/hermit`:
 ```
-echo "deb [trusted=yes] https://dl.bintray.com/hermitcore/ubuntu bionic main" \
-	| sudo tee -a /etc/apt/sources.list
-sudo apt update
-sudo apt install binutils-hermit newlib-hermit pte-hermit gcc-hermit \
-	libomp-hermit libhermit
+wget https://github.com/ssrg-vt/hermitux/releases/download/v1.0/binutils-hermit_2.30.51-1_amd64.deb \
+    && dpkg -i binutils-hermit_2.30.51-1_amd64.deb \
+    && rm binutils-hermit_2.30.51-1_amd64.deb
+
+for dep in binutils-hermit_2.30.51-1_amd64.deb gcc-hermit_6.3.0-1_amd64.deb \
+        libhermit_0.2.10_all.deb  newlib-hermit_2.4.0-1_amd64.deb; do \
+    wget https://github.com/ssrg-vt/hermitux/releases/download/v1.0/$dep && \
+    dpkg -i $dep && \
+    rm $dep;
+done
 ```
 
 ## Build
