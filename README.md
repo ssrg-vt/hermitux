@@ -32,7 +32,7 @@ sudo apt install git build-essential cmake nasm apt-transport-https wget \
 for dep in binutils-hermit_2.30.51-1_amd64.deb gcc-hermit_6.3.0-1_amd64.deb \
         libhermit_0.2.10_all.deb  newlib-hermit_2.4.0-1_amd64.deb; do \
     wget https://github.com/ssrg-vt/hermitux/releases/download/v1.0/$dep && \
-    dpkg -i $dep && \
+    sudo dpkg -i $dep && \
     rm $dep;
 done
 ```
