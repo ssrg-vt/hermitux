@@ -29,15 +29,13 @@ HermiTux is based on the [HermitCore](https://hermitcore.org/) operating
 system.
 
 ### Trying it out
-HermiTux is open source and all the code and instructions are on GitHub:
-- [https://github.com/ssrg-vt/hermitux](https://github.com/ssrg-vt/hermitux)
+HermiTux is open source and all the code and instructions are on
+[GitHub](https://github.com/ssrg-vt/hermitux).
 
 ### Design Principles
 
 For a detailed description please read Hermitux’s VEE 2019
-[paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and [Daniel Chiba’s MS
-Thesis](https://vtechworks.lib.vt.edu/handle/10919/88865)
-at Virginia Tech.
+[paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf).
 
 HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
 alongside a minimal OS layer within a single address space virtual machine. At
@@ -54,6 +52,10 @@ call latency.
 HermiTux can also analyze a Linux binary to determine which system calls it
 invokes, and compile a custom kernel containing only the implementations of
 these particular system calls.
+
+There are also various
+[documents](https://github.com/ssrg-vt/hermitux/wiki/Documents) related to
+HermiTux listed in the wiki.
 
 ### Contact
 
