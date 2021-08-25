@@ -4,7 +4,7 @@ LOMP=libiomp/build/runtime/src/libomp.a
 
 ifeq (, $(shell which /opt/hermit/bin/x86_64-hermit-gcc))
 $(error "Hermit toolchain not found, please follow these instructions: \
-https://github.com/hermitcore/libhermit#hermitcore-cross-toolchain")
+https://github.com/ssrg-vt/hermitux#prerequisites")
 endif
 
 
