@@ -5,7 +5,7 @@
 
 * * *
 **News**
-- An [extended version of HermiTux' paper](https://drive.google.com/u/0/uc?id=17pnEJnMsZA6Kp_gKK-kcWc67-IQi7_No&export=download) was accepted in IEEE Transactions on Computers
+- An [extended version of HermiTux' paper](https://www.ssrg.ece.vt.edu/papers/tc21.pdf) was accepted in IEEE Transactions on Computers
 - We have ported HermiTux to the ARM aarch64 architecture, more info on the [wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support)
 - Our HermiTux [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) won the best
 paper award at [VEE 2019](https://dl.acm.org/citation.cfm?id=3313817).
