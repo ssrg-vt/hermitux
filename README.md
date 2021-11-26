@@ -13,7 +13,7 @@ We also have a [Slack channel](https://join.slack.com/t/hermitux/shared_invite/e
 The easiest way to try HermiTux is with Docker:
 ```
 docker pull olivierpierre/hermitux
-docker run --privileged -it olivierpierre/hermitux
+docker run --device=/dev/kvm -it olivierpierre/hermitux
 ```
 Then you can directly try to [run an application](https://github.com/ssrg-vt/hermitux#run-an-application).
 

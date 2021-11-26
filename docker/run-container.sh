@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run --privileged -it hermitux
+docker run --device=/dev/kvm -it hermitux
