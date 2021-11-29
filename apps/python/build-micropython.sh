@@ -11,7 +11,7 @@ cd micropython
 
 git submodule update --init
 make -C ports/unix axtls -j`nproc`
-LDFLAGS_EXTRA=-static MICROPY_PY_THREAD=0 make -C ports/unix -j`nproc`
+CFLAGS_EXTRA="-Wno-missing-attributes" LDFLAGS_EXTRA=-static MICROPY_PY_THREAD=0 make -C ports/unix -j`nproc`
 
 cd -
 
