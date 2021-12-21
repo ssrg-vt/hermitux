@@ -1,5 +1,5 @@
 # Edit this with the path to HermiTux base install folder:
-HERMITUX_BASE=$(HOME)/Desktop/hermitux
+HERMITUX_BASE=$(HOME)/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -24,7 +24,7 @@ PROF?=0
 # Command line arguments
 ARGS?=
 # Memory to give to the VM
-MEM?=2G
+MEM?=1G
 
 # Set to 1 to enable minifs
 MINIFS?=0

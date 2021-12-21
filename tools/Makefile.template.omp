@@ -1,4 +1,4 @@
-HERMITUX_BASE=$(HOME)/Desktop/hermitux
+HERMITUX_BASE=$(HOME)/hermitux
 
 HERMIT_LOCAL_INSTALL=$(HERMITUX_BASE)/hermitux-kernel/prefix
 MUSL_PREFIX=$(HERMITUX_BASE)/musl/prefix
@@ -23,8 +23,8 @@ STRIP?=1
 SECCOMP?=0
 #ARGS?="-i100"
 ARGS?=
-CPUS?=4
-MEM?=4G
+CPUS?=2
+MEM?=1G
 
 # Set this to 1 to enable gdb support, see tools/hermitux-gdb. Don't forget
 # to disable stripping and -O3 to be able to debug.
