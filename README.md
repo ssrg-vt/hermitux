@@ -10,15 +10,12 @@ board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/A
 We also have a [Slack channel](https://join.slack.com/t/hermitux/shared_invite/enQtOTM0MTE2MjgwNzM2LTRjZTMyMzYwOWU3MDFkNjJiZTA5ZmY2NDJhOGI5NDU3MjZjZjI1MWNlMGZiZGE2OTc5MzQxN2UyNmRhYWRlYmM) for HermiTux.
 
 ## Quick start
-The easiest way to try HermiTux is with Docker:
-```
-docker pull olivierpierre/hermitux
-docker run --device=/dev/kvm -it olivierpierre/hermitux
-```
-Then you can directly try to [run an application](https://github.com/ssrg-vt/hermitux#run-an-application).
+
+If you have Docker installed on a Linux host with KVM support, you can easily
+[try HermiTux within a container](https://github.com/ssrg-vt/hermitux/wiki/Docker).
 
 ## Prerequisites
-  - Recommended system: Ubuntu 20.04/Debian 10 (GlibC support is not assured
+  - Recommended system: Ubuntu 20.04/Debian 11 (GlibC support is not assured
   on other distributions)
     - See [here](https://github.com/ssrg-vt/hermitux/wiki/Old-Linux-distributions-requirements)
     for additional instructions regarding older distributions Ubuntu 18.04/16.04 or Debian 10/9 
