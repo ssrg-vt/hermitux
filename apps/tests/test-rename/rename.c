@@ -60,5 +60,7 @@ int main(void) {
 
     close(fd);
 
-	return 0;
+    printf("Test succeeds!\n");
+
+    return 0;
 }
