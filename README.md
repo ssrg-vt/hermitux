@@ -23,7 +23,7 @@ If you have Docker installed on a Linux host with KVM support, you can easily
 ```
 sudo apt update
 sudo apt install git build-essential cmake nasm apt-transport-https wget \
-	libgmp-dev bsdmainutils libseccomp-dev python libelf-dev
+	libgmp-dev bsdmainutils libseccomp-dev python3 libelf-dev
 ```
 
   - HermitCore	toolchain installed in `/opt/hermit`:
