@@ -5,6 +5,7 @@
 
 * * *
 **News**
+- HermiTux is no longer maintained, if you are looking for an active unikernel project with similar compatibility goals and methods please make sure to check out [Unikraft](https://unikraft.org/)
 - Check out this [Usenix ;login: article](https://www.usenix.org/publications/loginonline/unikraft-and-coming-age-unikernels) regarding POSIX/Linux compatibility for unikernels
 - An [extended version of HermiTux' paper](https://www.ssrg.ece.vt.edu/papers/tc21.pdf) was accepted in IEEE Transactions on Computers
 - We have ported HermiTux to the ARM aarch64 architecture, more info on the [wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support)
