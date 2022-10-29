@@ -1,13 +1,13 @@
 # HermiTux: a unikernel binary-compatible with Linux applications
 
+**HermiTux is no longer maintained, if you are looking for an active unikernel project with similar compatibility goals and methods please make sure to check out [Unikraft](https://unikraft.org/)**
+
 For general information about HermiTux's design principles and implementation, please read the [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf). There are also various
 [documents](https://github.com/ssrg-vt/hermitux/wiki/Documents) related to HermiTux listed in the
 wiki.
 
 The instruction that follows are for x86-64. We have basic support for an ARM64 embedded
 board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support).
-
-We also have a [Slack channel](https://join.slack.com/t/hermitux/shared_invite/enQtOTM0MTE2MjgwNzM2LTRjZTMyMzYwOWU3MDFkNjJiZTA5ZmY2NDJhOGI5NDU3MjZjZjI1MWNlMGZiZGE2OTc5MzQxN2UyNmRhYWRlYmM) for HermiTux.
 
 ## Quick start
 
