@@ -9,11 +9,6 @@ wiki.
 The instruction that follows are for x86-64. We have basic support for an ARM64 embedded
 board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support).
 
-## Quick start
-
-If you have Docker installed on a Linux host with KVM support, you can easily
-[try HermiTux within a container](https://github.com/ssrg-vt/hermitux/wiki/Docker).
-
 ## Prerequisites
   - Recommended system: Ubuntu 20.04/Debian 11 (GlibC support is not assured
   on other distributions)
