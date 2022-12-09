@@ -142,7 +142,7 @@ int main(int argc, char **argv) {
 	}
 
 	if(verify_ftruncate())
-		printf("Test succeeded\n");
+		printf("All tests succeeded\n");
 	else {
 		printf("Test failed\n");
 		return -1;

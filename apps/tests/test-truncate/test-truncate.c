@@ -113,7 +113,7 @@ int main(int argc, char **argv) {
 	if(verify_truncate(0) || verify_truncate(1))
 		printf("Test failed\n");
 	else
-		printf("Test succeeded\n");
+		printf("All tests succeeded\n");
 
 	cleanup();
 }
