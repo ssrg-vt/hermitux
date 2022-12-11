@@ -5,7 +5,7 @@
 
 * * *
 **News**
-- HermiTux is no longer maintained, if you are looking for an active unikernel
+- HermiTux is no longer actively maintained, if you are looking for an active unikernel
   project with similar compatibility goals and methods please make sure to check
   out [Unikraft](https://unikraft.org/)
 - Check out this [Usenix ;login: article](https://www.usenix.org/publications/loginonline/unikraft-and-coming-age-unikernels) regarding POSIX/Linux compatibility for unikernels
