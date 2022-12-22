@@ -42,7 +42,7 @@ HermiTux is open source and all the code and instructions are on
 For a detailed description please read Hermitux’s VEE 2019
 [paper](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) as well as the 2021
 IEEE TC
-[paper](https://drive.google.com/u/0/uc?id=17pnEJnMsZA6Kp_gKK-kcWc67-IQi7_No&export=download).
+[paper](https://www.ssrg.ece.vt.edu/papers/tc21.pdf).
 
 HermiTux uses a lightweight KVM-based hypervisor that loads the Linux binary
 alongside a minimal OS layer within a single address space virtual machine. At
