@@ -18,7 +18,7 @@ paper award at [VEE 2019](https://dl.acm.org/citation.cfm?id=3313817).
 
 HermiTux is a [unikernel](http://unikernel.org/): a minimal operating system
 with low memory/disk footprint and sub-second boot time, executing an
-application within a single address space on top of an hypervisor. Moreover,
+application within a single address space on top of a hypervisor. Moreover,
 HermiTux is **binary-compatible** with Linux: it can run native Linux
 executables.
 
