@@ -5,6 +5,8 @@
 
 * * *
 [![](https://img.shields.io/github/stars/ssrg-vt/hermitux?style=social)](https://github.com/ssrg-vt/hermitux)
+[![](https://img.shields.io/badge/paper-VEE'19-orange)](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf)
+[![](https://img.shields.io/badge/paper-IEEE%20TC'21-orange)](https://www.ssrg.ece.vt.edu/papers/tc21.pdf)
 
 **News**
 - Check out this [Usenix ;login: article](https://www.usenix.org/publications/loginonline/unikraft-and-coming-age-unikernels) regarding POSIX/Linux compatibility for unikernels
