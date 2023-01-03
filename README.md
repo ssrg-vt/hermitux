@@ -1,6 +1,6 @@
 # HermiTux: a unikernel binary-compatible with Linux applications
 
-**HermiTux is no longer actively maintained, if you are looking for an active unikernel project with similar compatibility goals and methods please make sure to check out [Unikraft](https://unikraft.org/)**
+**HermiTux is no longer actively maintained, if you are looking for an active unikernel project with similar compatibility goals and methods please make sure to check out [Unikraft](https://unikraft.org/).**
 
 For general information about HermiTux's design principles and implementation, please read the
 [VEE'19](https://www.ssrg.ece.vt.edu/papers/vee2019.pdf) and the
