@@ -4,7 +4,7 @@
 </p>
 
 * * *
-[![](https://img.shields.io/github/stars/ssrg-vt/hermitux?style=social)]([https://arxiv.org/abs/2212.12904](https://github.com/ssrg-vt/hermitux))
+[![](https://img.shields.io/github/stars/ssrg-vt/hermitux?style=social)](https://github.com/ssrg-vt/hermitux))
 
 **News**
 - Check out this [Usenix ;login: article](https://www.usenix.org/publications/loginonline/unikraft-and-coming-age-unikernels) regarding POSIX/Linux compatibility for unikernels
