@@ -9,6 +9,7 @@
 [![](https://img.shields.io/badge/paper-IEEE%20TC'21-orange)](https://www.ssrg.ece.vt.edu/papers/tc21.pdf)
 
 **News**
+- We gave a [talk](https://fosdem.org/2023/schedule/event/loupe/) at FOSDEM'23 regarding application compatibility in custom operating systems
 - Check out this [Usenix ;login: article](https://www.usenix.org/publications/loginonline/unikraft-and-coming-age-unikernels) regarding POSIX/Linux compatibility for unikernels
 - An [extended version of HermiTux' paper](https://www.ssrg.ece.vt.edu/papers/tc21.pdf) was accepted in IEEE Transactions on Computers
 - We have ported HermiTux to the ARM aarch64 architecture, more info on the [wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support)
