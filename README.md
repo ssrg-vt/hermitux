@@ -12,7 +12,7 @@ The instruction that follows are for x86-64. We have basic support for an ARM64 
 board, more information in the [Wiki](https://github.com/ssrg-vt/hermitux/wiki/Aarch64-support).
 
 ## Prerequisites
-  - Recommended system: Ubuntu 20.04/Debian 11 (GlibC support is not assured
+  - Recommended system: Ubuntu 22.04 or 20.04, Debian 12 or 11 (GlibC support is not assured
   on other distributions)
     - See [here](https://github.com/ssrg-vt/hermitux/wiki/Old-Linux-distributions-requirements)
     for additional instructions regarding older distributions Ubuntu 18.04/16.04 or Debian 10/9 
