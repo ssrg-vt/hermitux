@@ -71,4 +71,4 @@ sudo HERMIT_ISLE=uhyve HERMIT_TUX=1 \
 For more documentation about multiple topics, please see the wiki:
 [https://github.com/ssrg-vt/hermitux/wiki](https://github.com/ssrg-vt/hermitux/wiki)
 
-HermiTux logo made by [Kerbreizh Informatique](https://www.kerbreizh-informatique.fr/communication/).
+HermiTux logo made by [Kerbreizh Informatique](https://www.kerbreizh-informatique.fr/).
